@@ -25,15 +25,36 @@
     enable = true;
     userName = "Robertino Martinez";
     userEmail = "48034748+rober-m@users.noreply.github.com";
+    aliases = {
+      gco = "checkout";
+      gaa = "add .";
+    };
+    difftastic.enable = true;
   };
 
   programs.vscode.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    #ohMyZsh.enable = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window.opacity = 0.95;
+    };
+  };
 
   home.packages = with pkgs; [
     # Some basics
     coreutils
     curl
     wget
+
+    #dua-cli
+    lazygit
+    zsh
 
 
     # Dev stuff

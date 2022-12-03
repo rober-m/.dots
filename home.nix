@@ -26,8 +26,10 @@
     userName = "Robertino Martinez";
     userEmail = "48034748+rober-m@users.noreply.github.com";
     aliases = {
-      gco = "checkout";
-      gaa = "add .";
+      co = "checkout";
+      aa = "add .";
+      cm = "commit -m";
+      ca = "commt --amend --no-edit"
     };
     difftastic.enable = true;
   };
@@ -46,6 +48,18 @@
     enable = true;
     settings = {
       window.opacity = 0.95;
+      font = {
+        size= 14;
+      };
+      draw_bold_text_with_bright_colors = true;
+      cursor = {
+        style.shape = "Block";
+        blinking = "Off";
+      };
+      key_bindings = [
+        #{ key = ""; mods = ""; chars/action = ""; }
+        { key = "N"; mods = "Command"; action = "SpawnNewInstance"; }
+      ];
     };
   };
 

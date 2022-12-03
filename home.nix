@@ -39,6 +39,9 @@
     #ohMyZsh.enable = true;
   };
 
+  # TODO: Add and configure Yabai
+
+  # TODO: add rest of alacritty settings
   programs.alacritty = {
     enable = true;
     settings = {

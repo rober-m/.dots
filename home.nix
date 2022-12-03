@@ -26,10 +26,11 @@
     userName = "Robertino Martinez";
     userEmail = "48034748+rober-m@users.noreply.github.com";
     aliases = {
+      s = "status";
       co = "checkout";
       aa = "add .";
       cm = "commit -m";
-      ca = "commt --amend --no-edit"
+      ca = "commt --amend --no-edit";
     };
     difftastic.enable = true;
   };
@@ -38,7 +39,22 @@
 
   programs.zsh = {
     enable = true;
-    #ohMyZsh.enable = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+    # localVariables = {};
+    shellAliases = {
+      ls = "lsd";
+      ll = "lsd -l";
+      la = "lsd -la";
+      rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
+      v = "lvim";
+      cat = "bat";
+    };
   };
 
   # TODO: Add and configure Yabai
@@ -69,9 +85,12 @@
     curl
     wget
 
+    # TERMINAL
     #dua-cli
     lazygit
     zsh
+    lsd
+    bat
 
 
     # Dev stuff
@@ -89,7 +108,7 @@
 
     # Useful nix related tools
     cachix # adding/managing alternative binary caches hosted by Cachix
-    # comma # run software from without installing it
+    comma # run software from without installing it
     niv # easy dependency management for nix projects
     nodePackages.node2nix
 

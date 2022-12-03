@@ -57,15 +57,13 @@
     };
   };
 
-  # TODO: Add and configure Yabai
-
-  # TODO: add rest of alacritty settings
   programs.alacritty = {
     enable = true;
     settings = {
       window.opacity = 0.95;
       font = {
-        size= 14;
+        size = 14;
+        normal.family = "Hack Nerd Font";
       };
       draw_bold_text_with_bright_colors = true;
       cursor = {

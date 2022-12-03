@@ -29,6 +29,28 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
+  services.yabai = {
+    enable = true;
+    config = {
+      top_padding         = 60;
+      bottom_padding      = 10;
+      left_padding        = 10;
+      right_padding       = 10;
+      window_gap          = 10;
+      window_opacity      = "on";
+      active_window_opacity = 1.0;
+      normal_window_opacity = 0.85;
+      window_shadow         = "off";
+      window_topmost        = "on";
+      focus_follows_mouse   = "autoraize";
+      mouse_follows_focus   = "on";
+      split_ratio           = 0.5;
+    };
+    extraConfig = ''
+      yabai -m rule --add app='System Preferences' manage=off
+    '';
+  };
+
   # Apps
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
@@ -44,7 +66,7 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
      recursive
-     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+     (nerdfonts.override { fonts = [ "Hack" ]; })
    ];
 
   # Keyboard

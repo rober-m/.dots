@@ -32,7 +32,6 @@
         # Sub in x86 version of packages that don't build on Apple Silicon yet
         final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
           inherit (final.pkgs-x86)
-            idris2
             nix-index
             niv;
         })
@@ -71,10 +70,6 @@
             system = "x86_64-darwin";
             inherit (nixpkgsConfig) config;
           };
-
-          # Get Apple Silicon version of `kitty`
-          # TODO: Remove when https://github.com/NixOS/nixpkgs/pull/137512 lands
-          #inherit (inputs.nixpkgs-with-patched-kitty.legacyPackages.aarch64-darwin) kitty;
         }; 
       };
 

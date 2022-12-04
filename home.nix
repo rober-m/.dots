@@ -16,7 +16,6 @@
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
-  #programs.neovim.enable = true;
   #programs.neovim.vimAlias = true;
   #programs.neovim.viAlias = true;
   #programs.nixvim.enable = true;
@@ -55,6 +54,12 @@
       v = "lvim";
       cat = "bat";
     };
+    profileExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)" 
+    '';
+    sessionVariables = {
+     HOMEBREW_NO_ANALYTICS = 1;
+    };
   };
 
   programs.alacritty = {
@@ -77,38 +82,45 @@
     };
   };
 
+  # obsidian obs-studio 
+
   home.packages = with pkgs; [
-    # Some basics
+
+    # Terminal
     coreutils
     curl
     wget
-
-    # TERMINAL
-    #dua-cli
+    git
+    dua
     lazygit
     zsh
     lsd
     bat
+    fd
 
+    # Work
+    discord
+    slack
 
-    # Dev stuff
-    # (agda.withPackages (p: [ p.standard-library ]))
-    #google-cloud-sdk
+    # Haskell stuff
     haskellPackages.cabal-install
     #haskellPackages.hoogle
     #haskellPackages.hpack
     haskellPackages.implicit-hie
     haskellPackages.stack
-    idris2
-    jq
-    nodePackages.typescript
-    nodejs
 
-    # Useful nix related tools
+    # Web stuff
+    nodejs
+    nodePackages.typescript
+    nodePackages.node2nix
+
+    # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix
     comma # run software from without installing it
     niv # easy dependency management for nix projects
-    nodePackages.node2nix
+
+    # Other
+    docker
 
   ] ++ lib.optionals stdenv.isDarwin [
     cocoapods

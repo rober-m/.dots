@@ -1,5 +1,9 @@
 {
   description = "Rober's darwin system";
+  # TODO
+  # - Apps added by nix aren't shown in Spotlight. Is there a solution? Use Alfred? Custom launcher?
+  # - Organize better
+  # - 
 
   inputs = {
     # Package sets

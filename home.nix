@@ -16,9 +16,12 @@
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
-  #programs.neovim.vimAlias = true;
-  #programs.neovim.viAlias = true;
-  #programs.nixvim.enable = true;
+  # Config (using nixvim?) 
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
   
   programs.git = {
     enable = true;
@@ -32,9 +35,19 @@
       ca = "commt --amend --no-edit";
     };
     difftastic.enable = true;
+    extraConfig = {
+      github.user = "rober-m";
+      pull.rebase = false;
+      merge.conflictstyle = "diff3";
+      #credential.helper = "osxkeychain";
+    };
   };
 
   programs.vscode.enable = true;
+
+  programs.ssh = {
+    enable = false;
+  };
 
   programs.zsh = {
     enable = true;
@@ -83,7 +96,7 @@
   };
 
   # obsidian obs-studio 
-
+  
   home.packages = with pkgs; [
 
     # Terminal
@@ -97,17 +110,27 @@
     lsd
     bat
     fd
+    fzf
+    jq
 
     # Work
     discord
     slack
+    
+    # Python and Jupyter 
+    python39Packages.jupyter
+    python39Packages.jupyter_core
+    python39Packages.jupyter-client
+    python39Packages.jupyterlab
+    python39Packages.notebook
 
     # Haskell stuff
     haskellPackages.cabal-install
     #haskellPackages.hoogle
     #haskellPackages.hpack
-    haskellPackages.implicit-hie
-    haskellPackages.stack
+    #haskellPackages.implicit-hie
+    #haskellPackages.stack
+    haskellPackages.ihaskell
 
     # Web stuff
     nodejs
@@ -140,6 +163,103 @@
       };
     };
     nix.enable = true;
+  };
+
+  # TODO: Create "Quick Service" running "customLauncher.sh" and add Cmd+Space shortcut to it
+  home.file.customLauncher = {
+    executable = true;
+    target = ".config/scripts/customLauncher.sh";
+    text = ''
+      #!/bin/zsh
+
+      ~/.config/scripts/popout.sh ~/.config/scripts/launcher.sh
+    '';
+  };
+
+  home.file.launcherPopoup = {
+    executable = true;
+    target = ".config/scripts/popoup.sh";
+    text = ''
+      #!/bin/zsh
+
+      # Set terminal with "mylauncher" tytle as a floating window in Amethyst/Yabai
+      alacritty -t "mylauncher" -o window.decorations=none --working-directory "$(pwd)" -e "$1"
+    '';
+  };
+
+  home.file.launcherBehavior = {
+    executable = true;
+    target = ".config/scripts/launcher.sh";
+    text = ''
+      #!/bin/zsh
+
+      find -L \
+          ~/Applications/Home\ Manager\ Apps \
+          /System/Library/CoreServices \
+          /System/Applications /Applications \
+          /System/Applications/Utilities \
+          ~/Applications \
+          -maxdepth 1 -name "*.app" | fzf | xargs -I {} open "{}" 
+    '';
+  };
+
+  # Configure properly if I have the time
+  home.file.yabai = {
+  executable = true;
+  target = ".config/yabai/yabairc";
+  text = ''
+    #!/usr/bin/env sh
+    # load scripting addition
+    sudo yabai --load-sa
+    yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+    # bar configuration
+    yabai -m config external_bar all:0:39
+    yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+    # borders
+    yabai -m config window_border on
+    yabai -m config window_border_width 2
+    yabai -m config window_border_radius 6
+    yabai -m config window_border_blur off
+    yabai -m config active_window_border_color 0xFF40FF00
+    yabai -m config normal_window_border_color 0x00FFFFFF
+    yabai -m config insert_feedback_color 0xffd75f5f
+    yabai -m config window_shadow off
+    # layout
+    yabai -m config layout bsp
+    yabai -m config auto_balance off
+    yabai -m config window_topmost on
+    # gaps
+    yabai -m config top_padding    0
+    yabai -m config bottom_padding 0
+    yabai -m config left_padding   0
+    yabai -m config right_padding  0
+    yabai -m config window_gap     0
+    # rules
+    yabai -m rule --add app="^System Preferences$" manage=off
+    # workspace management
+    yabai -m space 1 --label term
+    yabai -m space 2 --label code
+    yabai -m space 3 --label www
+    yabai -m space 4 --label chat
+    yabai -m space 5 --label todo
+    yabai -m space 6 --label music
+    yabai -m space 7 --label seven
+    yabai -m space 8 --label eight
+    yabai -m space 9 --label nine
+    yabai -m space 10 --label ten
+    # assign apps to spaces
+    yabai -m rule --add app="Alacritty" space=term
+    yabai-m rule --add app="Visual Studio Code" space=code
+    yabai -m rule --add app="Vivaldi" space=www
+    yabai -m rule --add app="Google Chrome" space=seven
+    yabai -m rule --add app="Microsoft Teams" space=chat
+    yabai -m rule --add app="Slack" space=chat
+    yabai -m rule --add app="Signal" space=chat
+    yabai -m rule --add app="Spotify" space=music
+    yabai -m rule --add app="Todoist" space=todo
+    echo "yabai configuration loaded.."
+  '';
+
   };
 
 }

@@ -1,9 +1,7 @@
 {
   description = "Rober's darwin system";
   # TODO
-  # - Apps added by nix aren't shown in Spotlight. Is there a solution? Use Alfred? Custom launcher?
   # - Organize better
-  # - 
 
   inputs = {
     # Package sets
@@ -44,9 +42,7 @@
   in
   {
 
-    
     # My `nix-darwin` configs
-      
     darwinConfigurations."roberm" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = attrValues self.darwinModules ++ [ 

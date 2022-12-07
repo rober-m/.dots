@@ -1,5 +1,22 @@
 { config, pkgs, lib, ... }:
 {
+
+  #################### CONFIG INSPIRED BY: #########################
+
+  # https://github.com/srid/nixos-config/blob/master/home/neovim.nix
+
+  ##################################################################
+
+  imports = [
+    # ./neovim/telescope.nix
+    # ./neovim/coc.nix
+    # ./neovim/haskell.nix
+    # ./neovim/rust.nix
+    # ./neovim/zk.nix
+    # which-key must be the last import for it to recognize the keybindings of
+    # previous imports.
+    ./which-key.nix
+  ];
   # Neovim
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
   programs.neovim = {
@@ -9,48 +26,35 @@
     # Add NodeJs since it's required by some plugins I use.
     withNodeJs = true;
 
-  # Add plugins using my `packer` function.
+  # Full list here:
+  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
   plugins = with pkgs.vimPlugins; [
+    # Themes 
+    sonokai
+    dracula-vim
+    gruvbox
+    papercolor-theme
+    tokyonight-nvim
+    {
+        plugin = lazygit-nvim;
+        type = "lua";
+        config = ''
+          nmap("<leader>gg", ":LazyGit<cr>")
+        '';
+      }
+
     # Apperance, interface, UI, etc.
     bufferline-nvim
     galaxyline-nvim 
     gitsigns-nvim
     indent-blankline-nvim
-    {
-      plugin = telescope-nvim;
-      config = ''
-        require('telescope').setup{
-          defaults = {
-            -- Default configuration for telescope goes here:
-            -- config_key = value,
-            mappings = {
-              i = {
-                -- map actions.which_key to <C-h> (default: <C-/>)
-                -- actions.which_key shows the mappings for your picker,
-                -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                ["<C-h>"] = "which_key"
-              }
-            }
-          },
-          pickers = {
-            -- Default configuration for builtin pickers goes here:
-            -- picker_name = {
-            --   picker_config_key = value,
-            --   ...
-            -- }
-            -- Now the picker_config_key will be applied every time you call this
-            -- builtin picker
-          },
-          extensions = {
-            -- Your extension configuration goes here:
-            -- extension_name = {
-            --   extension_config_key = value,
-            -- }
-            -- please take a look at the readme of the extension you want to configure
-          }
-        }
-      ''; 
-    }
+
+    # {
+    #   plugin = telescope-nvim;
+    #   config = ''
+    #     require('telescope').setup{ }
+    #   ''; 
+    # }
     # { plugin = toggleterm-nvim; config = ""; }
 
     # # Completions
@@ -67,9 +71,9 @@
     # { plugin = null-ls-nvim; config = ""; }
     # { plugin = nvim-lspconfig; config = ""; }
 
-    # nvim-treesitter.withAllGrammars
-    # vim-haskell-module-name
-    # vim-polyglot
+    nvim-treesitter.withAllGrammars
+    vim-haskell-module-name
+    vim-polyglot
 
     # # Editor behavior
     # { plugin = comment-nvim; config = "require'comment'.setup()"; }
@@ -88,16 +92,19 @@
     # { use = direnv-vim; }
     # { use = vim-eunuch; vscode = true; }
     # { use = vim-fugitive; }
-    # { use = which-key-nvim; opt = true; }
   ];
 
   # Required packages -------------------------------------------------------------------------- {{{
   extraPackages = with pkgs; [
     #neovim-remote
+    lazygit
 
     # Language servers, linters, etc.
     # See `../configs/nvim/lua/malo/nvim-lspconfig.lua` and
     # `../configs/nvim/lua/malo/null-ls-nvim.lua` for configuration.
+    
+    # Haskell
+    # TODO
 
     # Bash
     nodePackages.bash-language-server
@@ -121,6 +128,12 @@
     proselint
     sumneko-lua-language-server
   ];
+
+  extraConfig = ''
+      lua << EOF
+      ${builtins.readFile ./neovim.lua}
+      EOF
+    '';
 
   };
 }

@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
 let 
   imports = [
-    ./nvim.nix
+    ./modules/neovim
   ];
 in
 {
+
   inherit imports;
 
   home.stateVersion = "22.05";
@@ -79,7 +80,7 @@ in
     settings = {
       window.opacity = 0.95;
       font = {
-        size = 14;
+        size = 17;
         normal.family = "Hack Nerd Font";
       };
       draw_bold_text_with_bright_colors = true;

@@ -1,6 +1,12 @@
 { config, pkgs, lib, ... }:
-
+let 
+  imports = [
+    ./nvim.nix
+  ];
+in
 {
+  inherit imports;
+
   home.stateVersion = "22.05";
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
@@ -16,13 +22,6 @@
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
-  # Config (using nixvim?) 
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-  
   programs.git = {
     enable = true;
     userName = "Robertino Martinez";

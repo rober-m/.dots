@@ -13,6 +13,8 @@
   ];
 
   nix.configureBuildUsers = true;
+  
+  environment.variables.EDITOR = "nvim";
 
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
@@ -74,9 +76,33 @@
      (nerdfonts.override { fonts = [ "Hack" ]; })
    ];
 
-  # Keyboard
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+  system = {
+    # Dock
+    defaults.dock = {
+      autohide = true;
+      orientation = "left";
+    };
+    # Keyboard
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
+    };
+    # Finder
+    defaults.finder = {
+      AppleShowAllExtensions = true;
+    };
+    # Trackpad 
+    defaults.trackpad = {
+      Clicking = true;
+      TrackpadThreeFingerDrag = true;
+    };
+    # Global
+    defaults.NSGlobalDomain = {
+      AppleShowAllExtensions = true;
+      AppleShowScrollBars = "WhenScrolling";
+      "com.apple.mouse.tapBehavior" = 1; # Mode 1 enables tap to click
+    };
+  };
 
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;

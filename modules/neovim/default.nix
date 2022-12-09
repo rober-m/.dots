@@ -8,7 +8,7 @@
   ##################################################################
 
   imports = [
-    # ./neovim/telescope.nix
+    ./telescope.nix
     # ./neovim/coc.nix
     # ./neovim/haskell.nix
     # ./neovim/rust.nix
@@ -49,12 +49,6 @@
     gitsigns-nvim
     indent-blankline-nvim
 
-    # {
-    #   plugin = telescope-nvim;
-    #   config = ''
-    #     require('telescope').setup{ }
-    #   ''; 
-    # }
     # { plugin = toggleterm-nvim; config = ""; }
 
     # # Completions

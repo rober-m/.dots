@@ -8,6 +8,7 @@
         type = "lua";
         # TODO: How to port this to Lua?
         config = ''
+          vim.g.timeoutlen = 500
           vim.cmd([[
           map <Space> <Leader>
           let g:mapleader = "\<Space>"

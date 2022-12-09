@@ -125,6 +125,8 @@ in
     python39Packages.notebook
 
     # Haskell stuff
+    ghc
+    haskell-language-server
     haskellPackages.cabal-install
     #haskellPackages.hoogle
     #haskellPackages.hpack

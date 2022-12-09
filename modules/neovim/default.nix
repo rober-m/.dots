@@ -11,6 +11,7 @@
     ./telescope.nix
     ./coc.nix
     ./haskell.nix
+    ./bufferline.nix
     # ./rust.nix
     # ./neovim/zk.nix
     # which-key must be the last import for it to recognize the keybindings of

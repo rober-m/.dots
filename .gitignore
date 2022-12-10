@@ -9,3 +9,4 @@ scripts
 yabai
 nvim
 coc
+!modules/*

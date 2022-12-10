@@ -41,7 +41,10 @@
       }
 
     # Apperance, interface, UI, etc.
-    galaxyline-nvim 
+    # { 
+    #    plugin = galaxyline-nvim;
+    #    config = builtins.readFile ./galaxyline.lua;
+    # }
     gitsigns-nvim
     indent-blankline-nvim
 

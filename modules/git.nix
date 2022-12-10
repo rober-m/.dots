@@ -17,7 +17,7 @@
       github.user = "rober-m";
       pull.rebase = false;
       merge.conflictstyle = "diff3";
-      #credential.helper = "osxkeychain";
+      credential.helper = "osxkeychain";
     };
   };
 

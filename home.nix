@@ -4,6 +4,8 @@ let
     ./modules/neovim
     ./modules/alacritty
     ./modules/custom-launcher.nix
+    ./modules/git.nix
+    ./modules/zsh.nix
   ];
 in
 {
@@ -25,57 +27,12 @@ in
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
-  programs.git = {
-    enable = true;
-    userName = "Robertino Martinez";
-    userEmail = "48034748+rober-m@users.noreply.github.com";
-    aliases = {
-      s = "status";
-      co = "checkout";
-      aa = "add .";
-      cm = "commit -m";
-      ca = "commt --amend --no-edit";
-    };
-    difftastic.enable = true;
-    extraConfig = {
-      github.user = "rober-m";
-      pull.rebase = false;
-      merge.conflictstyle = "diff3";
-      #credential.helper = "osxkeychain";
-    };
-  };
-
   programs.vscode.enable = true;
 
   programs.ssh = {
     enable = false;
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableSyntaxHighlighting = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
-    # localVariables = {};
-    shellAliases = {
-      ls = "lsd";
-      ll = "lsd -l";
-      la = "lsd -la";
-      rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
-      v = "lvim";
-      cat = "bat";
-    };
-    profileExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)" 
-    '';
-    sessionVariables = {
-     HOMEBREW_NO_ANALYTICS = 1;
-    };
-  };
 
   home.packages = with pkgs; [
 

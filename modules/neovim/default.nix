@@ -12,8 +12,10 @@
     ./coc.nix
     ./haskell.nix
     ./bufferline.nix
+    ./themes.nix
     # ./rust.nix
     # ./neovim/zk.nix
+
     # which-key must be the last import for it to recognize the keybindings of
     # previous imports.
     ./which-key.nix
@@ -30,12 +32,6 @@
   # Full list here:
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
   plugins = with pkgs.vimPlugins; [
-    # Themes 
-    sonokai
-    dracula-vim
-    gruvbox
-    papercolor-theme
-    tokyonight-nvim
     {
         plugin = lazygit-nvim;
         type = "lua";
@@ -45,15 +41,18 @@
       }
 
     # Apperance, interface, UI, etc.
-    bufferline-nvim
     galaxyline-nvim 
     gitsigns-nvim
     indent-blankline-nvim
 
+    vim-nix
+
+    vim-markdown
+
     # { plugin = toggleterm-nvim; config = ""; }
 
     # # Completions
-    # copilot-vim
+    copilot-vim
 
     # # Language servers, linters, etc.
     # {
@@ -98,9 +97,6 @@
     # See `../configs/nvim/lua/malo/nvim-lspconfig.lua` and
     # `../configs/nvim/lua/malo/null-ls-nvim.lua` for configuration.
     
-    # Haskell
-    # TODO
-
     # Bash
     nodePackages.bash-language-server
     shellcheck
@@ -113,7 +109,6 @@
     statix
     nil
     nixpkgs-fmt
-
     # Vim
     nodePackages.vim-language-server
 
@@ -126,7 +121,7 @@
 
   extraConfig = ''
       lua << EOF
-      ${builtins.readFile ./neovim.lua}
+      ${builtins.readFile ./init.lua}
       EOF
     '';
 

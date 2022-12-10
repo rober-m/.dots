@@ -8,6 +8,8 @@
         type = "lua";
         # TODO: How to port this to Lua?
         config = ''
+        
+          --------------- which-key -------------------
           vim.g.timeoutlen = 500
           vim.cmd([[
           map <Space> <Leader>
@@ -16,6 +18,7 @@
           nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
           nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
           ]])
+          ---------------------------------------------
         '';
       }
       # TODO: Don't know how to configure this correctly

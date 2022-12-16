@@ -2,6 +2,7 @@
 -- Library
 -- -------
 
+-- TODO: Figure out what this does. Nvim crashes if I remove it
 function map (mode, shortcut, command)
 vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
@@ -12,9 +13,8 @@ function imap(shortcut, command)
 map('i', shortcut, command)
 end
 
--- ------
--- Config
--- ------
+--------------------------------------------------------------------------------------------------
+--------------------------------------  General Config -------------------------------------------
 
 vim.g.mapleader = " "
 

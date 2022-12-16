@@ -12,6 +12,7 @@
         plugin = tokyonight-nvim;
         type = "lua";
         config = ''
+          ------------------------------- THEMES: TOKYO NIGHT ------------------------------
           vim.g.tokyonight_transparent = true
           vim.g.tokyonight_transparent_sidebar = true
           vim.opt.background = "dark"
@@ -21,20 +22,22 @@
             -- leave it empty to use the default settings
             transparent = true, -- Enable this to disable setting the background color
           })
+          -----------------------------------------------------------------------------------
         '';
       }
 
     ];
 
     extraConfig = ''
-      lua << EOF
-      vim.cmd([[
-        "set termguicolors " 24-bit colors
-        colorscheme tokyonight
-        " colorscheme sonokai
-        " colorscheme PaperColor
-      ]])
-      EOF
+    lua << EOF
+    ------------------------------- THEMES EXTRA CONFIG ------------------------------
+    vim.cmd([[
+      colorscheme tokyonight
+    ]])
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -----------------------------------------------------------------------------------
+    EOF
     '';
   };
 }

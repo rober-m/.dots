@@ -49,6 +49,7 @@ in
     fd
     fzf
     jq
+    zoxide
 
     # Work
     discord

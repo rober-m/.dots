@@ -39,6 +39,14 @@
     };
     brews = [
       #"yabai"
+
+      # To build IHaskell from source
+      "zeromq"
+      "libmagic"
+      "cairo"
+      "pkg-config"
+      "haskell-stack"
+      "pango"
     ];
     taps = [
       "homebrew/cask"
@@ -55,6 +63,8 @@
       "obsidian"
       "notion"
       "amethyst"
+
+
     ];
   };
 

@@ -13,6 +13,7 @@
     ./haskell.nix
     ./bufferline.nix
     ./themes.nix
+    ./treesitter.nix
     # ./rust.nix
     # ./neovim/zk.nix
 
@@ -68,7 +69,6 @@
     # { plugin = null-ls-nvim; config = ""; }
     # { plugin = nvim-lspconfig; config = ""; }
 
-    nvim-treesitter.withAllGrammars
     vim-haskell-module-name
     vim-polyglot
 

@@ -9,13 +9,15 @@
 
   imports = [
     ./telescope.nix
-    ./coc.nix
-    ./haskell.nix
+    #./coc.nix
+    #./haskell.nix
     ./bufferline.nix
     ./themes.nix
     ./treesitter.nix
+    #./lsp-zero.nix # Unavailable in nixpkgs
     # ./rust.nix
-    # ./neovim/zk.nix
+
+    ./leap.nix #  General-purpose motion plugin
 
     # which-key must be the last import for it to recognize the keybindings of
     # previous imports.
@@ -41,17 +43,12 @@
         '';
       }
 
-    # Apperance, interface, UI, etc.
-    # { 
-    #    plugin = galaxyline-nvim;
-    #    config = builtins.readFile ./galaxyline.lua;
-    # }
-    gitsigns-nvim
-    indent-blankline-nvim
+    # gitsigns-nvim
+    # indent-blankline-nvim
 
-    vim-nix
+    # vim-nix
 
-    vim-markdown
+    # vim-markdown
 
     # { plugin = toggleterm-nvim; config = ""; }
 
@@ -69,8 +66,8 @@
     # { plugin = null-ls-nvim; config = ""; }
     # { plugin = nvim-lspconfig; config = ""; }
 
-    vim-haskell-module-name
-    vim-polyglot
+    # vim-haskell-module-name
+    # vim-polyglot
 
     # # Editor behavior
     # { plugin = comment-nvim; config = "require'comment'.setup()"; }

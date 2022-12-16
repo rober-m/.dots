@@ -60,5 +60,10 @@
       }
 
     ];
+
+    extraPackages = with pkgs; [
+      zoxide
+    ];
+
   };
 }

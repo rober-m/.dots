@@ -7,6 +7,7 @@
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
         config = ''
+          -------------------------------- TREESITTER ---------------------------------------
           require'nvim-treesitter.configs'.setup {
               highlight = {
                 enable = true
@@ -17,6 +18,7 @@
                 max_file_lines = nil
             }
           }
+          -----------------------------------------------------------------------------------
         '';
       }
 

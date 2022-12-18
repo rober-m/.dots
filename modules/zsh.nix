@@ -15,7 +15,7 @@
       ll = "lsd -l";
       la = "lsd -la";
       rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
-      v = "lvim";
+      v = "nvim";
       cat = "bat";
     };
     profileExtra = ''

@@ -2,28 +2,20 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      # Doom-emacs like experience
       {
-        plugin = vim-which-key;
+        plugin = which-key-nvim;
         type = "lua";
-        # TODO: How to port this to Lua?
         config = ''
-        
+
           ------------------------------------- WHICH-KEY -----------------------------------------
-          vim.g.timeoutlen = 500
-          vim.cmd([[
-          map <Space> <Leader>
-          let g:mapleader = "\<Space>"
-          let g:maplocalleader = ','
-          nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-          nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-          ]])
+          require("which-key").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+          }
           -----------------------------------------------------------------------------------------
         '';
       }
-      # TODO: Don't know how to configure this correctly
-      # nvim-whichkey-setup-lua
-
 
     ];
   };

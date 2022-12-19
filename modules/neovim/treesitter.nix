@@ -9,12 +9,14 @@
         config = ''
           -------------------------------- TREESITTER ---------------------------------------
           require'nvim-treesitter.configs'.setup {
-              highlight = {
-                enable = true
+            ensure_installed = { "haskell", "nix", "typescript", "lua", "rust" },
+            auto_install = true
+            highlight = {
+              enable = true
             },
             rainbow = {
                 enable = true,
-                extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table
                 max_file_lines = nil
             }
           }
@@ -22,6 +24,10 @@
         '';
       }
 
+    ];
+
+    extraPackages = with pkgs; [
+      tree-sitter
     ];
 
   };

@@ -64,7 +64,7 @@
       }
     ];
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.vimPlugins; [
 
       # COMPLETION PROVIDERS
       cmp-nvim-lsp # Completes with LSP server (Auto import, snippets, etc.)

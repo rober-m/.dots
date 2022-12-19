@@ -42,14 +42,15 @@ in
     wget
     git
     dua
-    lazygit
+    lazygit # Also installed in modules/nvim
     zsh
     lsd
     bat
     fd
     fzf
     jq
-    zoxide
+    zoxide # Also installed in modules/nvim
+    nix-tree
 
     # Work
     discord
@@ -64,7 +65,7 @@ in
 
     # Haskell stuff
     ghc
-    haskell-language-server
+    haskell-language-server # Also installed in modules/nvim/lsp-config.nix
     haskellPackages.cabal-install
     #haskellPackages.hoogle
     #haskellPackages.hpack

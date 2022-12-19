@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   # Nix configuration ------------------------------------------------------------------------------
+  nixpkgs.config.allowBroken = true; # TODO: Find out more about this
 
   nix.settings.substituters = [
     "https://cache.nixos.org/"

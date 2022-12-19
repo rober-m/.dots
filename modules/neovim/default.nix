@@ -112,26 +112,17 @@
       # See `../configs/nvim/lua/malo/nvim-lspconfig.lua` and
       # `../configs/nvim/lua/malo/null-ls-nvim.lua` for configuration.
 
-      # Bash
-      nodePackages.bash-language-server
-      shellcheck
+      shellcheck # Shell script analysis tool (Run shellcheck <script>)
 
-      # Javascript/Typescript
-      nodePackages.typescript-language-server
 
       # Nix
       deadnix
       statix
       nil
       nixpkgs-fmt
-      # Vim
-      nodePackages.vim-language-server
 
       #Other
-      nodePackages.vscode-langservers-extracted
-      nodePackages.yaml-language-server
       proselint
-      sumneko-lua-language-server
     ];
 
     extraConfig = ''

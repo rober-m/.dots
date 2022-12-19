@@ -80,11 +80,15 @@
     extraPackages = with pkgs; [
 
       # LANGUAGE SERVERS
-      nodePackages.typescript-language-server # Typescript
-      haskellPackages.hls # Haskell
+      haskell-language-server # Haskell
       rnix-lsp # Nix
       sumneko-lua-language-server # Lua
       rust-analyzer # Rust
+      nodePackages.vim-language-server # Vim
+      nodePackages.typescript-language-server # Typescript
+      nodePackages.yaml-language-server # Yaml
+      nodePackages.bash-language-server # Bash
+      nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint extracted from VSCode
 
     ];
 

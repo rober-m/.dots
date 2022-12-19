@@ -38,10 +38,23 @@
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
     plugins = with pkgs.vimPlugins; [
       {
+        plugin = nvim-notify; # Notifications for Nvim. Docs: https://github.com/rcarriga/nvim-notify/
+        type = "lua";
+        config = ''
+          ----------------------------------- NVIM-NOTIFY ----------------------------------------
+          -- NOTE: Make sure to use a font with supported icons (nerd-fonts)
+          vim.opt.termguicolors = true -- 24-bit colour is required
+          vim.notify = require("notify")
+          ----------------------------------------------------------------------------------------- 
+        '';
+      }
+      {
         plugin = lazygit-nvim;
         type = "lua";
         config = ''
+          --------------------------------------- LAZYGIT -----------------------------------------
           nmap("<leader>gg", ":LazyGit<cr>")
+          ----------------------------------------------------------------------------------------- 
         '';
       }
 

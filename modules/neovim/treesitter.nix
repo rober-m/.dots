@@ -9,8 +9,8 @@
         config = ''
           -------------------------------- TREESITTER ---------------------------------------
           require'nvim-treesitter.configs'.setup {
-            ensure_installed = { "haskell", "nix", "typescript", "lua", "rust" },
-            auto_install = true
+            -- IMPORTANT: Don't use "ensure_installed" or "auto_install" because you will get an
+            -- error. Install the parsers using nix.
             highlight = {
               enable = true
             },

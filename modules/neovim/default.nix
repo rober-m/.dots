@@ -11,12 +11,12 @@
     ./lsp-config.nix # Lsp config
     ./nvim-cmp.nix # Completion engine with completion sources
     ./telescope.nix # Fuzzy finder
-    ./bufferline.nix # Cool status-line
+    ./bufferline.nix # Cool buffer tabs
+    #./galaxyline.nix # Cool status-line
     ./themes.nix # Theme
     ./treesitter.nix # Treesitter config
     ./leap.nix #  General-purpose motion plugin
 
-    #./lsp-zero.nix # Unavailable in nixpkgs
     #./coc.nix
     #./haskell.nix
     # ./rust.nix

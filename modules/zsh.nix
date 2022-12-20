@@ -21,10 +21,9 @@
     };
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)" 
-      eval "$(ssh-agent -s)"
     '';
     sessionVariables = {
-     HOMEBREW_NO_ANALYTICS = 1;
+      HOMEBREW_NO_ANALYTICS = 1;
     };
   };
 

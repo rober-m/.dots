@@ -36,13 +36,13 @@
               { name = 'luasnip' },
               { name = 'buffer', keyword_length = 5 },
             })
-            -- TODO: Set up lspconfig.
-            -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-            -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-            --   capabilities = capabilities
-            -- }
           })
+          -- TODO: Set up lspconfig.
+          -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+          -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+          --require('lspconfig')['hls'].setup {
+          --   capabilities = capabilities
+          --}
           ----------------------------------------------------------------------------------------- 
         '';
       }
@@ -62,6 +62,11 @@
       nvim-web-devicons # Adds icons to my pluggins
 
     ];
+
+    # extraConfig goes in a .vim file, not .lua!
+    # extraConfig = ''
+    #   set completeopt=menu,menuone,noselect
+    # '';
 
   };
 }

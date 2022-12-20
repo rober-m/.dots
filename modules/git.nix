@@ -1,13 +1,12 @@
-
 { config, pkgs, lib, ... }:
 {
-    programs.git = {
+  programs.git = {
     enable = true;
     userName = "Robertino Martinez";
     userEmail = "48034748+rober-m@users.noreply.github.com";
     aliases = {
       s = "status";
-      co = "checkout";
+      c = "checkout";
       aa = "add .";
       cm = "commit -m";
       ca = "commt --amend --no-edit";
@@ -17,8 +16,9 @@
       github.user = "rober-m";
       pull.rebase = false;
       merge.conflictstyle = "diff3";
-      credential.helper = "osxkeychain";
+      #credential.helper = "osxkeychain";
     };
   };
 
 }
+

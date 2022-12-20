@@ -4,6 +4,7 @@
     enable = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
+    enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];

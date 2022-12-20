@@ -13,7 +13,7 @@
   ];
 
   nix.configureBuildUsers = true;
-  
+
   environment.variables.EDITOR = "nvim";
 
   # Enable experimental nix command and flakes
@@ -51,6 +51,7 @@
     taps = [
       "homebrew/cask"
       "koekeishiya/formulae" # yabai
+      #"microsoft/git" # git-credential-manager-core
     ];
     caskArgs = {
       appdir = "~/Applications";
@@ -63,6 +64,7 @@
       "obsidian"
       "notion"
       "amethyst"
+      #"git-credential-manager-core"
 
 
     ];
@@ -82,9 +84,9 @@
   # Fonts
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
-     recursive
-     (nerdfonts.override { fonts = [ "Hack" ]; })
-   ];
+    recursive
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
 
   system = {
     # Dock

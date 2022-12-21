@@ -20,7 +20,10 @@
 
       # Nix-related
       rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
-      conf = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
+      dots = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
+
+      # Projects
+      course = "cd ~/IOG/haskell-course && nvim ."; # cd before so nvim plugis work properly
     };
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)" 

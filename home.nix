@@ -91,9 +91,14 @@ in
   ] ++ lib.optionals stdenv.isDarwin [
     cocoapods
     m-cli # useful macOS CLI commands
+    karabiner-elements
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
+
+  # TODO: Only run if it's on a Darwin system
+  home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
+  #home.file."karabiner/karabiner.json" = builtins.readFile ./modules/karabiner.json;
 
   # https://docs.haskellstack.org/en/stable/yaml_configuration/#non-project-specific-config
   home.file.".stack/config.yaml".text = lib.generators.toYAML { } {

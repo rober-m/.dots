@@ -7,7 +7,8 @@
     text = ''
       #!/bin/zsh
 
-      ~/.config/scripts/popout.sh ~/.config/scripts/launcher.sh
+      #~/.config/scripts/popout.sh ~/.config/scripts/launcher.sh
+      osascript -e 'tell app "Terminal" to do script "~/.config/scripts/launcher.sh && exit"'
     '';
   };
 
@@ -18,7 +19,8 @@
       #!/bin/zsh
 
       # Set terminal with "mylauncher" tytle as a floating window in Amethyst/Yabai
-      alacritty -t "mylauncher" -o window.decorations=none --working-directory "$(pwd)" -e "$1"
+      # alacritty -t "mylauncher" -o window.decorations=none --working-directory "$(pwd)" -e "$1"
+
     '';
   };
 
@@ -34,7 +36,8 @@
           /System/Applications /Applications \
           /System/Applications/Utilities \
           ~/Applications \
-          -maxdepth 1 -name "*.app" | fzf | xargs -I {} open "{}" 
+          -maxdepth 1 -name "*.app" | fzf | xargs -I {} open "{}"
     '';
   };
 }
+

@@ -3,10 +3,12 @@
   # Nix configuration ------------------------------------------------------------------------------
 
   nix.settings.substituters = [
-    "https://cache.nixos.org/"
+    "https://cache.nixos.org/" # Default NixOS cache
+    "https://nixcache.reflex-frp.org" # Obelisk cache
   ];
   nix.settings.trusted-public-keys = [
-    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" # Default NixOS cache key (I think)
+    "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" # Obelisk cache key
   ];
   nix.settings.trusted-users = [
     "@admin"
@@ -21,6 +23,10 @@
   nix.extraOptions = ''
     auto-optimise-store = true
     experimental-features = nix-command flakes
+    ####  FOR OBELISK ######
+    #binary-caches-parallel-connections = 40 # Obelisk
+    #sandbox = false # Obelisk
+    ########################
   '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
     extra-platforms = x86_64-darwin aarch64-darwin
   '';

@@ -16,6 +16,7 @@
     ./themes.nix # Theme
     ./treesitter.nix # Treesitter config
     ./leap.nix #  General-purpose motion plugin
+    ./nvim-tree.nix # Tree file explorer
 
     #./coc.nix
     #./haskell.nix
@@ -25,14 +26,13 @@
     # previous imports.
     ./which-key.nix # Pannel showing available keymappings live.
   ];
-  # Neovim
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
+
+  # Docs: https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    # Add NodeJs since it's required by some plugins I use.
-    withNodeJs = true;
+    withNodeJs = true; # Add NodeJs is required by some plugins
 
     # Full list here:
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix

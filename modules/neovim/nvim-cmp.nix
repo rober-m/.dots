@@ -3,15 +3,18 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
+      cmp-nvim-lsp # Completes with LSP server (Auto import, snippets, etc.)
       {
         # This pluging provides an engine to have suggested competions based
         # on the completion providers (see extraPackages below)
         plugin = nvim-cmp;
-        type = "lua";
+        #type = "lua";
         config = ''
+          set completeopt=menu,menuone,noselect
+          lua << EOF
           ---------------------------------- NVIM-CMP ---------------------------------------
           -- Docs: https://github.com/hrsh7th/nvim-cmp/
-          local cmp = require'cmp'
+          local cmp = require 'cmp'
           cmp.setup({
             snippet = {
               expand = function(args)
@@ -38,12 +41,13 @@
             })
           })
           -- TODO: Set up lspconfig.
-          -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+          local capabilities = require('cmp_nvim_lsp').default_capabilities()
           -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-          --require('lspconfig')['hls'].setup {
-          --   capabilities = capabilities
-          --}
+          require('lspconfig')['hls'].setup {
+             capabilities = capabilities
+          }
           ----------------------------------------------------------------------------------------- 
+          EOF
         '';
       }
     ];

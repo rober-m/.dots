@@ -1,4 +1,3 @@
-
 { pkgs, system, ... }:
 {
   programs.alacritty = {
@@ -6,7 +5,10 @@
     settings = {
       # import = "./tokio-night.yaml";
       # colors = "*tokyo-night";
-      window.opacity = 0.95;
+      window = {
+        opacity = 0.95;
+        decorations = "None";
+      };
       font = {
         size = 17;
         normal.family = "Hack Nerd Font";
@@ -24,3 +26,4 @@
   };
 
 }
+

@@ -6,6 +6,7 @@ let
     ./modules/custom-launcher.nix
     ./modules/git.nix
     ./modules/zsh.nix
+    ./modules/ssh.nix
     #./modules/yabairc.nix
   ];
 in

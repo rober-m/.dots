@@ -1,5 +1,5 @@
 
-## My personal config for MacOS (WIP)
+## My personal dotfiles
 
 ### Roadmap
 

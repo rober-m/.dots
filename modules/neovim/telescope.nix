@@ -13,7 +13,7 @@
                                 s = {
                                   name = "search",
                                   f = { ":Telescope find_files<cr>", "File" }, 
-                                  s = { ":Telescope live_grep<cr>", "String" }, 
+                                  t = { ":Telescope live_grep<cr>", "Text" }, 
                                   b = { ":Telescope buffers<cr>", "Open Buffer" }, 
                                 },
                               }, { prefix = "<leader>" })
@@ -42,7 +42,7 @@
         type = "lua";
         config = ''
           ------------------------------ TELESCOPE: FILE BROWSER ----------------------------------
-          Docs: https://github.com/nvim-telescope/telescope-file-browser.nvim
+          -- Docs: https://github.com/nvim-telescope/telescope-file-browser.nvim
           -- There's a lot of options. It's like nvim-tree but inside telescope
           require("telescope").setup {
             extensions = {

@@ -44,6 +44,9 @@
           ----------------------------------- NVIM-NOTIFY ----------------------------------------
           -- NOTE: Make sure to use a font with supported icons (nerd-fonts)
           vim.opt.termguicolors = true -- 24-bit colour is required
+          require("notify").setup({
+            background_colour = "#000000",
+          })
           vim.notify = require("notify")
           ----------------------------------------------------------------------------------------- 
         '';
@@ -53,7 +56,12 @@
         type = "lua";
         config = ''
           --------------------------------------- LAZYGIT -----------------------------------------
-          nmap("<leader>gg", ":LazyGit<cr>")
+          require("which-key").register({
+                                g = {
+                                  name = "git",
+                                  g = { ":LazyGit<cr>", "LazyGit" }, 
+                                },
+                              }, { prefix = "<leader>" })
           ----------------------------------------------------------------------------------------- 
         '';
       }

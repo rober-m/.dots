@@ -13,36 +13,55 @@
           -- Mappings.
           -- See `:help vim.diagnostic.*` for documentation on any of the below functions
           local opts = { noremap=true, silent=true }
-          vim.keymap.set('n', '<space>di', vim.diagnostic.open_float, opts)
-          vim.keymap.set('n', '<space>dp', vim.diagnostic.goto_prev, opts)
-          vim.keymap.set('n', '<space>dn', vim.diagnostic.goto_next, opts)
-          vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+          require("which-key").register({
+                                l = {
+                                  name = "LSP",
+                                  a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+                                  d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+                                  w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+                                  i = { "<cmd>LspInfo<cr>", "Info" },
+                                  j = { vim.diagnostic.goto_next, "Next Diagnostic", },
+                                  k = { vim.diagnostic.goto_prev, "Prev Diagnostic", },
+                                  l = { vim.lsp.codelens.run, "CodeLens Action" },
+                                  q = { vim.diagnostic.setloclist, "Quickfix" },
+                                  r = { vim.lsp.buf.rename, "Rename" },
+                                  s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+                                  S = {
+                                    "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+                                    "Workspace Symbols",
+                                  },
+                                  e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+                                },
+                              }, { prefix = "<leader>" })
 
           -- Use an on_attach function to only map the following keys after the language server 
           -- attaches to the current buffer
           local on_attach = function(client, bufnr)
+
             -- Enable completion triggered by <c-x><c-o>
             vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
             -- Format on save
             vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
             -- Mappings.
             -- See `:help vim.lsp.*` for documentation on any of the below functions
             local bufopts = { noremap=true, silent=true, buffer=bufnr }
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-            vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-            vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-            vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-            vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-            vim.keymap.set('n', '<space>wl', function()
-              print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            end, bufopts)
-            vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-            vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-            vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+
+            require("which-key").register({
+              ["gD"] = { vim.lsp.buf.declaration, "GoTo Declaration"},
+              ["gd"] = { vim.lsp.buf.definition, "GoTo Definition"},
+              ["K"] = { vim.lsp.buf.hover, "Hover"},
+              ["gi"] = { vim.lsp.buf.implementation, "GoTo Implementation"},
+              ["gr"] = { vim.lsp.buf.references, "References"},
+              ["<C-k>"] = { vim.lsp.buf.signature_help, "Signature Help"},
+            })
+            require("which-key").register({
+              l = {
+                name = "LSP",
+                t = { vim.lsp.buf.type_definition, "Type definition" },
+              },
+              }, { prefix = "<leader>" })
           end
 
           local lsp_flags = {

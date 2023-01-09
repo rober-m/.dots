@@ -17,8 +17,8 @@
     ./treesitter.nix # Treesitter config
     ./leap.nix #  General-purpose motion plugin
     ./nvim-tree.nix # Tree file explorer
+    ./comments.nix # To easily comment/uncomment code
 
-    #./coc.nix
     #./haskell.nix
     # ./rust.nix
 

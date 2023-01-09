@@ -18,12 +18,14 @@
       v = "nvim";
       cat = "bat";
 
+      # Quick movement
+      hc = "cd ~/IOG/haskell-course/";
+      pr = "cd ~/Projects/";
+      sc = "cd ~/deleteMeDir/ && nvim ."; # cd before so nvim plugis work properly
+
       # Nix-related
       rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
       dots = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
-
-      # Projects
-      course = "cd ~/IOG/haskell-course && nvim ."; # cd before so nvim plugis work properly
     };
     profileExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)" 

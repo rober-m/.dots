@@ -18,8 +18,8 @@
     ./leap.nix #  General-purpose motion plugin
     ./nvim-tree.nix # Tree file explorer
     ./comments.nix # To easily comment/uncomment code
-
-    #./haskell.nix
+    ./haskell.nix # All my Haskell config (using haskell-tools
+    ./toggleterm.nix.nix # Persist and toggle multiple terminals
     # ./rust.nix
 
     # which-key must be the last import for it to recognize the keybindings of

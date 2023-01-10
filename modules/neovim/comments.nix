@@ -2,8 +2,17 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      # Docs: https://github.com/numtostr/comment.nvim/
-      comment-nvim
+      {
+        plugin = comment-nvim;
+        type = "lua";
+        config = ''
+
+          ------------------------------------- COMMENTS-NVIM -------------------------------------
+          -- Docs: https://github.com/numtostr/comment.nvim/
+          require("Comment").setup()
+          -----------------------------------------------------------------------------------------
+        '';
+      }
 
     ];
   };

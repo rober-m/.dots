@@ -28,6 +28,7 @@
       dots = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
     };
     profileExtra = ''
+      # Needed for homebrew
       eval "$(/opt/homebrew/bin/brew shellenv)" 
     '';
     sessionVariables = {

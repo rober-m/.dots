@@ -19,7 +19,8 @@
     ./nvim-tree.nix # Tree file explorer
     ./comments.nix # To easily comment/uncomment code
     ./haskell.nix # All my Haskell config (using haskell-tools
-    ./toggleterm.nix.nix # Persist and toggle multiple terminals
+    ./toggleterm.nix # Persist and toggle multiple terminals
+    ./gitsigns.nix # Git decorations
     # ./rust.nix
 
     # which-key must be the last import for it to recognize the keybindings of

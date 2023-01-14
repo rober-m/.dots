@@ -8,7 +8,7 @@
         config = ''
 
           ------------------------------------ TOGGLETERM -----------------------------------------
-          # Docs: https://github.com/akinsho/toggleterm.nvim/
+          -- Docs: https://github.com/akinsho/toggleterm.nvim/
           require("toggleterm").setup {
             open_mapping = [[<c-\>]],
           }

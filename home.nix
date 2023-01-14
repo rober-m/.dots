@@ -75,6 +75,7 @@ in
     #haskellPackages.implicit-hie
     #haskellPackages.stack
     haskellPackages.ihaskell
+    #haskellPackages.ghcup
 
     # Web stuff
     nodejs

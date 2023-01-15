@@ -12,6 +12,19 @@
           -- Docs: https://github.com/neovim/nvim-lspconfig/
           -- Mappings.
           -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+
+          -- Set the time it takes for the "CursorHold" function (inside on_attach) to run.
+          -- This setting is global and should be set only once
+          vim.o.updatetime = 100
+
+          vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            underline = true,
+            update_in_insert = true,
+            severity_sort = true,
+          })
+
           local opts = { noremap=true, silent=true }
           require("which-key").register({
                                 l = {
@@ -43,6 +56,22 @@
 
             -- Format on save
             vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+            -- Show line diagnostics automatically in hover window
+            vim.api.nvim_create_autocmd("CursorHold", {
+              buffer = bufnr,
+              callback = function()
+                local opts = {
+                  focusable = false,
+                  close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                  border = 'rounded',
+                  source = 'always',
+                  prefix = ' ',
+                  scope = 'cursor',
+                }
+                vim.diagnostic.open_float(nil, opts)
+              end
+            })
 
             -- Mappings.
             -- See `:help vim.lsp.*` for documentation on any of the below functions

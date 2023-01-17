@@ -19,6 +19,10 @@
       cat = "bat";
       e = "exit";
 
+      # Git-related
+      gs = "git status";
+      lz = "lazygit";
+
       # Quick movement
       hc = "cd ~/IOG/haskell-course/";
       pr = "cd ~/Projects/";

@@ -16,6 +16,22 @@
 
           local ht = require('haskell-tools')
           local on_attach = function(client, bufnr)
+            
+            -- Show line diagnostics automatically in hover window
+            vim.api.nvim_create_autocmd("CursorHold", {
+              buffer = bufnr,
+              callback = function()
+                local opts = {
+                  focusable = false,
+                  close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                  border = 'rounded',
+                  source = 'always',
+                  prefix = ' ',
+                  scope = 'cursor',
+                }
+                vim.diagnostic.open_float(nil, opts)
+             end
+            })
 
             -- enable completion triggered by <c-x><c-o>
             vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -35,10 +51,6 @@
               ["gr"] = { vim.lsp.buf.references, "references"},
             })
             require("which-key").register({
-                l = {
-                  name = "lsp",
-                  t = { vim.lsp.buf.type_definition, "type definition" },
-                },
                 h = {
                   name = "Haskell",
                   a = { vim.lsp.codelens.run, "CodeLens" },
@@ -52,7 +64,13 @@
 
           ht.setup {  -- LSP client options
             hls = {
-              on_attach =  on_attach           
+              on_attach =  on_attach,
+              settings = {
+                haskell = { -- haskell-language-server options
+                  -- formattingProvider = 'ormolu',
+                  checkProject = true, -- Could have a performance impact on large mono repos.
+                }
+              }
             },
           }
 

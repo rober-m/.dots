@@ -17,6 +17,7 @@
       la = "lsd -la";
       v = "nvim";
       cat = "bat";
+      e = "exit";
 
       # Quick movement
       hc = "cd ~/IOG/haskell-course/";

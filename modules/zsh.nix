@@ -21,7 +21,7 @@
 
       # Git-related
       gs = "git status";
-      lz = "lazygit";
+      lg = "lazygit";
 
       # Quick movement
       hc = "cd ~/IOG/haskell-course/";

@@ -1,6 +1,10 @@
 { config, pkgs, lib, ... }:
 {
-  # TODO: Create "Quick Service" running "customLauncher.sh" and add Cmd+Space shortcut to it
+  # AFTER_INSTALL
+  # - Create "Quick Service" running "customLauncher.sh" and add Cmd+Space shortcut to it
+  # - Create "Quick Service" running Alacritty and add a shortcut for it ??
+  # Second ToDo is because customLauncher.sh can't launch Alacritty
+
   home.file.customLauncher = {
     executable = true;
     target = ".config/scripts/customLauncher.sh";

@@ -97,30 +97,24 @@
             -- This is the default in Nvim 0.7+
             debounce_text_changes = 150,
           }
-          require('lspconfig')['tsserver'].setup{
+
+          -- Servers without specific config (Haskell server managed in haskell.nix)
+          local servers = {
+            'tsserver',      -- Typescript 
+            'rnix',          -- Nix
+            'sumneko_lua',   -- Lua
+            'rust_analyzer', -- Rust
+            'yamlls',        -- Yaml
+            'bashls',        -- Bash
+            'vimls',         -- Vim
+            'cssls'          -- vscode-langservers-extracted
+          }
+          for _, server in ipairs(servers) do
+            require('lspconfig')[server].setup{
               on_attach = on_attach,
               flags = lsp_flags,
-          }
-          -- require('lspconfig')['hls'].setup{
-          --     on_attach = on_attach,
-          --     flags = lsp_flags,
-          -- }
-          require('lspconfig')['rnix'].setup{
-              on_attach = on_attach,
-              flags = lsp_flags,
-          }
-          require('lspconfig')['sumneko_lua'].setup{
-              on_attach = on_attach,
-              flags = lsp_flags,
-          }
-          require('lspconfig')['rust_analyzer'].setup{
-              on_attach = on_attach,
-              flags = lsp_flags,
-              -- Server-specific settings...
-              settings = {
-                ["rust-analyzer"] = {}
-              }
-          }
+            }
+          end
           ----------------------------------------------------------------------------------------- 
         '';
       }

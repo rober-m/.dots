@@ -32,7 +32,7 @@
           require("onedark").setup({
             -- See options here: https://github.com/navarasu/onedark.nvim/
             transparent = true, -- Show/hide background
-            style = 'dark', -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+            style = 'deep', -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
             -- Lualine options --
             lualine = {
                 transparent = false, -- lualine center bar transparency
@@ -56,7 +56,7 @@
       ------------------------------- THEMES EXTRA CONFIG ------------------------------
       vim.opt.background = "dark" -- Values are "dark" or "light" to indicate the mode.
       vim.cmd([[
-        colorscheme gruvbox
+        colorscheme onedark
       ]])
       -- vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

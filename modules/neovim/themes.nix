@@ -56,7 +56,7 @@
       ------------------------------- THEMES EXTRA CONFIG ------------------------------
       vim.opt.background = "dark" -- Values are "dark" or "light" to indicate the mode.
       vim.cmd([[
-        colorscheme onedark
+        colorscheme tokyonight
       ]])
       -- vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

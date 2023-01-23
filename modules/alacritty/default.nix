@@ -1,14 +1,13 @@
 { pkgs, system, ... }:
 let
   colors_tomorrow = import ./colors-base16-tomorrow.nix;
-  #tokio-night = import ./tokio-night.yaml;
+  colors_tokionight = import ./colors-tokio-night.nix;
 in
 {
   programs.alacritty = {
     enable = true;
     settings = {
-      #schemes = tokio-night;
-      colors = colors_tomorrow;
+      colors = colors_tokionight;
       window = {
         opacity = 0.95;
         decorations = "none";

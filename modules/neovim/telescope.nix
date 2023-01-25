@@ -41,31 +41,26 @@
         plugin = telescope-file-browser-nvim;
         type = "lua";
         config = ''
-          ------------------------------ TELESCOPE: FILE BROWSER ----------------------------------
+          ----------------------------- TELESCOPE: FILE BROWSER -----------------------------------
           -- Docs: https://github.com/nvim-telescope/telescope-file-browser.nvim
-          -- There's a lot of options. It's like nvim-tree but inside telescope
-          require("telescope").setup {
-            extensions = {
-              file_browser = {
-                theme = "ivy",
-                mappings = {
-                  ["i"] = {
-                    -- your custom insert mode mappings
-                  },
-                  ["n"] = {
-                    -- your custom normal mode mappings
-                  },
-                },
-              },
-            },
-          }
-          -- To get telescope-file-browser loaded and working with telescope,
-          -- you need to call load_extension, somewhere after setup function:
           require("telescope").load_extension "file_browser"
           require("which-key").register({
-                                s = {
-                                  name = "search",
-                                  B = { ":Telescope file_browser<cr>", "Browser" }, 
+                                ["<C-b>"] = { ":Telescope file_browser<cr>", "Browse Files" },
+                              })
+          ----------------------------------------------------------------------------------------- 
+        '';
+      }
+      {
+        plugin = telescope_hoogle;
+        type = "lua";
+        config = ''
+          --------------------------------- TELESCOPE: HOOGLE -------------------------------------
+          -- Docs: https://github.com/luc-tielen/telescope_hoogle/
+          require("telescope").load_extension "hoogle"
+          require("which-key").register({
+                                h = {
+                                  name = "Haskell",
+                                  s = { ":Telescope hoogle<cr>", "Hoogle search" }, 
                                 },
                               }, { prefix = "<leader>" })
           ----------------------------------------------------------------------------------------- 
@@ -77,6 +72,7 @@
     extraPackages = with pkgs; [
       zoxide
       ripgrep
+      haskellPackages.hoogle
     ];
 
   };

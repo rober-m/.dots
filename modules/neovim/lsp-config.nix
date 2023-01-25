@@ -100,14 +100,15 @@
 
           -- Servers without specific config (Haskell server managed in haskell.nix)
           local servers = {
-            'tsserver',      -- Typescript 
-            'rnix',          -- Nix
-            'sumneko_lua',   -- Lua
-            'rust_analyzer', -- Rust
-            'yamlls',        -- Yaml
-            'bashls',        -- Bash
-            'vimls',         -- Vim
-            'cssls'          -- vscode-langservers-extracted
+             'tsserver'      -- Typescript 
+            ,'rnix'          -- Nix
+            ,'sumneko_lua'   -- Lua
+            ,'rust_analyzer' -- Rust
+            ,'yamlls'        -- Yaml
+            ,'bashls'        -- Bash
+            ,'vimls'         -- Vim
+            ,'cssls'         -- vscode-langservers-extracted
+            -- ,'marksman'       -- Markdown
           }
           for _, server in ipairs(servers) do
             require('lspconfig')[server].setup{
@@ -132,6 +133,7 @@
       nodePackages.yaml-language-server # Yaml
       nodePackages.bash-language-server # Bash
       nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint extracted from VSCode
+      # marksman # Markdown
 
     ];
 

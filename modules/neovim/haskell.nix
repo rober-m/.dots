@@ -5,6 +5,7 @@
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       plenary-nvim
+      hoogle
       {
         plugin = haskell-tools-nvim;
         type = "lua";

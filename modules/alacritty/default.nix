@@ -11,6 +11,10 @@ in
       window = {
         opacity = 0.95;
         decorations = "none";
+        padding = {
+          x = 8;
+          y = 8;
+        };
       };
       font = {
         size = 17;

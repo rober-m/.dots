@@ -24,6 +24,8 @@ vim.g.mapleader = " " -- Leader key
 vim.opt.wrap = false -- Wrap text?
 vim.opt.cursorline = true -- Highlight cursor line
 vim.opt.scrolloff = 15 -- Screen lines above and below cursor
+vim.opt.list = false -- List mode: Show invisible chararcters
+vim.opt.listchars = "eol:¬,tab:>·,extends:>,precedes:<,space:·" -- Specify how to show invisible chars (`list = true` needed)
 
 -- Numbers
 vim.opt.number = true -- Show line numbers

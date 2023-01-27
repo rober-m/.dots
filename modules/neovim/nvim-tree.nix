@@ -18,7 +18,13 @@
           vim.opt.termguicolors = true
 
           -- Empty setup using defaults
-          require("nvim-tree").setup()
+          require("nvim-tree").setup{
+            view = {
+              float = {
+                enable = true,
+              },
+            },
+          }
 
           -- Remappings
           nmap("<C-e>", ":NvimTreeToggle<cr>")

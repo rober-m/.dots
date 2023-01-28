@@ -99,8 +99,13 @@
   system = {
     # Dock
     defaults.dock = {
-      autohide = true;
-      orientation = "left";
+      autohide = true; # Autohide dock
+      orientation = "left"; # Were the Dock is
+      mru-spaces = false; # Whether to automatically rearrange spaces based on most recent use.
+      wvous-tl-corner = 1; # Hot corner action for top left corner. 1 = Mission Control.
+      wvous-tr-corner = 1; # Hot corner action for top right corner. 1 = Mission Control.
+      wvous-bl-corner = 11; # Hot corner action for bottom left corner. 11 = Launchpad.
+      wvous-br-corner = 11; # Hot corner action for bottom right corner. 11 = Launchpad.
     };
     # Keyboard
     keyboard = {
@@ -121,7 +126,10 @@
       AppleShowAllExtensions = true;
       AppleShowScrollBars = "WhenScrolling";
       "com.apple.mouse.tapBehavior" = 1; # Mode 1 enables tap to click
+      NSAutomaticWindowAnimationsEnabled = false; # Animate opening and closing of windows and popovers.
     };
+    # Software updates
+    defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
   };
 
   # Add ability to used TouchID for sudo authentication

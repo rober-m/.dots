@@ -87,6 +87,9 @@ in
     comma # run software from without installing it
     niv # easy dependency management for nix projects
 
+    #Rust
+    rustup
+
     # Other
     docker
 

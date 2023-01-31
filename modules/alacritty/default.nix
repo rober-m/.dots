@@ -28,6 +28,7 @@ in
       key_bindings = [
         #{ key = ""; mods = ""; chars/action = ""; }
         { key = "N"; mods = "Command"; action = "SpawnNewInstance"; }
+        { key = "Escape"; mods = "Control"; action = "ToggleViMode"; }
       ];
     };
   };

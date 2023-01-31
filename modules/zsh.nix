@@ -7,7 +7,10 @@
     enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [
+        "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+        "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+      ];
       theme = "robbyrussell";
     };
     # localVariables = {};
@@ -19,8 +22,8 @@
       cat = "bat";
       e = "exit";
 
-      # Git-related
-      gs = "git status";
+      # Git-related 
+      # See oh-my-zsh -> plugins -> git
       lg = "lazygit";
 
       # Quick movement
@@ -33,8 +36,9 @@
       dots = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
     };
     profileExtra = ''
-      # Needed for homebrew
-      eval "$(/opt/homebrew/bin/brew shellenv)" 
+      eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
+      # export KEYTIMEOUT=1 # Needed for ZSH vi mode
+      VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true # For oh-my-zsh vi-mode
     '';
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;

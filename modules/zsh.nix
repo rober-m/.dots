@@ -21,6 +21,7 @@
       v = "nvim";
       cat = "bat";
       e = "exit";
+      #tr = "echo TODO "; # TODO: Send to trash
 
       # Git-related 
       # See oh-my-zsh -> plugins -> git

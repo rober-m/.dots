@@ -16,6 +16,7 @@
       github.user = "rober-m";
       pull.rebase = false;
       merge.conflictstyle = "diff3";
+      init.defaultBranch = "main";
       #credential.helper = "osxkeychain";
     };
   };

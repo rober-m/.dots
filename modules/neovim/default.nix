@@ -12,7 +12,7 @@
     ./nvim-cmp.nix # Completion engine with completion sources
     ./telescope.nix # Fuzzy finder
     ./bufferline.nix # Cool buffer tabs
-    ./galaxyline.nix # Cool status-line
+    ./lualine.nix # Cool status-line
     ./themes.nix # Theme
     ./treesitter.nix # Treesitter config
     ./leap.nix #  General-purpose motion plugin

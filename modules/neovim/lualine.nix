@@ -5,12 +5,15 @@
     plugins = with pkgs.vimPlugins; [
       # Buffer tabs
       {
-        plugin = galaxyline-nvim;
+        plugin = lualine-nvim;
         type = "lua";
         config = ''
-          ------------------------------------ GALAXYLINE -----------------------------------------
-          -- TODO: Find out how to configure
-          require("galaxyline.themes.spaceline")
+          ------------------------------------- LUALINE -------------------------------------------
+          require('lualine').setup {
+            options = {
+              theme = 'tokyonight'
+            }
+          }
           ----------------------------------------------------------------------------------------- 
         '';
       }

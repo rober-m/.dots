@@ -23,7 +23,7 @@
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
-    auto-optimise-store = true
+    auto-optimise-store = false # See: https://github.com/NixOS/nix/issues/7273
     experimental-features = nix-command flakes
     ####  FOR OBELISK ######
     #binary-caches-parallel-connections = 40 # Obelisk

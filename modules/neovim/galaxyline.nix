@@ -3,14 +3,14 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-    # Buffer tabs
+      # Buffer tabs
       {
         plugin = galaxyline-nvim;
         type = "lua";
         config = ''
           ------------------------------------ GALAXYLINE -----------------------------------------
-          TODO: Find out how to configure
-          -- require("galaxyline.themes.eviline")
+          -- TODO: Find out how to configure
+          require("galaxyline.themes.spaceline")
           ----------------------------------------------------------------------------------------- 
         '';
       }

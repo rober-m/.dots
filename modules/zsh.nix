@@ -21,6 +21,7 @@
       v = "nvim";
       cat = "bat";
       e = "exit";
+      c = "clear";
       #tr = "echo TODO "; # TODO: Send to trash
 
       # Git-related 
@@ -30,7 +31,7 @@
       # Quick movement
       hc = "cd ~/IOG/haskell-course/";
       pr = "cd ~/Projects/";
-      sc = "cd ~/deleteMeDir/ && nvim ."; # cd before so nvim plugis work properly
+      sc = "cd ~/scratchpad/";
 
       # Nix-related
       rebuild = "darwin-rebuild switch --flake ~/.config#roberm";

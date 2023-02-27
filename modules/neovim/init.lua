@@ -40,3 +40,19 @@ vim.opt.expandtab = true -- Insert spaces instead of tabs.
 -- Search
 vim.opt.hlsearch = true -- Highlight all the matches.
 vim.opt.incsearch = true -- Show incremental matches while typing the search.
+
+--------------------------------------------------------------------------------------------------
+------------------------------------------  PACKER -----------------------------------------------
+
+packer = require 'packer'
+local use = packer.use
+packer.startup(function()
+
+  use {
+    'https://codeberg.org/esensar/nvim-dev-container', -- To use Devcontainers (Docker). Docs: https://github.com/esensar/nvim-dev-container
+    requires = { 'nvim-treesitter/nvim-treesitter' } -- Needed  to parse the config
+  }
+
+end)
+
+require("devcontainer").setup {}

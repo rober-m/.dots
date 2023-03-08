@@ -108,6 +108,7 @@
             ,'bashls'        -- Bash
             ,'vimls'         -- Vim
             ,'cssls'         -- vscode-langservers-extracted
+            ,'jsonls'        -- vscode-langservers-extracted
             -- ,'marksman'       -- Markdown
           }
           for _, server in ipairs(servers) do

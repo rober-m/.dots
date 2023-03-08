@@ -70,7 +70,7 @@ in
     ghc
     haskell-language-server # Also installed in modules/nvim/lsp-config.nix
     haskellPackages.cabal-install
-    #haskellPackages.hoogle
+    haskellPackages.hoogle
     #haskellPackages.hpack
     #haskellPackages.implicit-hie
     #haskellPackages.stack

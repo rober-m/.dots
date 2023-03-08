@@ -4,8 +4,7 @@
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      plenary-nvim
-      hoogle
+      # IMPORTANT: I had to install hoogle separatedly "extraPackages" didn't work.
       {
         plugin = haskell-tools-nvim;
         type = "lua";
@@ -77,8 +76,7 @@
 
           ht.tools = { -- haskell-tools options
             repl = {
-              -- 'builtin': Use the simple builtin repl
-              -- 'toggleterm': Use akinsho/toggleterm.nvim
+              -- Opt: 'builtin' (Use the simple builtin repl) | 'toggleterm' (Use akinsho/toggleterm.nvim)
               handler = 'toggleterm',
               builtin = {
                 create_repl_window = function(view)
@@ -87,16 +85,18 @@
                 end
               },
             },
+            hover = {
+              -- Stylize markdown (the builtin lsp's default behaviour).
+              -- Setting this option to false sets the file type to markdown and enables
+              -- Treesitter syntax highligting for Haskell snippets if nvim-treesitter is installed
+              stylize_markdown = true
+            },
           }
 
           require("which-key").register({
               h = {
                 name = "Haskell",
-                r = { 
-                  name = "REPL",
-                  t = {ht.repl.toggle, "Toggle" },
-                  q = {ht.repl.quit, "Quit" },
-                }
+                r = {ht.repl.toggle, "Toggle REPL" },
               },
                
           }, { prefix = "<leader>" })
@@ -104,6 +104,11 @@
         '';
       }
     ];
+
+    # extraPackages = with pkgs; [
+    #   vimPlugins.plenary-nvim
+    #   haskellPackages.hoogle
+    # ];
 
   };
 }

@@ -107,9 +107,13 @@
             ,'yamlls'        -- Yaml
             ,'bashls'        -- Bash
             ,'vimls'         -- Vim
-            ,'cssls'         -- vscode-langservers-extracted
-            ,'jsonls'        -- vscode-langservers-extracted
-            -- ,'marksman'       -- Markdown
+            ,'html'          -- HTML   (vscode-langservers-extracted)
+            ,'cssls'         -- CSS    (vscode-langservers-extracted)
+            ,'eslint'        -- ESLint (vscode-langservers-extracted)
+            ,'jsonls'        -- JSON   (vscode-langservers-extracted)
+            ,'marksman'      -- Markdown
+            --,'ltex'          -- LaTeX and Markdown
+
           }
           for _, server in ipairs(servers) do
             require('lspconfig')[server].setup{
@@ -134,7 +138,8 @@
       nodePackages.yaml-language-server # Yaml
       nodePackages.bash-language-server # Bash
       nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint extracted from VSCode
-      # marksman # Markdown
+      #marksman # Markdown. IMPORTANT: I had to install it using "nix profile install nixpkgs#marksman"
+      #ltex-ls # LaTeX and Markdown, and others (https://github.com/valentjn/ltex-ls)
 
     ];
 

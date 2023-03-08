@@ -31,8 +31,10 @@
     #binary-caches-parallel-connections = 40 # Obelisk
     #sandbox = false # Obelisk
     ########################
-  '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
+    system = x86_64-darwin
     extra-platforms = x86_64-darwin aarch64-darwin
+    extra-sandbox-paths = /System/Library/Frameworks /System/Library/PrivateFrameworks /usr/lib /private/tmp /private/var/tmp /usr/bin/env
+    experimental-features = nix-command
   '';
 
   # Create /etc/bashrc that loads the nix-darwin environment.

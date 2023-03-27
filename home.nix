@@ -81,6 +81,7 @@ in
     nodejs
     nodePackages.typescript
     nodePackages.node2nix
+    nodePackages.web-ext # cli to help build web extensions
 
     # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix

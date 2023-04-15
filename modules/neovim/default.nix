@@ -39,6 +39,7 @@
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
     plugins = with pkgs.vimPlugins; [
       packer-nvim # For plugins that aren't on nixpkgs (see ./init.lua)
+      copilot-vim #   GitHub Copilot
       {
         plugin = nvim-notify; # Notifications for Nvim. Docs: https://github.com/rcarriga/nvim-notify/
         type = "lua";

@@ -43,7 +43,7 @@ in
     curl
     wget
     git
-    dua
+    dua # Disk Usage Analyzer
     lazygit # Also installed in modules/nvim
     zsh
     lsd
@@ -53,6 +53,7 @@ in
     jq
     zoxide # Also installed in modules/nvim
     nix-tree
+    mdbook # Create books from Markdown
 
     # Communications
     discord

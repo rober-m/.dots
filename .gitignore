@@ -11,3 +11,5 @@ nvim
 coc
 !modules/*
 karabiner
+configstore
+github-copilot

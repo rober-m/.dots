@@ -101,7 +101,8 @@
           -- Servers without specific config (Haskell server managed in haskell.nix)
           local servers = {
              'tsserver'      -- Typescript 
-            ,'rnix'          -- Nix
+            --,'rnix'          -- Nix
+            ,'nil_ls'           -- Nix
             ,'sumneko_lua'   -- Lua
             ,'rust_analyzer' -- Rust
             ,'yamlls'        -- Yaml
@@ -131,6 +132,7 @@
       # LANGUAGE SERVERS
       haskell-language-server # Haskell
       rnix-lsp # Nix
+      nil # Nix
       sumneko-lua-language-server # Lua
       rust-analyzer # Rust
       nodePackages.vim-language-server # Vim

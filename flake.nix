@@ -8,7 +8,6 @@
     # Package sets
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-with-patched-kitty.url = github:azuwis/nixpkgs/kitty;
 
     # Environment/system management
     darwin.url = "github:lnl7/nix-darwin/master";
@@ -19,13 +18,12 @@
     # Other sources
     comma = { url = "github:Shopify/comma"; flake = false; };
     
-    nixvim.url = "github:pta2002/nixvim";
   };
 
   ###############################################################################################
   ###################################### OUTPUTS ################################################
 
-  outputs = { self, darwin, nixpkgs, home-manager, nixvim, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
   let 
 
     inherit (inputs.nixpkgs-unstable.lib) attrValues optionalAttrs singleton;

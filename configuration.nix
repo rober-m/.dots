@@ -95,6 +95,14 @@
     nix-index.enable = true;
   };
 
+  users = {
+    users = {
+      roberm = {
+        home = "/Users/roberm";
+      };
+    };
+  };
+
 
   # Fonts
   fonts = {

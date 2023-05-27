@@ -14,27 +14,29 @@ in
 
   inherit imports;
 
-  home.stateVersion = "22.05";
+  home = {
+    stateVersion = "22.05";
+    username = "roberm";
+    homeDirectory = "/Users/roberm";
+  };
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
 
   # Direnv, load and unload environment variables depending on the current directory.
   # https://direnv.net
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Htop
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
-  programs.htop.enable = true;
-  programs.htop.settings.show_program_path = true;
-
-  programs.vscode.enable = true;
-
-  programs.ssh = {
-    enable = false;
+  programs = {
+    vscode.enable = true;
+    ssh.enable = false;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    htop ={
+      enable = true;
+      settings.show_program_path = true;
+    };
   };
-
 
   home.packages = with pkgs; [
 
@@ -61,11 +63,11 @@ in
     # telegram
 
     # Python and Jupyter 
-    python39Packages.jupyter
-    python39Packages.jupyter_core
-    python39Packages.jupyter-client
-    python39Packages.jupyterlab
-    python39Packages.notebook
+    python310Packages.jupyter
+    python310Packages.jupyter_core
+    python310Packages.jupyter-client
+    python310Packages.jupyterlab
+    python310Packages.notebook
 
     # Haskell stuff
     ghc

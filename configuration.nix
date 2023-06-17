@@ -120,6 +120,7 @@
     alacritty
     exa
     terminal-notifier
+    #vscode
   ];
 
   environment.variables.EDITOR = "nvim";

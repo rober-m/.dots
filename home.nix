@@ -26,7 +26,7 @@ in
   # https://direnv.net
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
   programs = {
-    vscode.enable = true;
+    #vscode.enable = true;
     ssh.enable = false;
     direnv = {
       enable = true;
@@ -63,6 +63,7 @@ in
     # telegram
 
     # Python and Jupyter 
+    python310Packages.pip
     python310Packages.jupyter
     python310Packages.jupyter_core
     python310Packages.jupyter-client
@@ -96,6 +97,7 @@ in
 
     # Other
     docker
+    #vscode
 
   ] ++ lib.optionals stdenv.isDarwin [
     cocoapods

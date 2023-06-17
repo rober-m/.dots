@@ -75,17 +75,14 @@ in
     haskell-language-server # Also installed in modules/nvim/lsp-config.nix
     haskellPackages.cabal-install
     haskellPackages.hoogle
-    #haskellPackages.hpack
-    #haskellPackages.implicit-hie
-    #haskellPackages.stack
     haskellPackages.ihaskell
-    #haskellPackages.ghcup
 
-    # Web stuff
+    # NodeJS stuff
     nodejs
     nodePackages.typescript
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions
+    nodePackages.firebase-tools # firebase CLI
 
     # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix

@@ -13,3 +13,4 @@ coc
 karabiner
 configstore
 github-copilot
+firebase/*.json

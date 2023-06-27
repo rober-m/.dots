@@ -33,8 +33,14 @@
               ["¬"] = { "<C-\\><C-N><C-w>l", "Move to right pane"},
           }
 
+          local macos_copy_paste = {
+              ["<D-c>"] = { '"+y', "Copy to clipboard"},
+              ["<D-v>"] = { '"+p', "Paste from clipboard"},
+          }
+
           require("which-key").register(normal_pane_movements, { mode = 'n', silent = true })
           require("which-key").register(terminal_pane_movements, { mode = 't', silent = true })
+          require("which-key").register(macos_copy_paste, { mode = 'v', silent = true })
           -----------------------------------------------------------------------------------------
         '';
       }

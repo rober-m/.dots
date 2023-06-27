@@ -1,4 +1,4 @@
-{ pkgs, system, ... }:
+{ ... }:
 let
   colors_tomorrow = import ./colors-base16-tomorrow.nix;
   colors_tokionight = import ./colors-tokio-night.nix;
@@ -29,6 +29,8 @@ in
         #{ key = ""; mods = ""; chars/action = ""; }
         { key = "N"; mods = "Command"; action = "SpawnNewInstance"; }
         { key = "Escape"; mods = "Control"; action = "ToggleViMode"; }
+        { key = "C"; mods = "Command"; action = "Copy"; }
+        { key = "V"; mods = "Command"; action = "Paste"; }
       ];
     };
   };

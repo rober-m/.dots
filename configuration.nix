@@ -121,6 +121,7 @@
     exa
     terminal-notifier
     #vscode
+    flutter
   ];
 
   environment.variables.EDITOR = "nvim";

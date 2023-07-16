@@ -76,6 +76,7 @@ in
     haskellPackages.cabal-install
     haskellPackages.hoogle
     haskellPackages.ihaskell
+    ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
 
     # NodeJS stuff
     nodejs

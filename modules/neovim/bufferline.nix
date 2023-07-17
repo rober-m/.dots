@@ -34,6 +34,7 @@
                                   h = { ":BufferLineCyclePrev<cr>", "Cycle Prev" },
                                   c = { ":bd<cr>", "Close" },
                                   C = { ":bd!<cr>", "Close without saving" },
+                                  o = { ":BufferLineCloseOthers<cr>", "Close Others" },
                                 },
                               }, { prefix = "<leader>" })
 

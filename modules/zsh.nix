@@ -47,6 +47,7 @@
     '';
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;
+      IHP_EDITOR = "code --goto";
     };
   };
 

@@ -56,6 +56,7 @@ in
     zoxide # Also installed in modules/nvim
     nix-tree
     mdbook # Create books from Markdown
+    inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
 
     # Communications
     discord
@@ -71,12 +72,18 @@ in
     python310Packages.notebook
 
     # Haskell stuff
-    ghc
-    haskell-language-server # Also installed in modules/nvim/lsp-config.nix
+    # GHC VS boot libraries version: https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/libraries/version-history
+    #haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
+    haskell.compiler.ghc925  #(GHC: 9.2.5  && base: 4.16.4.0)
+    #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
+    #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
+    #haskell.compiler.ghc96  #(GHC: 9.6.2  && base: 4.18.0.0)
+    (haskell-language-server.override { supportedGhcVersions = [ "925" "928" ]; })  #Also installed in modules/nvim/lsp-config.nix
     haskellPackages.cabal-install
     haskellPackages.hoogle
     haskellPackages.ihaskell
     ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
+    haskellPackages.doctest
 
     # NodeJS stuff
     nodejs

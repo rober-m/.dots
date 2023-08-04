@@ -67,7 +67,7 @@
               on_attach =  on_attach,
               settings = {
                 haskell = { -- haskell-language-server options
-                  -- formattingProvider = 'ormolu',
+                  formattingProvider = 'stylish-haskell',
                   checkProject = true, -- Could have a performance impact on large mono repos.
                 }
               }

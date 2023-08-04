@@ -84,6 +84,7 @@ in
     haskellPackages.ihaskell
     ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
     haskellPackages.doctest
+    stylish-haskell # Haskell code prettifier / formatter
 
     # NodeJS stuff
     nodejs

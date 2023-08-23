@@ -9,7 +9,7 @@ in
     settings = {
       colors = colors_tokionight;
       window = {
-        opacity = 0.95;
+        opacity = 0.90;
         decorations = "none";
         padding = {
           x = 8;

@@ -57,6 +57,8 @@ in
     nix-tree
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
+    #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
+    #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
 
     # Communications
     discord
@@ -85,6 +87,8 @@ in
     ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
     haskellPackages.doctest
     stylish-haskell # Haskell code prettifier / formatter
+    #haskellPackages.lhs2tex # Literate Haskell to LaTeX
+    #ghcid # Dependency to compile Andres slides... for some reason..
 
     # NodeJS stuff
     nodejs

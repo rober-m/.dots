@@ -51,7 +51,7 @@
     # Dock
     defaults.dock = {
       autohide = true; # Autohide dock
-      orientation = "left"; # Were the Dock is
+      orientation = "bottom"; # Were the Dock is located. "left", "bottom", "right"
       mru-spaces = false; # Whether to automatically rearrange spaces based on most recent use.
       wvous-tl-corner = 1; # Hot corner action for top left corner. 1 = Mission Control.
       wvous-tr-corner = 1; # Hot corner action for top right corner. 1 = Mission Control.
@@ -70,7 +70,7 @@
     # Trackpad 
     defaults.trackpad = {
       Clicking = true;
-      TrackpadThreeFingerDrag = true;
+      TrackpadThreeFingerDrag = false;
     };
     # Global
     defaults.NSGlobalDomain = {
@@ -78,6 +78,7 @@
       AppleShowScrollBars = "WhenScrolling";
       "com.apple.mouse.tapBehavior" = 1; # Mode 1 enables tap to click
       NSAutomaticWindowAnimationsEnabled = false; # Animate opening and closing of windows and popovers.
+      "com.apple.swipescrolldirection" = false; # Scroll direction: true = natural, false = regular
     };
     # Software updates
     defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;

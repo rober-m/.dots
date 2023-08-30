@@ -44,7 +44,7 @@
             local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
             require("which-key").register({
-              ["gd"] = { vim.lsp.buf.declaration, "goto declaration"},
+              ["gD"] = { vim.lsp.buf.declaration, "goto declaration"},
               ["gd"] = { vim.lsp.buf.definition, "goto definition"},
               ["K"] = { vim.lsp.buf.hover, "Hover"},
               ["gi"] = { vim.lsp.buf.implementation, "goto implementation"},

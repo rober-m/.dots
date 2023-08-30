@@ -129,8 +129,6 @@
     extraPackages = with pkgs; [
 
       # LANGUAGE SERVERS
-      haskell-language-server # Haskell
-      #rnix-lsp # Nix
       nil # Nix
       lua-language-server # Lua
       rust-analyzer # Rust

@@ -7,9 +7,10 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
-      colors = colors_tokionight;
+      colors = colors_tokionight.storm;
       window = {
-        opacity = 0.90;
+        #opacity = 1;
+        opacity = 0.98;
         decorations = "none";
         padding = {
           x = 8;

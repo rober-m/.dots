@@ -44,6 +44,7 @@
       eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
       # export KEYTIMEOUT=1 # Needed for ZSH vi mode
       VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true # For oh-my-zsh vi-mode
+      eval "$(direnv hook zsh)" # Needed for direnv
     '';
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;

@@ -7,10 +7,31 @@
       gruvbox
       papercolor-theme
 
-      # TODO: The only themes that correctly works with transparent BG is gruvbox and papercolor
-
       {
-        plugin = tokyonight-nvim;
+        plugin = catppuccin-nvim; # colorscheme catppuccin-latte / catppuccin-frappe / catppuccin-macchiato / catppuccin-mocha
+        type = "lua";
+        config = ''
+          ------------------------------- THEMES: CATPPUCCIN --------------------------------
+          require("catppuccin").setup({
+            flavour = "latte", -- latte, frappe, macchiato, mocha
+            background = { -- :h background
+                light = "latte",
+                dark = "mocha",
+            },
+            transparent_background = false, -- disables setting the background color.
+            show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+            term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+            dim_inactive = {
+                enabled = false, -- dims the background color of inactive window
+                shade = "dark",
+                percentage = 0.15, -- percentage of the shade to apply to the inactive window
+            },
+          })
+          -----------------------------------------------------------------------------------
+        '';
+      }
+      {
+        plugin = tokyonight-nvim; # colorscheme tokyonight
         type = "lua";
         config = ''
           ------------------------------- THEMES: TOKYO NIGHT ------------------------------
@@ -58,7 +79,8 @@
       vim.cmd([[
         colorscheme tokyonight
       ]])
-      -- vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+
+      -- Next two lines: Set transparent background (activate when using tokyonight theme)
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       -----------------------------------------------------------------------------------

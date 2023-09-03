@@ -1,7 +1,4 @@
-
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       {
@@ -12,18 +9,16 @@
           require("which-key").register({
                                 g = {
                                   name = "git",
-                                  g = { ":LazyGit<cr>", "LazyGit" }, 
+                                  g = { ":LazyGit<cr>", "LazyGit" },
                                 },
                               }, { prefix = "<leader>" })
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
-
       }
     ];
 
     extraPackages = with pkgs; [
       lazygit
     ];
-
   };
 }

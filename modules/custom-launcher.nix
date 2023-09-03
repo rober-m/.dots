@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{...}: {
   # AFTER_INSTALL
   # - Create "Quick Service" running "customLauncher.sh" and add Cmd+Space shortcut to it
   # - Create "Quick Service" running Alacritty and add a shortcut for it ??
@@ -44,4 +43,3 @@
     '';
   };
 }
-

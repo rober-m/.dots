@@ -1,7 +1,4 @@
-{ config, pkgs, lib, ... }:
-
-{
-
+{...}: {
   # Configure properly when I have the time
   home.file.yabai = {
     executable = true;
@@ -58,7 +55,5 @@
       yabai -m rule --add app="Todoist" space=todo
       echo "yabai configuration loaded.."
     '';
-
   };
-
 }

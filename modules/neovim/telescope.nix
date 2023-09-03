@@ -1,5 +1,4 @@
-{ pkgs, inputs, system, ... }:
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       which-key-nvim
@@ -12,12 +11,12 @@
           require("which-key").register({
                                 s = {
                                   name = "search",
-                                  f = { ":Telescope find_files<cr>", "File" }, 
-                                  t = { ":Telescope live_grep<cr>", "Text" }, 
-                                  b = { ":Telescope buffers<cr>", "Open Buffer" }, 
+                                  f = { ":Telescope find_files<cr>", "File" },
+                                  t = { ":Telescope live_grep<cr>", "Text" },
+                                  b = { ":Telescope buffers<cr>", "Open Buffer" },
                                 },
                               }, { prefix = "<leader>" })
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
       {
@@ -31,10 +30,10 @@
           require("which-key").register({
                                 s = {
                                   name = "search",
-                                  z = { ":Telescope zoxide list<cr>", "Zoxide list" }, 
+                                  z = { ":Telescope zoxide list<cr>", "Zoxide list" },
                                 },
                               }, { prefix = "<leader>" })
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
       {
@@ -47,7 +46,7 @@
           require("which-key").register({
                                 ["<C-b>"] = { ":Telescope file_browser<cr>", "Browse Files" },
                               })
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
       {
@@ -60,13 +59,12 @@
           require("which-key").register({
                                 h = {
                                   name = "Haskell",
-                                  s = { ":Telescope hoogle<cr>", "Hoogle search" }, 
+                                  s = { ":Telescope hoogle<cr>", "Hoogle search" },
                                 },
                               }, { prefix = "<leader>" })
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
-
     ];
 
     extraPackages = with pkgs; [
@@ -74,7 +72,5 @@
       ripgrep
       haskellPackages.hoogle
     ];
-
   };
 }
-

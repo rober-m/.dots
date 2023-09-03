@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.git = {
     enable = true;
     userName = "Robertino Martinez";
@@ -20,6 +19,4 @@
       #credential.helper = "osxkeychain";
     };
   };
-
 }
-

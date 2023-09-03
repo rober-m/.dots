@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-{
-
+{pkgs, ...}: {
   # CONFIG INSPIRED BY: https://github.com/srid/nixos-config/blob/master/home/neovim.nix
 
   imports = [
@@ -35,7 +33,7 @@
 
     # Full list of plugins here:
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
-    
+
     # Plugins without configuration
     plugins = with pkgs.vimPlugins; [
       packer-nvim # For plugins that aren't on nixpkgs (see ./init.lua)
@@ -43,7 +41,6 @@
     ];
 
     extraPackages = with pkgs; [
-
       # TODO: clean this up.
       shellcheck # Shell script analysis tool (Run shellcheck <script>)
 
@@ -61,7 +58,5 @@
       ${builtins.readFile ./init.lua}
       EOF
     '';
-
   };
 }
-

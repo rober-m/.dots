@@ -1,6 +1,4 @@
-{ pkgs, inputs, system, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       # Buffer tabs
@@ -14,7 +12,7 @@
               theme = 'tokyonight'
             }
           }
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
     ];
@@ -22,6 +20,5 @@
     extraPackages = with pkgs; [
       vimPlugins.nvim-web-devicons
     ];
-
   };
 }

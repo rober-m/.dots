@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   imports = [
     ./modules/neovim
     ./modules/alacritty
@@ -9,9 +12,7 @@ let
     ./modules/ssh.nix
     #./modules/yabairc.nix
   ];
-in
-{
-
+in {
   inherit imports;
 
   home = {
@@ -32,88 +33,88 @@ in
       enable = true;
       nix-direnv.enable = true;
     };
-    htop ={
+    htop = {
       enable = true;
       settings.show_program_path = true;
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+    [
+      # Terminal
+      coreutils
+      curl
+      wget
+      git
+      dua # Disk Usage Analyzer
+      lazygit # Also installed in modules/nvim
+      zsh
+      lsd
+      bat
+      fd
+      fzf
+      jq
+      zoxide # Also installed in modules/nvim
+      nix-tree
+      mdbook # Create books from Markdown
+      inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
+      #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
+      #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
 
-    # Terminal
-    coreutils
-    curl
-    wget
-    git
-    dua # Disk Usage Analyzer
-    lazygit # Also installed in modules/nvim
-    zsh
-    lsd
-    bat
-    fd
-    fzf
-    jq
-    zoxide # Also installed in modules/nvim
-    nix-tree
-    mdbook # Create books from Markdown
-    inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
-    #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
-    #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
+      # Communications
+      discord
+      slack
+      # telegram
 
-    # Communications
-    discord
-    slack
-    # telegram
+      # Python and Jupyter
+      python310Packages.pip
+      python310Packages.jupyter
+      python310Packages.jupyter_core
+      python310Packages.jupyter-client
+      python310Packages.jupyterlab
+      python310Packages.notebook
 
-    # Python and Jupyter 
-    python310Packages.pip
-    python310Packages.jupyter
-    python310Packages.jupyter_core
-    python310Packages.jupyter-client
-    python310Packages.jupyterlab
-    python310Packages.notebook
+      # Haskell stuff
+      # GHC VS boot libraries version: https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/libraries/version-history
+      #haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
+      haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
+      #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
+      #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
+      #haskell.compiler.ghc96  #(GHC: 9.6.2  && base: 4.18.0.0)
+      (haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
+      haskellPackages.cabal-install
+      haskellPackages.hoogle
+      haskellPackages.ihaskell
+      ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
+      haskellPackages.doctest
+      stylish-haskell # Haskell code prettifier / formatter
+      #haskellPackages.lhs2tex # Literate Haskell to LaTeX
+      #ghcid # Dependency to compile Andres slides... for some reason..
 
-    # Haskell stuff
-    # GHC VS boot libraries version: https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/libraries/version-history
-    #haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
-    haskell.compiler.ghc925  #(GHC: 9.2.5  && base: 4.16.4.0)
-    #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
-    #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
-    #haskell.compiler.ghc96  #(GHC: 9.6.2  && base: 4.18.0.0)
-    (haskell-language-server.override { supportedGhcVersions = [ "925" "928" ]; })  #Also installed in modules/nvim/lsp-config.nix
-    haskellPackages.cabal-install
-    haskellPackages.hoogle
-    haskellPackages.ihaskell
-    ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
-    haskellPackages.doctest
-    stylish-haskell # Haskell code prettifier / formatter
-    #haskellPackages.lhs2tex # Literate Haskell to LaTeX
-    #ghcid # Dependency to compile Andres slides... for some reason..
+      # NodeJS stuff
+      nodejs
+      nodePackages.typescript
+      nodePackages.node2nix
+      nodePackages.web-ext # cli to help build web extensions
+      nodePackages.firebase-tools # firebase CLI
 
-    # NodeJS stuff
-    nodejs
-    nodePackages.typescript
-    nodePackages.node2nix
-    nodePackages.web-ext # cli to help build web extensions
-    nodePackages.firebase-tools # firebase CLI
+      # Nix stuff
+      cachix # adding/managing alternative binary caches hosted by Cachix
+      comma # run software from without installing it
+      niv # easy dependency management for nix projects
 
-    # Nix stuff
-    cachix # adding/managing alternative binary caches hosted by Cachix
-    comma # run software from without installing it
-    niv # easy dependency management for nix projects
+      #Rust
+      rustup
 
-    #Rust
-    rustup
-
-    # Other
-    docker
-    #vscode
-
-  ] ++ lib.optionals stdenv.isDarwin [
-    cocoapods
-    m-cli # useful macOS CLI commands
-    karabiner-elements
-  ];
+      # Other
+      docker
+      #vscode
+    ]
+    ++ lib.optionals stdenv.isDarwin [
+      cocoapods
+      m-cli # useful macOS CLI commands
+      karabiner-elements
+    ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
 
@@ -122,7 +123,7 @@ in
   #home.file."karabiner/karabiner.json" = builtins.readFile ./modules/karabiner.json;
 
   # https://docs.haskellstack.org/en/stable/yaml_configuration/#non-project-specific-config
-  home.file.".stack/config.yaml".text = lib.generators.toYAML { } {
+  home.file.".stack/config.yaml".text = lib.generators.toYAML {} {
     templates = {
       scm-init = "git";
       params = {
@@ -140,5 +141,4 @@ in
       :set prompt "λ: "
     '';
   };
-
 }

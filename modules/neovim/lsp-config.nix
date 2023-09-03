@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       {
@@ -46,7 +44,7 @@
                                 },
                               }, { prefix = "<leader>" })
 
-          -- Use an on_attach function to only map the following keys after the language server 
+          -- Use an on_attach function to only map the following keys after the language server
           -- attaches to the current buffer
           local on_attach = function(client, bufnr)
 
@@ -99,7 +97,7 @@
 
           -- Servers without specific config (Haskell server managed in haskell.nix)
           local servers = {
-             'tsserver'      -- Typescript 
+             'tsserver'      -- Typescript
             --,'rnix'        -- Nix
             ,'nil_ls'        -- Nix
             ,'lua_ls'        -- Lua
@@ -121,13 +119,24 @@
               flags = lsp_flags,
             }
           end
-          ----------------------------------------------------------------------------------------- 
+
+          require('lspconfig').nil_ls.setup {
+            on_attach = on_attach,
+            settings = {
+              ['nil'] = {
+                formatting = {
+                  --command = { "nixpkgs-fmt" },
+                  command = { "alejandra" },
+                },
+              },
+            },
+          }
+          -----------------------------------------------------------------------------------------
         '';
       }
     ];
 
     extraPackages = with pkgs; [
-
       # LANGUAGE SERVERS
       nil # Nix
       lua-language-server # Lua
@@ -139,9 +148,6 @@
       nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint extracted from VSCode
       #marksman # Markdown. IMPORTANT: I had to install it using "nix profile install nixpkgs#marksman"
       #ltex-ls # LaTeX and Markdown, and others (https://github.com/valentjn/ltex-ls)
-
     ];
-
   };
 }
-

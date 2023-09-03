@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       # IMPORTANT: I had to install hoogle separatedly "extraPackages" didn't work.
@@ -16,7 +13,7 @@
 
           local ht = require('haskell-tools')
           local on_attach = function(client, bufnr)
-            
+
             -- Show line diagnostics automatically in hover window
             vim.api.nvim_create_autocmd("CursorHold", {
               buffer = bufnr,
@@ -56,7 +53,7 @@
                   a = { vim.lsp.codelens.run, "CodeLens" },
                   h = { ht.hoogle.hoogle_signature, "Hoogle Signature" },
                 },
-                 
+
             }, { prefix = "<leader>" })
 
           end
@@ -98,7 +95,7 @@
                 name = "Haskell",
                 r = {ht.repl.toggle, "Toggle REPL" },
               },
-               
+
           }, { prefix = "<leader>" })
           -----------------------------------------------------------------------------------------
         '';
@@ -109,7 +106,5 @@
     #   vimPlugins.plenary-nvim
     #   haskellPackages.hoogle
     # ];
-
   };
 }
-

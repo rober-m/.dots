@@ -1,9 +1,6 @@
-{ pkgs, inputs, system, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-
       # COMPLETION PROVIDERS
       cmp-nvim-lsp # Completes with LSP server (Auto import, snippets, etc.)
       cmp-path # Completes files
@@ -58,7 +55,7 @@
           })
           -- TODO: Set up lspconfig.
           local capabilities = require('cmp_nvim_lsp').default_capabilities()
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
           EOF
         '';
       }
@@ -68,7 +65,5 @@
     # extraConfig = ''
     #   set completeopt=menu,menuone,noselect
     # '';
-
   };
 }
-

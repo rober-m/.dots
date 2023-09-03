@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-{
-
+{pkgs, ...}: {
   #################################################################################################
   ######################################### NIX CONFIG ############################################
 
@@ -26,8 +24,8 @@
     ];
     auto-optimise-store = false; # See: https://github.com/NixOS/nix/issues/7273
     system = "x86_64-darwin";
-    extra-platforms = [ "x86_64-darwin" "aarch64-darwin" ];
-    experimental-features = [ "nix-command" "flakes" ];
+    extra-platforms = ["x86_64-darwin" "aarch64-darwin"];
+    experimental-features = ["nix-command" "flakes"];
     extra-sandbox-paths = [
       "/System/Library/Frameworks"
       "/System/Library/PrivateFrameworks"
@@ -41,7 +39,6 @@
     #binary-caches-parallel-connections = 40;
     #sandbox = false;
     # ---------------------------------------------------------
-
   };
 
   #################################################################################################
@@ -67,7 +64,7 @@
     defaults.finder = {
       AppleShowAllExtensions = true;
     };
-    # Trackpad 
+    # Trackpad
     defaults.trackpad = {
       Clicking = true;
       TrackpadThreeFingerDrag = false;
@@ -87,7 +84,6 @@
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
@@ -106,13 +102,12 @@
     };
   };
 
-
   # Fonts
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
       recursive
-      (nerdfonts.override { fonts = [ "Hack" ]; })
+      (nerdfonts.override {fonts = ["Hack"];})
     ];
   };
 
@@ -125,6 +120,8 @@
     terminal-notifier
     #vscode
     flutter
+
+    alejandra
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -166,9 +163,6 @@
       "notion"
       "amethyst"
       #"git-credential-manager-core"
-
-
     ];
   };
-
 }

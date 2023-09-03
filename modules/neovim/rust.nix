@@ -1,28 +1,30 @@
-{ pkgs, inputs, system, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.neovim = {
     coc.settings.languageserver.rust = {
       command = "rust-analyzer";
-      args = [ ];
+      args = [];
       rootPatterns = [
         "Cargo.lock"
       ];
-      filetypes = [ "rust" ];
+      filetypes = ["rust"];
     };
 
     plugins = with pkgs.vimPlugins; [
       rust-vim
       {
-        plugin =
-          (pkgs.vimUtils.buildVimPlugin {
-            name = "coc-rust-analyzer";
-            src = inputs.coc-rust-analyzer;
-          });
+        plugin = pkgs.vimUtils.buildVimPlugin {
+          name = "coc-rust-analyzer";
+          src = inputs.coc-rust-analyzer;
+        };
         type = "lua";
         config = ''
         '';
       }
     ];
-
   };
 }
+

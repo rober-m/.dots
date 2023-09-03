@@ -1,6 +1,4 @@
-{ pkgs, inputs, system, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       {
@@ -23,13 +21,10 @@
           -----------------------------------------------------------------------------------
         '';
       }
-
     ];
 
     extraPackages = with pkgs; [
       tree-sitter
     ];
-
   };
-
 }

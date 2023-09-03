@@ -1,6 +1,4 @@
-{ pkgs, inputs, system, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       # Tree file explorer.
@@ -44,7 +42,7 @@
           -- Remappings
           nmap("<C-e>", ":NvimTreeToggle<cr>")
           imap("<C-e>", ":NvimTreeToggle<cr>")
-          ----------------------------------------------------------------------------------------- 
+          -----------------------------------------------------------------------------------------
         '';
       }
     ];
@@ -52,6 +50,5 @@
     extraPackages = with pkgs; [
       vimPlugins.nvim-web-devicons
     ];
-
   };
 }

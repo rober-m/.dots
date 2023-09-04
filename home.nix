@@ -10,6 +10,7 @@
     ./modules/git.nix
     ./modules/zsh.nix
     ./modules/ssh.nix
+    ./modules/haskell.nix # Haskell-related binaries and config (withot nvim config)
     #./modules/vscode/vscode.nix # TODO: Try this config when I have time to fix it in case it breaks VSCode containers
     #./modules/yabairc.nix
   ];
@@ -56,7 +57,6 @@ in {
       fzf
       jq
       zoxide # Also installed in modules/nvim
-      nix-tree
       mdbook # Create books from Markdown
       inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
       #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
@@ -75,23 +75,6 @@ in {
       python310Packages.jupyterlab
       python310Packages.notebook
 
-      # Haskell stuff
-      # GHC VS boot libraries version: https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/libraries/version-history
-      #haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
-      haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
-      #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
-      #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
-      #haskell.compiler.ghc96  #(GHC: 9.6.2  && base: 4.18.0.0)
-      (haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
-      haskellPackages.cabal-install
-      haskellPackages.hoogle
-      haskellPackages.ihaskell
-      ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
-      haskellPackages.doctest
-      stylish-haskell # Haskell code prettifier / formatter
-      #haskellPackages.lhs2tex # Literate Haskell to LaTeX
-      #ghcid # Dependency to compile Andres slides... for some reason..
-
       # NodeJS stuff
       nodejs
       nodePackages.typescript
@@ -103,13 +86,13 @@ in {
       cachix # adding/managing alternative binary caches hosted by Cachix
       comma # run software from without installing it
       niv # easy dependency management for nix projects
+      nix-tree # visualize the dependency graph of a nix derivation
 
       #Rust
       rustup
 
       # Other
       docker
-      #vscode
     ]
     ++ lib.optionals stdenv.isDarwin [
       cocoapods
@@ -122,24 +105,4 @@ in {
   # TODO: Only run if it's on a Darwin system
   home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
   #home.file."karabiner/karabiner.json" = builtins.readFile ./modules/karabiner.json;
-
-  # https://docs.haskellstack.org/en/stable/yaml_configuration/#non-project-specific-config
-  home.file.".stack/config.yaml".text = lib.generators.toYAML {} {
-    templates = {
-      scm-init = "git";
-      params = {
-        author-name = "Robertino Martinez"; # config.programs.git.userName;
-        author-email = "48034748+rober-m@users.noreply.github.com"; # config.programs.git.userEmail;
-        github-username = "rober-m";
-      };
-    };
-    nix.enable = true;
-  };
-
-  home.file.ghc = {
-    target = ".ghci";
-    text = ''
-      :set prompt "λ: "
-    '';
-  };
 }

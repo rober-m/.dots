@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -34,10 +34,10 @@
       hc = "cd ~/IOG/haskell-course/";
       pr = "cd ~/Projects/";
       sc = "cd ~/scratchpad/";
-      dots = "cd ~/.config && nvim ."; # cd before so nvim plugis work properly
+      dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
 
       # Nix-related
-      rebuild = "darwin-rebuild switch --flake ~/.config#roberm";
+      rebuild = "darwin-rebuild switch --flake ~/.dots#roberm";
       plutus-apps = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 

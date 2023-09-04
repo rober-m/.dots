@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   programs.git = {
     enable = true;
     userName = "Robertino Martinez";
@@ -18,5 +18,6 @@
       init.defaultBranch = "main";
       #credential.helper = "osxkeychain";
     };
+    ignores = [ ".DS_Store" ];
   };
 }

@@ -10,6 +10,7 @@
     ./modules/git.nix
     ./modules/zsh.nix
     ./modules/ssh.nix
+    #./modules/vscode/vscode.nix # TODO: Try this config when I have time to fix it in case it breaks VSCode containers
     #./modules/yabairc.nix
   ];
 in {

@@ -1,0 +1,44 @@
+{
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {},
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "gitlens.views.commitDetails.files.layout": "list",
+  "git.ignoreRebaseWarning": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "haskell.serverExecutablePath": "/etc/profiles/per-user/roberm/bin/haskell-language-server-wrapper",
+  "haskell.formattingProvider": "stylish-haskell",
+  "haskell.toolchain": {},
+  "[haskell]": {
+    "editor.defaultFormatter": "vigoo.stylish-haskell"
+  },
+  "emmet.includeLanguages": {
+    "haskell": "html"
+  },
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+  },
+  "workbench.colorTheme": "Dracula",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.tabWidth": 4,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {},
+  "window.zoomLevel": 2,
+  "workbench.startupEditor": "none",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

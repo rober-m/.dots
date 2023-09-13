@@ -1,16 +1,1 @@
 result
-nix
-direnv
-git
-htop
-old-flake.nix
-alacritty
-scripts
-yabai
-nvim
-coc
-!modules/*
-karabiner
-configstore
-github-copilot
-firebase/*.json

@@ -3,7 +3,6 @@
   home-manager,
   darwin,
   user,
-  nixpkgs,
   ...
 }: let
   system = "aarch64-darwin";
@@ -15,7 +14,7 @@ in {
   # My `nix-darwin` configs
   macbook = darwin.lib.darwinSystem {
     inherit system;
-    specialArgs = {inherit user inputs;};
+    specialArgs = {inherit user inputs;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [
       # Main `nix-darwin` config
       ./configuration.nix

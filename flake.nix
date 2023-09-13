@@ -39,15 +39,12 @@
     alejandra,
     ...
   } @ inputs: let
-    inherit (inputs.nixpkgs-unstable.lib) attrValues optionalAttrs singleton;
-
     user = "roberm";
-    location = "$HOME/.dots";
   in {
     darwinConfigurations = ( # Darwin Configurations
       import ./darwin {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs home-manager darwin user attrValues optionalAttrs singleton self;
+        inherit inputs nixpkgs home-manager darwin user;
       }
     );
   };

@@ -37,7 +37,7 @@
       dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
 
       # Nix-related
-      rebuild = "darwin-rebuild switch --flake ~/.dots#roberm";
+      rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
       plutus-apps = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 

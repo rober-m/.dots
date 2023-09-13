@@ -8,7 +8,7 @@ in {
       colors = colors_tokionight.storm;
       window = {
         #opacity = 1;
-        opacity = 0.98;
+        opacity = 0.90;
         decorations = "none";
         padding = {
           x = 8;

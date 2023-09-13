@@ -4,15 +4,7 @@
   ...
 }: let
   imports = [
-    ./modules/neovim
-    ./modules/alacritty
-    ./modules/custom-launcher.nix
-    ./modules/git.nix
-    ./modules/zsh.nix
-    ./modules/ssh.nix
-    ./modules/haskell.nix # Haskell-related binaries and config (withot nvim config)
-    #./modules/vscode/vscode.nix # TODO: Try this config when I have time to fix it in case it breaks VSCode containers
-    #./modules/yabairc.nix
+    ../modules
   ];
 in {
   inherit imports;
@@ -97,12 +89,12 @@ in {
     ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
-      karabiner-elements
+      #karabiner-elements
     ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
 
   # TODO: Only run if it's on a Darwin system
-  home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
+  #home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
   #home.file."karabiner/karabiner.json" = builtins.readFile ./modules/karabiner.json;
 }

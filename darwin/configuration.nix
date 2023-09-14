@@ -1,27 +1,17 @@
 {pkgs, ...}: {
-  #################################################################################################
-  ######################################### NIX CONFIG ############################################
+  # Configuration for darwin system and darwin-specific nix options.
 
-  nix.configureBuildUsers = true;
+  #################################################################################################
+  ################################ DARWIN-SPECIFIC NIX CONFIG #####################################
+
+  imports = [
+    ../common/nixconf.nix # Common nix configuration
+    ./homebrew.nix # Homebrew configuration
+  ];
+
+  nix.configureBuildUsers = true; # TODO: should this be in nixconf.nix?
 
   nix.settings = {
-    substituters = [
-      "https://cache.nixos.org/" # Default NixOS cache
-      "https://nixcache.reflex-frp.org" # Obelisk cache
-      "https://cache.iog.io" # IOG (IOHK) cache
-      "https://cache.zw3rk.com" # zw3kr (Moritz Angermann) cache
-      "https://digitallyinduced.cachix.org" # IHP Web Framework cache
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" # Default NixOS cache key
-      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" # Obelisk cache key
-      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" # IOG (IOHK) cache key
-      "loony-tools:pr9m4BkM/5/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk=" # zw3kr (Moritz Angermann) cache key
-      "digitallyinduced.cachix.org-1:y+wQvrnxQ+PdEsCt91rmvv39qRCYzEgGQaldK26hCKE=" # IHP Web Framework cache key
-    ];
-    trusted-users = [
-      "@admin"
-    ];
     auto-optimise-store = false; # See: https://github.com/NixOS/nix/issues/7273
     system = "x86_64-darwin";
     extra-platforms = ["x86_64-darwin" "aarch64-darwin"];
@@ -42,7 +32,7 @@
   };
 
   #################################################################################################
-  ####################################### SYSTEM CONFIG ###########################################
+  ################################### DARWIN (MacOS) CONFIG #######################################
 
   system = {
     # Dock
@@ -81,6 +71,9 @@
     defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
   };
 
+  #################################################################################################
+  ####################################### OTHER CONFIG ############################################
+
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -94,6 +87,7 @@
     nix-index.enable = true;
   };
 
+  # TODO: This looks like a bug waiting to hapen. Do I need this? Why?
   users = {
     users = {
       roberm = {
@@ -102,7 +96,7 @@
     };
   };
 
-  # Fonts
+  # Fonts TODO: Extract to common
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
@@ -111,7 +105,7 @@
     ];
   };
 
-  # Apps
+  # Apps - TODO: Can I extract this to common and still have it work?
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
@@ -124,45 +118,5 @@
     alejandra
   ];
 
-  environment.variables.EDITOR = "nvim";
-
-  #################################################################################################
-  ###################################### HOMEBREW CONFIG ##########################################
-
-  homebrew = {
-    enable = true;
-    onActivation = {
-      cleanup = "zap";
-      upgrade = true;
-    };
-    brews = [
-      #"yabai"
-
-      # To build IHaskell from source
-      "zeromq"
-      "libmagic"
-      "cairo"
-      "pkg-config"
-      "haskell-stack"
-      "pango"
-    ];
-    taps = [
-      "homebrew/cask"
-      "koekeishiya/formulae" # yabai
-      #"microsoft/git" # git-credential-manager-core
-    ];
-    caskArgs = {
-      appdir = "~/Applications";
-      require_sha = true;
-    };
-    casks = [
-      "google-chrome"
-      "telegram-desktop"
-      "obs"
-      "obsidian"
-      "notion"
-      "amethyst"
-      #"git-credential-manager-core"
-    ];
-  };
+  environment.variables.EDITOR = "nvim"; # TODO: Extract to common
 }

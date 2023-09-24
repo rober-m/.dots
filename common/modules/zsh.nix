@@ -31,6 +31,7 @@
       lg = "lazygit";
 
       # Quick movement
+      iog = "cd ~/IOG/";
       hc = "cd ~/IOG/haskell-course/";
       pr = "cd ~/Projects/";
       sc = "cd ~/scratchpad/";

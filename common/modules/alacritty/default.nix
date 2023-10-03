@@ -9,7 +9,7 @@ in {
       window = {
         #opacity = 1;
         opacity = 0.92;
-        decorations = "none";
+        #decorations = "none";
         padding = {
           x = 8;
           y = 8;

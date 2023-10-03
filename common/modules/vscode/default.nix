@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{pkgs,lib, ...}: {
+  #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
   programs.vscode = {
     enable = true;
-    userSettings = import ./settings.json;
+    userSettings = lib.importJSON ./settings.json;
     extensions = with pkgs.vscode-extensions; [
       # General
       vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
@@ -14,10 +15,10 @@
       eamodio.gitlens # GitLens (https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
       # Containers and remote
-      ms-vscode-remote.remote-containers # Dev containers (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-      ms-vscode-remote.remote-ssh # SSH (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+      #ms-vscode-remote.remote-containers # Dev containers (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+      #ms-vscode-remote.remote-ssh # SSH (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
       ms-azuretools.vscode-docker # Docker (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-      ms-vscode-remote.remote-ssh-edit # SSH Editing (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
+      #ms-vscode-remote.remote-ssh-edit # SSH Editing (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
 
       # Languages
       haskell.haskell # Haskell (https://marketplace.visualstudio.com/items?itemName=haskell.haskell)

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{pkgs, user, ...}: let
   imports = [
     ./modules
   ];
@@ -8,7 +8,6 @@ in {
   home.stateVersion = "22.05";
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
-
   # Direnv, load and unload environment variables depending on the current directory.
   # https://direnv.net
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
@@ -25,8 +24,12 @@ in {
     };
   };
 
+
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     # Terminal
+    (pkgs.nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
     coreutils
     curl
     wget
@@ -46,7 +49,7 @@ in {
     #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
 
     # Communications
-    discord
+    #discord
     slack
     # telegram
 

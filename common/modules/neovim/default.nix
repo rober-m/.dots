@@ -31,6 +31,8 @@
     vimAlias = true;
     withNodeJs = true; # Add NodeJs. It's required by some plugins.
 
+
+
     # Full list of plugins here:
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
 

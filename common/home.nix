@@ -12,7 +12,6 @@ in {
   # https://direnv.net
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
   programs = {
-    #vscode.enable = true;
     ssh.enable = false;
     direnv = {
       enable = true;
@@ -26,6 +25,7 @@ in {
 
 
   fonts.fontconfig.enable = true;
+
 
   home.packages = with pkgs; [
     # Terminal
@@ -47,6 +47,7 @@ in {
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
     #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
     #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
+    docker-compose
 
     # Communications
     #discord
@@ -79,5 +80,6 @@ in {
 
     # Other
     docker
+    google-chrome
   ];
 }

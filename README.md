@@ -1,4 +1,3 @@
-
 ## My personal dotfiles
 
 This is the configuration for my machines:
@@ -17,3 +16,11 @@ This is the configuration for my machines:
 - [ ] Rice NixOS
 
 ## Installation
+
+
+### If Neovim can't load packages
+
+I'm not sure about this, but if Neovim has problems loading modules or finding packpath:
+1. Install `vimPlugins.packer-nvim`
+2. Run `:PackerInstall`
+3. Rebuild

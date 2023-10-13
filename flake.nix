@@ -30,6 +30,7 @@
     };
 
     # Nix tools
+    flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.
     comma = {
       url = "github:Shopify/comma";
       flake = false;
@@ -50,6 +51,7 @@
     nixpkgs-unstable,
     home-manager,
     alejandra,
+    flake-utils,
     ...
   } @ inputs: let
     user = "roberm";

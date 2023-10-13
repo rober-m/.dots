@@ -59,8 +59,7 @@
           end
 
 
-          ht.setup {  -- LSP client options
-            hls = {
+          ht.hls = {  -- LSP client options
               on_attach =  on_attach,
               settings = {
                 haskell = { -- haskell-language-server options
@@ -68,7 +67,6 @@
                   checkProject = true, -- Could have a performance impact on large mono repos.
                 }
               }
-            },
           }
 
           ht.tools = { -- haskell-tools options

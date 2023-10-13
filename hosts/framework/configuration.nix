@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
 
@@ -10,23 +10,46 @@
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ../../common/nixconf.nix # Common nix configuration
     #./xmonad.nix # window manager
+    #./modules/system-wide-gtk.nix
+    ./modules/fingerprint.nix
   ];
+
+  #################################################################################################
+  ################################# NIXOS-SPECIFIC NIX CONFIG #####################################
+
+  nix.gc.dates = "weekly";
+
+  #################################################################################################
+  ########################### REST OF CONFIG (I HAVE TO TIDY A BIT) ###############################
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+   # daemon.settings = {
+   #   #ipv6 = false;
+   #   dns = [ "1.1.1.1" "8.8.8.8" ];
+   #  # proxies = {
+   #  #   "http-proxy" = ":ttp://";
+   #     "http-proxy" = "";
+   #  #   "https-proxy" = "";
+   #  #   "no-proxy" = "*";
+   #  # };
+   # };
+  };
 
-  networking.hostName = "framework"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking = {
+    hostName = "framework"; # Define your hostname.
+    enableIPv6 = false; # It might be causing "Host/Server Not Found" errors.
+    nameservers = [ "1.1.1.1"]; # 1.1.1.1 is Clodflare DNS. 8.8.8.8 is Google Public DNS.
+    #wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  
+    # Enable networking
+    networkmanager.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Lisbon";
@@ -46,7 +69,6 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
@@ -64,13 +86,18 @@
     #desktopManager.plasma5.enable = true;
 
     # Configure keymap in X11
-    layout = "us";
+    layout = "us,es";
+    # If xkb config doesn't seem to take effect, see:
+    # https://discourse.nixos.org/t/problem-with-xkboptions-it-doesnt-seem-to-take-effect/5269/2
     xkbVariant = "";
-    xkbOptions = "esc:swapcaps";
+    xkbOptions = "caps:swapescape"; 
   };
+
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable Bloetooth
   hardware.bluetooth.enable = true;
 
   # Enable sound with pipewire.
@@ -94,32 +121,40 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.roberm = {
+  users.users.${user} = {
     isNormalUser = true;
     description = "Robertino";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      kate
-    #  thunderbird
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.variables = {
+    EDITOR = "nvim";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #neovim 
+    wget
+    gnomeExtensions.appindicator
+    gnome3.gnome-tweaks
   ];
+
+  environment.sessionVariables = rec {
+    GTK_THEME = "Nordic:dark";
+  };
 
   programs = {
     zsh.enable = true;
     #nix-index.enable = true;
+    steam.enable = false; # Set to true if bored :P
   };
 
   system.stateVersion = "23.05";
-
 }

@@ -28,6 +28,7 @@ in {
 
 
   home.packages = with pkgs; [
+
     # Terminal
     (pkgs.nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
     coreutils
@@ -48,6 +49,10 @@ in {
     #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
     #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
     docker-compose
+
+    # Desktop Rice
+    neofetch # Print system properties
+    variety # Wallpaper manager
 
     # Communications
     #discord

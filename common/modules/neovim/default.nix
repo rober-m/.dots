@@ -17,10 +17,10 @@
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
-    # ./rust.nix
+   # ./rust.nix
 
-    # which-key must be the last import for it to recognize the keybindings of
-    # previous imports.
+   # which-key must be the last import for it to recognize the keybindings of
+   # previous imports.
     ./which-key.nix # Pannel showing available keymappings live.
   ];
 
@@ -38,8 +38,8 @@
 
     # Plugins without configuration
     plugins = with pkgs.vimPlugins; [
-      packer-nvim # For plugins that aren't on nixpkgs (see ./init.lua)
       copilot-vim # GitHub Copilot
+     packer-nvim # This might be related to packerpath error. Always install, just in case
     ];
 
     extraPackages = with pkgs; [

@@ -57,7 +57,7 @@
     user = "roberm";
   in {
     darwinConfigurations = ( # Darwin Configurations
-      import ./darwin {
+      import ./hosts/macbook16 {
         inherit (nixpkgs) lib;
         inherit inputs nixpkgs home-manager darwin user;
       }

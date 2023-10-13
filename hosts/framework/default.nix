@@ -11,13 +11,15 @@
     config = {allowUnfree = true;};
   };
 in {
-  # My `NixOS` configs
+
+  # My `Framework` config
   framework = nixpkgs-unstable.lib.nixosSystem {
     inherit system;
     specialArgs = {inherit user inputs;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [
       # Main  config
-      ./configuration.nix
+      ./hardware-configuration.nix
+      ../../linux/configuration.nix
       # `home-manager` module
       home-manager.nixosModules.home-manager
       {
@@ -26,7 +28,7 @@ in {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {inherit user inputs;}; # Pass flake variables
-        home-manager.users.${user} = import ./home.nix;
+        home-manager.users.${user} = import ../../linux/home.nix;
       }
     ];
   };

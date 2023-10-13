@@ -5,8 +5,8 @@
 }: let
 
   imports = [
-    ../../common/home.nix # Common Home configuration
-    # Start of NixOS specific configuration
+    ../common/home.nix # Common Home configuration
+    # Start of Linux specific configuration
     ./modules/zsh.nix
     ./modules/gtk.nix
   ];
@@ -27,7 +27,6 @@ in {
     megasync # MegaSync (MEGA Cloud Drive)
     telegram-desktop # Telegram for Linux
     emote # emoji picker
-    #neovim
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{

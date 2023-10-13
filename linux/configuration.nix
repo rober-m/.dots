@@ -7,8 +7,7 @@
 {
 
   imports = [ 
-    ./hardware-configuration.nix # Include the results of the hardware scan.
-    ../../common/nixconf.nix # Common nix configuration
+    ../common/nixconf.nix # Common nix configuration
     #./xmonad.nix # window manager
     #./modules/system-wide-gtk.nix
     ./modules/fingerprint.nix

@@ -4,6 +4,21 @@ This is the configuration for my machines:
 - **MacBook Pro (M2)** with MacOS using `nix-darwin` and `home-manager`
 - **Framework (Intel)** with NixOS using `home-manager`
 
+Folder dependency (higher depends on lower):
+```
+              flake.nix
+                  |
+                hosts
+        ----------|--------|
+        |                  |
+    macbook16          framework
+        |                  |
+      darwin             linux
+        |                  |
+        ----------|---------
+                common
+```
+
 ### Roadmap
 
 - [x] Add Neovim and configure all the essential packages
@@ -14,7 +29,7 @@ This is the configuration for my machines:
     - [x] NixOS + home-manager
 - [ ] Add XMonad to NixOS config
 - [ ] Rice NixOS
-- [ ] Organize files in `hosts/pulsar`, `hosts/gear` and generalize all `darwin` and `linux` config.
+- [x] Organize files in `hosts/*` and generalize `darwin` and `linux` config.
 - [ ] Add better instructions to README.
 
 ## Installation

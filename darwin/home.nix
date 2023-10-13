@@ -7,6 +7,7 @@
     ../common/home.nix # Common Home configuration
     # Start of the macOS specific configuration
     ./modules/zsh.nix
+    ./modules/ssh.nix
     ./modules/custom-launcher.nix
   ];
 in {

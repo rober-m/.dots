@@ -31,15 +31,13 @@
     vimAlias = true;
     withNodeJs = true; # Add NodeJs. It's required by some plugins.
 
-
-
     # Full list of plugins here:
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/generated.nix
 
     # Plugins without configuration
     plugins = with pkgs.vimPlugins; [
       copilot-vim # GitHub Copilot
-     packer-nvim # This might be related to packerpath error. Always install, just in case
+      packer-nvim # This might be related to packerpath error. Always install, just in case
     ];
 
     extraPackages = with pkgs; [

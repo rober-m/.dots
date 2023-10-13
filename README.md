@@ -14,9 +14,12 @@ This is the configuration for my machines:
     - [x] NixOS + home-manager
 - [ ] Add XMonad to NixOS config
 - [ ] Rice NixOS
+- [ ] Organize files in `hosts/pulsar`, `hosts/gear` and generalize all `darwin` and `linux` config.
+- [ ] Add better instructions to README.
 
 ## Installation
 
+TODO
 
 ### If Neovim can't load packages
 

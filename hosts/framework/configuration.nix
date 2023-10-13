@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
 {
 
@@ -126,8 +126,7 @@
     description = "Robertino";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -146,7 +145,7 @@
     gnome3.gnome-tweaks
   ];
 
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     GTK_THEME = "Nordic:dark";
   };
 

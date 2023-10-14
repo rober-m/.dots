@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
@@ -11,6 +12,7 @@
   "gitlens.views.commitDetails.files.layout": "list",
   "git.ignoreRebaseWarning": true,
   "diffEditor.ignoreTrimWhitespace": false,
+  "haskell.manageHLS": "PATH",
   "haskell.serverExecutablePath": "/etc/profiles/per-user/roberm/bin/haskell-language-server-wrapper",
   "haskell.formattingProvider": "stylish-haskell",
   "haskell.toolchain": {},

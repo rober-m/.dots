@@ -99,6 +99,9 @@
   # Enable Bloetooth
   hardware.bluetooth.enable = true;
 
+  # Enable udev rules to be able to flash new configurations to the ZSA Moonlander
+  hardware.keyboard.zsa.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -141,6 +144,7 @@
     #neovim 
     wget
     gnomeExtensions.appindicator
+    gnomeExtensions.vitals
     gnome3.gnome-tweaks
   ];
 

@@ -17,7 +17,7 @@
                 light = "latte",
                 dark = "mocha",
             },
-            transparent_background = false, -- disables setting the background color.
+            transparent_background = true, -- disables setting the background color.
             show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
             term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
             dim_inactive = {
@@ -38,7 +38,7 @@
           vim.g.tokyonight_transparent_sidebar = true
           require("tokyonight").setup({
             -- See options here: https://github.com/folke/tokyonight.nvim
-            transparent = true, -- Enable this to disable setting the background color
+            -- transparent = true, -- Enable this to disable setting the background color
           })
           -----------------------------------------------------------------------------------
         '';
@@ -55,7 +55,7 @@
             style = 'deep', -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
             -- Lualine options --
             lualine = {
-                transparent = false, -- lualine center bar transparency
+                transparent = true, -- lualine center bar transparency
             },
             -- Plugins Config --
             diagnostics = {
@@ -75,12 +75,19 @@
       ------------------------------- THEMES EXTRA CONFIG ------------------------------
       vim.opt.background = "dark" -- Values are "dark" or "light" to indicate the mode.
       vim.cmd([[
-        colorscheme tokyonight
+        " colorscheme tokyonight
+        colorscheme catppuccin-macchiato
+        " colorscheme gruvbox
+        " colorscheme dracula
+        " colorscheme onedark
       ]])
 
-      -- Next two lines: Set transparent background (activate when using tokyonight theme)
+      -- Next block: Remove all background colors so it looks transparent
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" }) -- Remove NvimTree background
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Remove left gutter background
       -----------------------------------------------------------------------------------
       EOF
     '';

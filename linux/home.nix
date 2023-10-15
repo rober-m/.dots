@@ -1,6 +1,5 @@
 {
   pkgs,
-  user,
   ...
 }: let
 
@@ -8,7 +7,7 @@
     ../common/home.nix # Common Home configuration
     # Start of Linux specific configuration
     ./modules/zsh.nix
-    ./modules/gtk.nix
+    ./modules/gui/gtk.nix
   ];
 
 in {
@@ -28,7 +27,5 @@ in {
     telegram-desktop # Telegram for Linux
     emote # emoji picker
   ];
-
-  # Misc configuration files --------------------------------------------------------------------{{{
 
 }

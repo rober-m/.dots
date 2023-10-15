@@ -1,4 +1,7 @@
 { pkgs, ... }:
+
+# INFO: gtk.nix is a home-manager configuration!! Not a system-level one.
+
 {
   home.packages = with pkgs; [
     dconf

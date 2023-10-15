@@ -25,17 +25,20 @@ in {
         style.shape = "Block";
         blinking = "Off";
       };
+      # TODO: Change commands depending on the operating system. Do I have to?
       key_bindings = [
         #{ key = ""; mods = ""; chars/action = ""; }
-        {
-          key = "N";
-          mods = "Command";
-          action = "SpawnNewInstance";
-        }
+        ######## Common ########
         {
           key = "Escape";
           mods = "Control";
           action = "ToggleViMode";
+        }
+        ######## MacOS ########
+        {
+          key = "N";
+          mods = "Command";
+          action = "SpawnNewInstance";
         }
         {
           key = "C";
@@ -45,6 +48,22 @@ in {
         {
           key = "V";
           mods = "Command";
+          action = "Paste";
+        }
+        ######## Linux ########
+        {
+          key = "N";
+          mods = "Control";
+          action = "SpawnNewInstance";
+        }
+        {
+          key = "C";
+          mods = "Alt";
+          action = "Copy";
+        }
+        {
+          key = "V";
+          mods = "Alt";
           action = "Paste";
         }
       ];

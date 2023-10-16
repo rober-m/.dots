@@ -1,5 +1,4 @@
-{...}:{
-
+{...}: {
   # Set your time zone.
   time.timeZone = "Europe/Lisbon";
 
@@ -17,5 +16,4 @@
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
   };
-
 }

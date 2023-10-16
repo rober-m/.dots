@@ -1,22 +1,17 @@
-{
-  pkgs,
-  ...
-}: let
-
+{pkgs, ...}: let
   imports = [
     ../common/home.nix # Common Home configuration
     # Start of Linux specific configuration
     ./modules/zsh.nix
     ./modules/gui/gtk.nix
   ];
-
 in {
   inherit imports;
 
- # home = {
- #   username = user;
- #   homeDirectory = "/Users/${user}";
- # };
+  # home = {
+  #   username = user;
+  #   homeDirectory = "/Users/${user}";
+  # };
 
   home.keyboard = null; # Configured in `configuration.nix`.
 
@@ -27,5 +22,4 @@ in {
     telegram-desktop # Telegram for Linux
     emote # emoji picker
   ];
-
 }

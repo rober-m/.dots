@@ -1,4 +1,4 @@
-{pkgs, user, ...}: let
+{pkgs, ...}: let
   imports = [
     ./modules
   ];
@@ -23,31 +23,30 @@ in {
     };
   };
 
-
   fonts.fontconfig.enable = true;
 
-
   home.packages = with pkgs; [
-
     # Terminal
-    (pkgs.nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
+    (pkgs.nerdfonts.override {fonts = ["Hack" "FiraCode" "DroidSansMono"];})
     coreutils
     curl
     wget
     git
     dua # Disk Usage Analyzer
     lazygit # Also installed in modules/nvim
-    zsh
+    zsh # Linux shell
     lsd
-    bat
+    bat # `cat` with wings
     fd
-    fzf
+    fzf # Fuzzy finder
     jq
     zoxide # Also installed in modules/nvim
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
-    #graphviz-nox # Graph visualization software (I use it to compile *.dot files. See: https://graphviz.org/doc/info/lang.html)
-    #texlive.combined.scheme-full # LaTeX (I use it to compile Andres' slides) TODO: Delete if not needed, it's a big package.
+    tree # Print folder structure as a tree
+
+    # Virtualization
+    docker
     docker-compose
 
     # Desktop Rice
@@ -84,7 +83,6 @@ in {
     rustup
 
     # Other
-    docker
     google-chrome
   ];
 }

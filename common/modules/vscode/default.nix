@@ -1,4 +1,8 @@
-{pkgs,lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
   programs.vscode = {
     enable = true;

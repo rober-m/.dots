@@ -9,7 +9,11 @@
     ./modules/homebrew.nix # Homebrew configuration
   ];
 
-  nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; }; # Run on the 0th day of the week at 00:00
+  nix.gc.interval = {
+    Weekday = 0;
+    Hour = 0;
+    Minute = 0;
+  }; # Run on the 0th day of the week at 00:00
 
   nix.configureBuildUsers = true; # TODO: should this be in nixconf.nix?
 

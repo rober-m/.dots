@@ -1,8 +1,9 @@
-{ pkgs, user, ... }:
-
 {
-
-  imports = [ 
+  pkgs,
+  user,
+  ...
+}: {
+  imports = [
     ../common/nixconf.nix # Common nix configuration
     ./modules/base # base system (basic system configurations)
     ./modules/gui # Graphical User Interface config (Desktop and WM)
@@ -25,16 +26,15 @@
   hardware = {
     bluetooth.enable = true;
     keyboard.zsa.enable = true; # Enable udev rules to be able to flash new configurations to the ZSA Moonlander
-  }; 
+  };
 
   security.rtkit.enable = true;
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
     description = "Robertino";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     # packages = with pkgs; [ ];
   };
@@ -48,6 +48,7 @@
 
   environment.systemPackages = with pkgs; [
     wget
+    alejandra
   ];
 
   programs = {

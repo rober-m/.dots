@@ -62,7 +62,7 @@
         inherit inputs nixpkgs home-manager darwin user;
       }
     );
-    
+
     nixosConfigurations = ( # NixOS Configurations
       import ./hosts/framework {
         inherit (nixpkgs) lib;

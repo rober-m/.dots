@@ -11,7 +11,6 @@
     config = {allowUnfree = true;};
   };
 in {
-
   # My `Framework` config
   framework = nixpkgs-unstable.lib.nixosSystem {
     inherit system;

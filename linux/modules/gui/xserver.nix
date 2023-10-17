@@ -13,13 +13,14 @@
     # Enable the X11 windowing system.
     enable = true;
 
-    #dpi = 180; # 200 is the actual one # This breaks sound?
+    # Setting `dpi` breaks the sound in both X11 and Wayland!!
+    #dpi = 180; # (200 is the actual one for the Framework)
 
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
 
-    #displayManager.gdm.wayland = true;
+    displayManager.gdm.wayland = false;
 
     # Enable the KDE Plasma Desktop Environment.
     #displayManager.sddm.enable = true;

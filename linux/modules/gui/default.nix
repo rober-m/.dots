@@ -3,5 +3,6 @@
 
   imports = [
     ./xserver.nix
+    ./autorandr.nix
   ];
 }

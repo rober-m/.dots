@@ -1,4 +1,9 @@
-{pkgs, ...}:
+{
+  pkgs,
+  lib,
+  user,
+  ...
+}:
 # INFO: gtk.nix is a home-manager configuration!! Not a system-level one.
 {
   home.packages = with pkgs; [
@@ -10,6 +15,7 @@
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
+        #scaling-factor = lib.hm.gvariant.mkUint32 2;
       };
     };
   };

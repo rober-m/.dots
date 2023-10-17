@@ -27,8 +27,9 @@ Folder dependency (higher depends on lower):
 - [x] Add profiles for multiple systems
     - [x] MacOs + nix-darwin + home-manager
     - [x] NixOS + home-manager
-- [ ] Add XMonad to NixOS config
 - [ ] Rice NixOS
+    - [ ] Add XMonad to NixOS config
+    - [ ] Add a way to centralize colorscheme settings
 - [x] Organize files in `hosts/*` and generalize `darwin` and `linux` config.
 - [ ] Add better instructions to README.
 

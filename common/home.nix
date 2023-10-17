@@ -1,9 +1,16 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   imports = [
     ./modules
+    inputs.nix-colors.homeManagerModules.default
   ];
 in {
   inherit imports;
+
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
 
   home.stateVersion = "22.05";
 

@@ -1,11 +1,43 @@
-{...}: let
-  #colors_tomorrow = import ./colors-base16-tomorrow.nix;
-  colors_tokionight = import ./colors-tokio-night.nix;
-in {
+{config, ...}:
+#let
+#colors_tomorrow = import ./colors-base16-tomorrow.nix;
+#colors_tokionight = import ./colors-tokio-night.nix;
+#in
+{
   programs.alacritty = {
     enable = true;
     settings = {
-      colors = colors_tokionight.storm;
+      colors = with config.colorScheme.colors; {
+        # Default colors
+        primary = {
+          background = "0x${base00}";
+          foreground = "0x${base06}";
+        };
+
+        # Normal colors
+        normal = {
+          black = "0x${base00}";
+          red = "0x${base08}";
+          green = "0x${base0B}";
+          yellow = "0x${base0A}";
+          blue = "0x${base0D}";
+          magenta = "0x${base0E}";
+          cyan = "0x${base0C}";
+          white = "0x${base06}";
+        };
+
+        # Bright colors
+        bright = {
+          black = "0x${base00}";
+          red = "0x${base08}";
+          green = "0x${base0B}";
+          yellow = "0x${base09}";
+          blue = "0x${base0D}";
+          magenta = "0x${base0E}";
+          cyan = "0x${base0C}";
+          white = "0x${base06}";
+        };
+      };
       window = {
         #opacity = 1;
         opacity = 0.92;

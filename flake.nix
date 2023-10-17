@@ -31,6 +31,7 @@
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.
+    nix-colors.url = "github:misterio77/nix-colors";
     comma = {
       url = "github:Shopify/comma";
       flake = false;

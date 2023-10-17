@@ -21,6 +21,7 @@ Folder dependency (higher depends on lower):
 
 ### Roadmap
 
+- [ ] Solve: using X11 breaks touchpad gestures
 - [x] Add Neovim and configure all the essential packages
 - [x] Create a sepparate config for Nvim + Haskell with: [haskell-tools](https://github.com/MrcJkb/haskell-tools.nvim)
 - [x] Add VSCode + extensions

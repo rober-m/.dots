@@ -10,7 +10,9 @@
 in {
   inherit imports;
 
+  #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
   colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
+  #colorScheme = inputs.nix-colors.colorSchemes.nord;
 
   home.stateVersion = "22.05";
 

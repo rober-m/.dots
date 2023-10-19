@@ -1,7 +1,10 @@
 {pkgs, ...}: {
+  services.touchegg.enable = true; # To detect trackpad's gesture animations in X11
+
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
+    gnomeExtensions.x11-gestures # Only when using X11. Depends on touchegg service
     gnome3.gnome-tweaks
   ];
 

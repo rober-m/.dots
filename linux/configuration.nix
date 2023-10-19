@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ../common/nixconf.nix # Common nix configuration
-    ./modules/base # base system (basic system configurations)
+    ../common/configuration.nix # Common all-systems configuration
+    ./modules/base # base system (basic linux-systems configurations)
     ./modules/gui # Graphical User Interface config (Desktop and WM)
     ./modules/fingerprint.nix # Config to use fingerprint sensor
   ];
@@ -41,10 +41,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  environment.variables = {
-    EDITOR = "nvim";
-  };
 
   environment.systemPackages = with pkgs; [
     wget

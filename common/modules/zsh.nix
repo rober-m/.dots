@@ -11,7 +11,7 @@
         "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
         "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
       ];
-      theme = "robbyrussell";
+      theme = "robbyrussell"; # This is not only colors, but also prompt config.
     };
 
     # localVariables = {};

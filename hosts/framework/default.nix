@@ -3,6 +3,7 @@
   home-manager,
   user,
   nixpkgs-unstable,
+  colorscheme,
   ...
 }: let
   system = "x86_64-linux";
@@ -14,7 +15,7 @@ in {
   # My `Framework` config
   framework = nixpkgs-unstable.lib.nixosSystem {
     inherit system;
-    specialArgs = {inherit user inputs;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
+    specialArgs = {inherit user inputs colorscheme;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [
       # Main  config
       ./hardware-configuration.nix
@@ -26,7 +27,7 @@ in {
         # `home-manager` config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit user inputs;}; # Pass flake variables
+        home-manager.extraSpecialArgs = {inherit user inputs colorscheme;}; # Pass flake variables
         home-manager.users.${user} = import ../../linux/home.nix;
       }
     ];

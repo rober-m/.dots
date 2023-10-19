@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  colorscheme,
   ...
 }: let
   imports = [
@@ -10,9 +11,7 @@
 in {
   inherit imports;
 
-  #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-storm;
-  #colorScheme = inputs.nix-colors.colorSchemes.nord;
+  colorScheme = inputs.nix-colors.colorSchemes.${colorscheme};
 
   home.stateVersion = "22.05";
 

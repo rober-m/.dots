@@ -56,18 +56,20 @@
     ...
   } @ inputs: let
     user = "roberm";
+    # More colorschemes at: https://base16-showcase.vercel.app/
+    colorscheme = "tokyo-night-storm"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
   in {
     darwinConfigurations = ( # Darwin Configurations
       import ./hosts/macbook16 {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs home-manager darwin user;
+        inherit inputs nixpkgs home-manager darwin user colorscheme;
       }
     );
 
     nixosConfigurations = ( # NixOS Configurations
       import ./hosts/framework {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs-unstable home-manager user;
+        inherit inputs nixpkgs-unstable home-manager user colorscheme;
       }
     );
   };

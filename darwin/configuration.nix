@@ -34,6 +34,8 @@
   #################################################################################################
   ################################### DARWIN (MacOS) CONFIG #######################################
 
+  # TODO: Use .dots/wallpapers folder to set wallpapers and make them autoroate every day.
+
   system = {
     # Dock
     defaults.dock = {
@@ -61,11 +63,14 @@
     };
     # Global
     defaults.NSGlobalDomain = {
-      AppleShowAllExtensions = true;
-      AppleShowScrollBars = "WhenScrolling";
+      AppleShowAllExtensions = true; # Show all file extensions
+      AppleShowAllFiles = true; # Show hidden files in Finder
+      AppleShowScrollBars = "WhenScrolling"; # Show scrollbars when scrolling
       "com.apple.mouse.tapBehavior" = 1; # Mode 1 enables tap to click
       NSAutomaticWindowAnimationsEnabled = false; # Animate opening and closing of windows and popovers.
       "com.apple.swipescrolldirection" = false; # Scroll direction: true = natural, false = regular
+      ApplePressAndHoldEnabled = false; # Disable press-and-hold for keys in favor of key repeat.
+      #"com.microsoft.VSCode ApplePressAndHoldEnabled" = false; # Disable press-and-hold for keys in favor of key repeat. # TODO: Delete this if global one works after restarting
     };
     # Software updates
     defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;

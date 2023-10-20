@@ -51,6 +51,7 @@
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;
       IHP_EDITOR = "code --goto";
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#888"; # Change autosuggest highligh color
     };
   };
 }

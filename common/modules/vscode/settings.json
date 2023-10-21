@@ -6,11 +6,15 @@
   "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {},
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "keyboard.dispatch": "keyCode",
   "git.autofetch": true,
   "git.confirmSync": false,
   "gitlens.views.commitDetails.files.layout": "list",
   "git.ignoreRebaseWarning": true,
   "diffEditor.ignoreTrimWhitespace": false,
+  "haskell.manageHLS": "PATH",
   "haskell.serverExecutablePath": "/etc/profiles/per-user/roberm/bin/haskell-language-server-wrapper",
   "haskell.formattingProvider": "stylish-haskell",
   "haskell.toolchain": {},
@@ -27,7 +31,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

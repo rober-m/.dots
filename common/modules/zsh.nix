@@ -11,7 +11,7 @@
         "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
         "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
       ];
-      theme = "robbyrussell";
+      theme = "robbyrussell"; # This is not only colors, but also prompt config.
     };
 
     # localVariables = {};
@@ -23,7 +23,6 @@
       cat = "bat";
       e = "exit";
       c = "clear";
-      #tr = "echo TODO "; # TODO: Send to trash
       gs = "git status"; # More aliases at git config
 
       # Git-related
@@ -38,7 +37,6 @@
       dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
 
       # Nix-related
-      rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
       plutus-apps = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 
@@ -52,6 +50,7 @@
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;
       IHP_EDITOR = "code --goto";
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#888"; # Change autosuggest highligh color
     };
   };
 }

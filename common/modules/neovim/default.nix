@@ -36,21 +36,14 @@
 
     # Plugins without configuration
     plugins = with pkgs.vimPlugins; [
-      packer-nvim # For plugins that aren't on nixpkgs (see ./init.lua)
       copilot-vim # GitHub Copilot
+      packer-nvim # This might be related to packerpath error. Always install, just in case
     ];
 
     extraPackages = with pkgs; [
-      # TODO: clean this up.
       shellcheck # Shell script analysis tool (Run shellcheck <script>)
-
-      # Nix
-      deadnix
-      statix
-      nixpkgs-fmt
-
-      #Other
-      proselint
+      statix # `statix check file.nix` Lints and suggestions for the Nix programming language.
+      proselint # A linter for English prose
     ];
 
     extraConfig = ''

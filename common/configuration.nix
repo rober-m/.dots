@@ -2,7 +2,11 @@
   #################################################################################################
   ######################################### NIX CONFIG ############################################
 
-  nix.configureBuildUsers = true;
+  nix.gc = {
+    automatic = true;
+    # INFO: The time interval is set different for nix-darwin. So, I moved that to each machine's config.
+    options = "--delete-older-than 30d";
+  };
 
   nix.settings = {
     substituters = [
@@ -29,4 +33,9 @@
     #sandbox = false;
     # ---------------------------------------------------------
   };
+
+  #################################################################################################
+  ##################################### COMMON SYSTEM CONFIG ######################################
+
+  environment.variables.EDITOR = "nvim";
 }

@@ -8,10 +8,10 @@
 in {
   programs.neovim = {
     plugins = [
-      {
-        plugin = nix-colors-lib.vimThemeFromScheme {scheme = config.colorScheme;};
-        config = "colorscheme nix-${config.colorScheme.slug}";
-      }
+      #{
+      #  plugin = nix-colors-lib.vimThemeFromScheme {scheme = config.colorScheme;};
+      #  config = "colorscheme nix-${config.colorScheme.slug}";
+      #}
       #   sonokai
       #   dracula-nvim
       #   gruvbox
@@ -40,20 +40,20 @@ in {
       #       -----------------------------------------------------------------------------------
       #     '';
       #   }
-      #   {
-      #     plugin = tokyonight-nvim; # colorscheme tokyonight
-      #     type = "lua";
-      #     config = ''
-      #       ------------------------------- THEMES: TOKYO NIGHT ------------------------------
-      #       vim.g.tokyonight_transparent = true
-      #       vim.g.tokyonight_transparent_sidebar = true
-      #       require("tokyonight").setup({
-      #         -- See options here: https://github.com/folke/tokyonight.nvim
-      #         -- transparent = true, -- Enable this to disable setting the background color
-      #       })
-      #       -----------------------------------------------------------------------------------
-      #     '';
-      #   }
+      {
+        plugin = pkgs.vimPlugins.tokyonight-nvim; # colorscheme tokyonight
+        type = "lua";
+        config = ''
+          ------------------------------- THEMES: TOKYO NIGHT ------------------------------
+          vim.g.tokyonight_transparent = true
+          vim.g.tokyonight_transparent_sidebar = true
+          require("tokyonight").setup({
+            -- See options here: https://github.com/folke/tokyonight.nvim
+            -- transparent = true, -- Enable this to disable setting the background color
+          })
+          -----------------------------------------------------------------------------------
+        '';
+      }
       #
       #   {
       #     plugin = onedark-nvim;
@@ -85,13 +85,15 @@ in {
       lua << EOF
       ------------------------------- THEMES EXTRA CONFIG ------------------------------
       --vim.opt.background = "dark" -- Values are "dark" or "light" to indicate the mode.
-      --vim.cmd([[
-      --  " colorscheme tokyonight
-      --  " colorscheme catppuccin-macchiato
-      --  colorscheme gruvbox
-      --  " colorscheme dracula
-      --  " colorscheme onedark
-      --]])
+      vim.cmd([[
+        colorscheme tokyonight
+        " colorscheme catppuccin-macchiato
+        " colorscheme gruvbox
+        " colorscheme dracula
+        " colorscheme onedark
+      ]])
+
+      vim.o.termguicolors = true
 
       -- Next block: Remove all background colors so it looks transparent
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

@@ -57,7 +57,7 @@
   } @ inputs: let
     user = "roberm";
     # More colorschemes at: https://base16-showcase.vercel.app/
-    colorscheme = "tokyo-night-dark"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
+    colorscheme = "tokyo-night-storm"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
   in {
     darwinConfigurations =
       # Darwin Configurations

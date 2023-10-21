@@ -7,6 +7,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      env.TERM = "xterm-256color";
       colors = with config.colorScheme.colors; {
         # Default colors
         primary = {

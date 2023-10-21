@@ -121,7 +121,6 @@
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
     alacritty
-    exa
     terminal-notifier
     #vscode
     flutter

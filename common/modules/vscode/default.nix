@@ -11,7 +11,6 @@
       # General
       vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
       github.copilot # Copilot (https://marketplace.visualstudio.com/items?itemName=github.copilot)
-      ms-vsliveshare.vsliveshare # Live Share (https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
       arrterian.nix-env-selector # Nix Env Selector (https://marketplace.visualstudio.com/items?itemName=arrterian.nix-env-selector)
 
       # Git

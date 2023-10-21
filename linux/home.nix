@@ -4,6 +4,8 @@
     # Start of Linux specific configuration
     ./modules/zsh.nix
     #./modules/gui/gtk.nix
+    ./modules/vscode-linux.nix
+    ./modules/firefox.nix
   ];
 in {
   inherit imports;
@@ -22,5 +24,6 @@ in {
     telegram-desktop # Telegram for Linux
     emote # emoji picker
     variety # Wallpaper manager
+    google-chrome # Google Chrome browser
   ];
 }

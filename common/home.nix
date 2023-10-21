@@ -53,6 +53,7 @@ in {
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
     tree # Print folder structure as a tree
     gh # GitHub CLI
+    eza # Easy aliases for zsh
 
     # Virtualization
     docker
@@ -88,8 +89,5 @@ in {
 
     #Rust
     rustup
-
-    # Other
-    google-chrome
   ];
 }

@@ -3,7 +3,7 @@
     ../common/home.nix # Common Home configuration
     # Start of Linux specific configuration
     ./modules/zsh.nix
-    ./modules/gui/gtk.nix
+    #./modules/gui/gtk.nix
   ];
 in {
   inherit imports;
@@ -21,5 +21,6 @@ in {
     megasync # MegaSync (MEGA Cloud Drive)
     telegram-desktop # Telegram for Linux
     emote # emoji picker
+    variety # Wallpaper manager
   ];
 }

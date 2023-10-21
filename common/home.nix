@@ -58,9 +58,7 @@ in {
     docker
     docker-compose
 
-    # Desktop Rice
     neofetch # Print system properties
-    variety # Wallpaper manager
 
     # Communications
     #discord

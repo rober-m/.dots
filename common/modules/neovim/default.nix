@@ -41,16 +41,9 @@
     ];
 
     extraPackages = with pkgs; [
-      # TODO: clean this up.
       shellcheck # Shell script analysis tool (Run shellcheck <script>)
-
-      # Nix
-      deadnix
-      statix
-      nixpkgs-fmt
-
-      #Other
-      proselint
+      statix # `statix check file.nix` Lints and suggestions for the Nix programming language.
+      proselint # A linter for English prose
     ];
 
     extraConfig = ''

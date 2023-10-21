@@ -23,7 +23,6 @@
       cat = "bat";
       e = "exit";
       c = "clear";
-      #tr = "echo TODO "; # TODO: Send to trash
       gs = "git status"; # More aliases at git config
 
       # Git-related

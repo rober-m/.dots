@@ -52,6 +52,7 @@ in {
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
     tree # Print folder structure as a tree
+    gh # GitHub CLI
 
     # Virtualization
     docker

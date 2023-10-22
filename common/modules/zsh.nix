@@ -45,6 +45,9 @@
       # export KEYTIMEOUT=1 # Needed for ZSH vi mode
       VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true # For oh-my-zsh vi-mode
       eval "$(direnv hook zsh)" # Needed for direnv
+
+      # Should I add evaluation of SSH agent?
+      # eval "$(ssh-agent -s)"
     '';
 
     sessionVariables = {

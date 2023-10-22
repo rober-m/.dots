@@ -4,6 +4,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
+    dotDir = ".config/zsh";
 
     oh-my-zsh = {
       enable = true;
@@ -14,6 +15,12 @@
       theme = "robbyrussell"; # This is not only colors, but also prompt config.
     };
 
+    dirHashes = {
+      iog = "$HOME/IOG";
+      hc = "$HOME/IOG/haskell-course";
+      pr = "$HOME/Projects";
+      sc = "$HOME/scratchpad";
+    };
     # localVariables = {};
     shellAliases = {
       ls = "lsd";
@@ -30,28 +37,29 @@
       lg = "lazygit";
 
       # Quick movement
-      iog = "cd ~/IOG/";
-      hc = "cd ~/IOG/haskell-course/";
-      pr = "cd ~/Projects/";
-      sc = "cd ~/scratchpad/";
       dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
 
       # Nix-related
       plutus-apps = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 
-    profileExtra = ''
+    # Extra commands that should be added to {file}`.zshrc`.
+    initExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
-      # export KEYTIMEOUT=1 # Needed for ZSH vi mode
-      VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true # For oh-my-zsh vi-mode
       eval "$(direnv hook zsh)" # Needed for direnv
       eval "$(ssh-agent -s)" # Initialize SSH agent
+      clear
+    '';
+
+    profileExtra = ''
+      # export KEYTIMEOUT=1 # Needed for ZSH vi mode
     '';
 
     sessionVariables = {
       HOMEBREW_NO_ANALYTICS = 1;
       IHP_EDITOR = "code --goto";
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#888"; # Change autosuggest highligh color
+      VI_MODE_RESET_PROMPT_ON_MODE_CHANGE = true; # For oh-my-zsh vi-mode
     };
   };
 }

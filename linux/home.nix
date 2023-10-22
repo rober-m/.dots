@@ -6,6 +6,7 @@
     #./modules/gui/gtk.nix
     #./modules/vscode-linux.nix
     ./modules/firefox.nix
+    ./modules/ssh.nix
   ];
 in {
   inherit imports;

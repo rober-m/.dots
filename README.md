@@ -33,6 +33,7 @@ Folder dependency (higher depends on lower):
     - [ ] Add a way to centralize colorscheme settings
 - [x] Organize files in `hosts/*` and generalize `darwin` and `linux` config.
 - [ ] Add better instructions to README.
+- [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
 
 ## Installation
 

@@ -11,6 +11,7 @@
       plugins = [
         "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
         "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+        "ssh-agent" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
       ];
       theme = "robbyrussell"; # This is not only colors, but also prompt config.
     };
@@ -45,10 +46,10 @@
 
     # Extra commands that should be added to {file}`.zshrc`.
     initExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
-      eval "$(direnv hook zsh)" # Needed for direnv
-      eval "$(ssh-agent -s)" # Initialize SSH agent
-      clear
+      # MacOS-specific ZSH configuration
+      if [[ $(uname) == "Darwin" ]]; then
+          eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
+      fi
     '';
 
     profileExtra = ''

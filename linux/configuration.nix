@@ -8,6 +8,7 @@
     ./modules/base # base system (basic linux-systems configurations)
     ./modules/gui # Graphical User Interface config (Desktop and WM)
     ./modules/fingerprint.nix # Config to use fingerprint sensor
+    ./modules/flatpak.nix # Use flatpak
   ];
 
   #################################################################################################

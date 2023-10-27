@@ -89,5 +89,7 @@ in {
 
     #Rust
     rustup
+    # Flutter
+    flutter
   ];
 }

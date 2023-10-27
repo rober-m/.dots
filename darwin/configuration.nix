@@ -122,9 +122,6 @@
   environment.systemPackages = with pkgs; [
     alacritty
     terminal-notifier
-    #vscode
-    flutter
-
     alejandra
   ];
 }

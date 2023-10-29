@@ -21,6 +21,8 @@
 
   virtualisation.docker.enable = true;
 
+  services.thermald.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   # Enable Bloetooth

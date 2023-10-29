@@ -54,6 +54,7 @@ in {
     tree # Print folder structure as a tree
     gh # GitHub CLI
     eza # Easy aliases for zsh
+    btop # Resource monitor (htop wiht steroids)
 
     # Virtualization
     docker

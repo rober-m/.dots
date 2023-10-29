@@ -50,7 +50,7 @@
       };
       font = {
         size = 17;
-        normal.family = "Hack Nerd Font";
+        normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
       };
       draw_bold_text_with_bright_colors = true;
       cursor = {

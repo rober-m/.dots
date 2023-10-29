@@ -55,22 +55,25 @@
     flake-utils,
     ...
   } @ inputs: let
-    user = "roberm";
-    # More colorschemes at: https://base16-showcase.vercel.app/
-    colorscheme = "tokyo-night-storm"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
+    user-options = {
+      username = "roberm";
+      # More colorschemes at: https://base16-showcase.vercel.app/
+      colorscheme = "tokyo-night-storm"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
+      fonts = ["Hack" "FiraCode" "DroidSansMono"];
+    };
   in {
     darwinConfigurations =
       # Darwin Configurations
       import ./hosts/macbook16 {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs home-manager darwin user colorscheme;
+        inherit inputs nixpkgs home-manager darwin user-options;
       };
 
     nixosConfigurations =
       # NixOS Configurations
       import ./hosts/framework {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs-unstable home-manager user colorscheme;
+        inherit inputs nixpkgs-unstable home-manager user-options;
       };
   };
 }

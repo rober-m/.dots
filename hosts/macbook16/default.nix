@@ -2,8 +2,7 @@
   inputs,
   home-manager,
   darwin,
-  user,
-  colorscheme,
+  user-options,
   ...
 }: let
   system = "aarch64-darwin";
@@ -15,7 +14,7 @@ in {
   # My `nix-darwin` configs
   macbook = darwin.lib.darwinSystem {
     inherit system;
-    specialArgs = {inherit user inputs colorscheme;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
+    specialArgs = {inherit user-options inputs;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [
       # Main `nix-darwin` config
       ../../darwin/configuration.nix
@@ -26,8 +25,8 @@ in {
         # `home-manager` config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit user system inputs colorscheme;}; # Pass flake variable
-        home-manager.users.${user} = import ../../darwin/home.nix;
+        home-manager.extraSpecialArgs = {inherit user-options system inputs;}; # Pass flake variable
+        home-manager.users.${user-options.username} = import ../../darwin/home.nix;
       }
     ];
   };

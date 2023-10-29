@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  user,
   ...
 }:
 # INFO: gtk.nix is a home-manager configuration!! Not a system-level one.

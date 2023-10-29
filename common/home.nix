@@ -1,7 +1,7 @@
 {
   pkgs,
   inputs,
-  colorscheme,
+  user-options,
   ...
 }: let
   imports = [
@@ -11,7 +11,7 @@
 in {
   inherit imports;
 
-  colorScheme = inputs.nix-colors.colorSchemes.${colorscheme};
+  colorScheme = inputs.nix-colors.colorSchemes.${user-options.colorscheme};
 
   home.stateVersion = "22.05";
 
@@ -35,7 +35,7 @@ in {
 
   home.packages = with pkgs; [
     # Terminal
-    (pkgs.nerdfonts.override {fonts = ["Hack" "FiraCode" "DroidSansMono"];})
+    (pkgs.nerdfonts.override {fonts = user-options.fonts;})
     coreutils
     curl
     wget

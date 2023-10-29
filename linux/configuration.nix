@@ -1,6 +1,6 @@
 {
   pkgs,
-  user,
+  user-options,
   ...
 }: {
   imports = [
@@ -34,7 +34,7 @@
   security.rtkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${user} = {
+  users.users.${user-options.username} = {
     isNormalUser = true;
     description = "Robertino";
     extraGroups = ["networkmanager" "wheel" "docker"];

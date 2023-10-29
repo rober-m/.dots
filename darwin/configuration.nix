@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  user-options,
+  ...
+}: {
   # Configuration for darwin system and darwin-specific nix options.
 
   #################################################################################################
@@ -102,7 +106,7 @@
   users = {
     users = {
       roberm = {
-        home = "/Users/roberm";
+        home = "/Users/${user-options.username}";
       };
     };
   };
@@ -112,7 +116,7 @@
     fontDir.enable = true;
     fonts = with pkgs; [
       recursive
-      (nerdfonts.override {fonts = ["Hack"];})
+      (nerdfonts.override {fonts = user-options.fonts;})
     ];
   };
 

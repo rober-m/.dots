@@ -1,6 +1,6 @@
 {
   pkgs,
-  user,
+  user-options,
   ...
 }: let
   imports = [
@@ -14,8 +14,8 @@ in {
   inherit imports;
 
   home = {
-    username = user;
-    homeDirectory = "/Users/${user}";
+    username = user-options.username;
+    homeDirectory = "/Users/${user-options.username}";
   };
 
   home.packages = with pkgs; [

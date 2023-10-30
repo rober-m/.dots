@@ -49,7 +49,7 @@
         };
       };
       font = {
-        size = 17;
+        size = 19;
         normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
       };
       draw_bold_text_with_bright_colors = true;

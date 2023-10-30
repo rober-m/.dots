@@ -7,7 +7,7 @@
     ./telescope.nix # Fuzzy finder
     ./bufferline.nix # Cool buffer tabs
     ./lualine.nix # Cool status-line
-    ./themes.nix # Theme
+    ./themes # Theme
     ./treesitter.nix # Treesitter config
     ./leap.nix # General-purpose motion plugin
     ./nvim-tree.nix # Tree file explorer
@@ -18,7 +18,6 @@
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
     # ./rust.nix
-
     # which-key must be the last import for it to recognize the keybindings of
     # previous imports.
     ./which-key.nix # Pannel showing available keymappings live.
@@ -48,7 +47,7 @@
 
     extraConfig = ''
       lua << EOF
-      ${builtins.readFile ./init.lua}
+      ${builtins.readFile ./default.lua}
       EOF
     '';
   };

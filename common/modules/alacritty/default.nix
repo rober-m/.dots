@@ -1,4 +1,8 @@
-{config, ...}:
+{
+  config,
+  user-options,
+  ...
+}:
 #let
 #colors_tomorrow = import ./colors-base16-tomorrow.nix;
 #colors_tokionight = import ./colors-tokio-night.nix;
@@ -40,8 +44,7 @@
         };
       };
       window = {
-        #opacity = 1;
-        opacity = 0.92;
+        opacity = user-options.opacity;
         #decorations = "none";
         padding = {
           x = 8;

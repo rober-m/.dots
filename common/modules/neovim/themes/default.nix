@@ -1,5 +1,6 @@
 {
   pkgs,
+  user-options,
   # config,
   # inputs,
   ...
@@ -47,12 +48,19 @@ in {
 
       vim.o.termguicolors = true
 
-      -- Next block: Remove all background colors so it looks transparent
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" }) -- Remove NvimTree background
-      vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Remove left gutter background
+      ${
+        if user-options.opacity < 1
+        then ''
+          -- Next block: Remove all background colors so it looks transparent
+          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+          vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+          vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" }) -- Remove NvimTree background
+          vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Remove left gutter background
+
+        ''
+        else ""
+      }
       -----------------------------------------------------------------------------------
       EOF
     '';

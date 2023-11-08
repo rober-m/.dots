@@ -17,7 +17,8 @@
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
-    # ./rust.nix
+    #./chatGPT.nix # ChatGPT integration TODO: Configure it
+    # ./rust.nix # Rust config
     # which-key must be the last import for it to recognize the keybindings of
     # previous imports.
     ./which-key.nix # Pannel showing available keymappings live.

@@ -41,6 +41,7 @@
   "nix.serverSettings": {},
   "window.zoomLevel": 2,
   "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

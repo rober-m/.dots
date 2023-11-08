@@ -36,6 +36,7 @@
 
       # Themes
       dracula-theme.theme-dracula # Dracula Official (https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+      pkief.material-icon-theme # Material Icon Theme (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
       # Missing from Nixpkgs:
       # direnv (https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-direnv)

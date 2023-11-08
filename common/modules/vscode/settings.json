@@ -27,7 +27,6 @@
   "workbench.editorAssociations": {
     "*.pdf": "latex-workshop-pdf-hook"
   },
-  "workbench.colorTheme": "Dracula",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -1,4 +1,4 @@
-{...}: {
+{user-options, ...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -49,6 +49,17 @@
       # MacOS-specific ZSH configuration
       if [[ $(uname) == "Darwin" ]]; then
           eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
+      fi
+
+      # Aiken-specific configuration
+      # If aiken binary is present in nix-profile, add completion
+      if [[ -f "/Users/${user-options.username}/.nix-profile/bin/aiken" ]]; then
+          if [[ -f "/Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken" ]]; then
+              source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
+          else
+          aiken completion zsh > /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
+          source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
+          fi
       fi
     '';
 

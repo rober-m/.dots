@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
+      nvim-ts-autotag # Automatically close and rename HTML tags
+      nvim-treesitter-context # Show the context of the current function
       {
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
@@ -16,6 +18,10 @@
                 enable = true,
                 extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table
                 max_file_lines = nil
+            },
+            -- Enable autotag using nvim-ts-autotag
+            autotag = {
+              enable = true,
             }
           }
           -----------------------------------------------------------------------------------

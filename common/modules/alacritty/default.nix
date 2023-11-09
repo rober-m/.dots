@@ -53,7 +53,8 @@
       };
       font = {
         size = 19;
-        normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
+        #normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
+        normal.family = "Hack Nerd Font"; # Hack Nerd Font
       };
       draw_bold_text_with_bright_colors = true;
       cursor = {

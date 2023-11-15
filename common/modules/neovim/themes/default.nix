@@ -6,7 +6,8 @@
   ...
 }: let
   # nix-colors-lib = inputs.nix-colors.lib.contrib {inherit pkgs;};
-  selected-colorscheme = "tokyonight"; # catppuccin-macchiato | gruvbox | dracula | onedark
+  #selected-colorscheme = "tokyonight"; # catppuccin-macchiato | gruvbox | dracula | onedark
+  selected-colorscheme = "catppuccin-frappe"; # catppuccin-macchiato | gruvbox | dracula | onedark
 in {
   programs.neovim = {
     # Use base 16 colros (if using this, comment all other themes)

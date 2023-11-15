@@ -57,8 +57,8 @@
   } @ inputs: let
     user-options = {
       username = "roberm";
-      # More colorschemes at: https://base16-showcase.vercel.app/
-      colorscheme = "tokyo-night-storm"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
+      # More colorschemes at: https://github.com/tinted-theming/base16-schemes
+      colorscheme = "catppuccin-frappe"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
       opacity = 1; # Terminal-related opacity. Range: 0-1 (e.g., 0.92)
       fonts = ["Hack" "FiraCode" "DroidSansMono"];
     };

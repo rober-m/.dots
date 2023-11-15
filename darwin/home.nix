@@ -21,11 +21,9 @@ in {
   home.packages = with pkgs; [
     cocoapods
     m-cli # useful macOS CLI commands
-    karabiner-elements
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{
 
   home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
-  #home.file."karabiner/karabiner.json" = builtins.readFile ./modules/karabiner.json;
 }

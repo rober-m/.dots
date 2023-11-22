@@ -6,7 +6,9 @@
   ...
 }: let
   # nix-colors-lib = inputs.nix-colors.lib.contrib {inherit pkgs;};
-  selected-colorscheme = "tokyonight"; # catppuccin-macchiato | gruvbox | dracula | onedark
+  fixed-theme = if user-options.colorscheme == "tokyo-night-storm"  then "tokyonight"
+  	else if user-options.colorscheme == "tokyo-night-dark" then "tokyonight"
+	else user-options.colorscheme;
 in {
   programs.neovim = {
     # Use base 16 colros (if using this, comment all other themes)
@@ -44,7 +46,7 @@ in {
       lua << EOF
       ------------------------------- THEMES EXTRA CONFIG ------------------------------
       --vim.opt.background = "dark" -- Values are "dark" or "light" to indicate the mode.
-      vim.cmd([[ colorscheme ${selected-colorscheme} ]])
+      vim.cmd([[ colorscheme ${fixed-theme} ]])
 
       vim.o.termguicolors = true
 

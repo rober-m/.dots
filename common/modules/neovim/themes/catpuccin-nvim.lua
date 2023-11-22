@@ -1,8 +1,8 @@
 ------------------------------- THEMES: CATPPUCCIN --------------------------------
 -- Docs: https://github.com/catppuccin/nvim
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  background = {      -- :h background
     light = "latte",
     dark = "mocha",
   },

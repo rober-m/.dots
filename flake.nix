@@ -57,7 +57,6 @@
     flake-compat,
     ...
   } @ inputs: let
-    # TODO: If a colorscheme fails, create map between general name and application-specific names.
     colorschemes = {
       cf = "catppuccin-frappe";
       cm = "catppuccin-macchiato";
@@ -69,7 +68,7 @@
 
     user-options = {
       username = "roberm";
-      # More colorschemes at: https://base16-showcase.vercel.app/
+      # More colorschemes at: https://github.com/tinted-theming/base16-schemes
       colorscheme = colorschemes.cf;
       opacity = 1; # Terminal-related opacity. Range: 0-1 (e.g., 0.92)
       fonts = ["Hack" "FiraCode" "DroidSansMono"];

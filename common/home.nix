@@ -75,7 +75,8 @@ in {
     python310Packages.jupyterlab
     python310Packages.notebook
 
-    # NodeJS stuff
+    # WebDev stuff
+    deno
     nodejs
     nodePackages.typescript
     nodePackages.node2nix
@@ -90,6 +91,7 @@ in {
 
     #Rust
     rustup
+
     # Flutter
     flutter
   ];

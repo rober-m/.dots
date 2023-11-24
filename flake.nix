@@ -31,6 +31,7 @@
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     nix-colors.url = "github:misterio77/nix-colors";
     comma = {
       url = "github:Shopify/comma";
@@ -53,12 +54,23 @@
     home-manager,
     alejandra,
     flake-utils,
+    flake-compat,
     ...
   } @ inputs: let
+    # TODO: If a colorscheme fails, create map between general name and application-specific names.
+    colorschemes = {
+      cf = "catppuccin-frappe";
+      cm = "catppuccin-macchiato";
+      tns = "tokyo-night-storm";
+      tnd = "tokyo-night-dark";
+      od = "onedark";
+      gdm = "gruvbox-dark-medium";
+    };
+
     user-options = {
       username = "roberm";
-      # More colorschemes at: https://github.com/tinted-theming/base16-schemes
-      colorscheme = "catppuccin-frappe"; # tokyo-night-storm/-dark | gruvbox-dark-medium/hard | nord | mocha | onedark
+      # More colorschemes at: https://base16-showcase.vercel.app/
+      colorscheme = colorschemes.cf;
       opacity = 1; # Terminal-related opacity. Range: 0-1 (e.g., 0.92)
       fonts = ["Hack" "FiraCode" "DroidSansMono"];
     };

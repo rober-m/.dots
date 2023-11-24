@@ -6,7 +6,7 @@
   #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
   programs.vscode = {
     enable = true;
-    userSettings = lib.importJSON ./settings.json;
+    #userSettings = lib.importJSON ./settings.json; # Commenting this because it's too cumbersome
     extensions = with pkgs.vscode-extensions; [
       # General
       vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)

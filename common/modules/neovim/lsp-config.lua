@@ -88,19 +88,19 @@ local lsp_flags = {
 
 -- Servers without specific config (Haskell server managed in haskell.nix)
 local servers = {
-  'tsserver'      -- Typescript
-  --,'rnix'         -- Nix
-  , 'nil_ls'      -- Nix
-, 'lua_ls'        -- Lua
-, 'rust_analyzer' -- Rust
-, 'yamlls'        -- Yaml
-, 'bashls'        -- Bash
-, 'vimls'         -- Vim
-, 'html'          -- HTML   (vscode-langservers-extracted)
-, 'cssls'         -- CSS    (vscode-langservers-extracted)
-, 'eslint'        -- ESLint (vscode-langservers-extracted)
-, 'jsonls'        -- JSON   (vscode-langservers-extracted)
-, 'marksman'      -- Markdown
+  'tsserver',      -- Typescript
+  'nil_ls',        -- Nix
+  'lua_ls',        -- Lua
+  'rust_analyzer', -- Rust
+  'yamlls',        -- Yaml
+  'bashls',        -- Bash
+  'vimls',         -- Vim
+  'html',          -- HTML   (vscode-langservers-extracted)
+  'cssls',         -- CSS    (vscode-langservers-extracted)
+  'eslint',        -- ESLint (vscode-langservers-extracted)
+  'jsonls',        -- JSON   (vscode-langservers-extracted)
+  'marksman',      -- Markdown
+  'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown
 }
 

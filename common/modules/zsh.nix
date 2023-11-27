@@ -11,7 +11,6 @@
       plugins = [
         "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
         "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
-        "ssh-agent" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
       ];
       theme = "robbyrussell"; # This is not only colors, but also prompt config.
     };

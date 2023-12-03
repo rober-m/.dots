@@ -63,7 +63,7 @@ in {
     neofetch # Print system properties
 
     # Communications
-    #discord
+    discord
     slack
     # telegram
 

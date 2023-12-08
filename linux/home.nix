@@ -21,7 +21,7 @@ in {
   home.packages = with pkgs; [
     protonvpn-gui # Proton VPN
     bitwarden # Password manager
-    #megasync # MegaSync (MEGA Cloud Drive) # TODO: Check if this was solved: https://github.com/NixOS/nixpkgs/issues/126848
+    megasync # MegaSync (MEGA Cloud Drive)
     telegram-desktop # Telegram for Linux
     emote # emoji picker
     variety # Wallpaper manager

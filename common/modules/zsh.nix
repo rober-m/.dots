@@ -16,10 +16,10 @@
     };
 
     dirHashes = {
-      iog = "$HOME/IOG";
-      hc = "$HOME/IOG/haskell-course";
-      pr = "$HOME/Projects";
-      sc = "$HOME/scratchpad";
+      # iog = "$HOME/IOG";
+      # hc = "$HOME/IOG/haskell-course";
+      # pr = "$HOME/Projects";
+      # sc = "$HOME/scratchpad";
     };
     # localVariables = {};
     shellAliases = {
@@ -38,9 +38,18 @@
 
       # Quick movement
       dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
+      sc = "cd ~/scratchpad";
 
       # Nix-related
-      plutus-apps = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
+      h810 = "nix develop github:input-output-hk/devx#ghc810 --no-write-lock-file --refresh";
+      h92 = "nix develop github:input-output-hk/devx#ghc92 --no-write-lock-file --refresh";
+      h94 = "nix develop github:input-output-hk/devx#ghc94 --no-write-lock-file --refresh";
+      h96 = "nix develop github:input-output-hk/devx#ghc96 --no-write-lock-file --refresh";
+      h810-iog = "nix develop github:input-output-hk/devx#ghc810-iog --no-write-lock-file --refresh";
+      h92-iog = "nix develop github:input-output-hk/devx#ghc92-iog --no-write-lock-file --refresh";
+      h94-iog = "nix develop github:input-output-hk/devx#ghc94-iog --no-write-lock-file --refresh";
+      h96-iog = "nix develop github:input-output-hk/devx#ghc96-iog --no-write-lock-file --refresh";
+      plutus-apps12 = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 
     # Extra commands that should be added to {file}`.zshrc`.

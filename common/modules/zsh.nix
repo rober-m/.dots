@@ -41,14 +41,15 @@
       sc = "cd ~/scratchpad";
 
       # Nix-related
-      h810 = "nix develop github:input-output-hk/devx#ghc810 --no-write-lock-file --refresh";
-      h92 = "nix develop github:input-output-hk/devx#ghc92 --no-write-lock-file --refresh";
-      h94 = "nix develop github:input-output-hk/devx#ghc94 --no-write-lock-file --refresh";
-      h96 = "nix develop github:input-output-hk/devx#ghc96 --no-write-lock-file --refresh";
-      h810-iog = "nix develop github:input-output-hk/devx#ghc810-iog --no-write-lock-file --refresh";
-      h92-iog = "nix develop github:input-output-hk/devx#ghc92-iog --no-write-lock-file --refresh";
-      h94-iog = "nix develop github:input-output-hk/devx#ghc94-iog --no-write-lock-file --refresh";
-      h96-iog = "nix develop github:input-output-hk/devx#ghc96-iog --no-write-lock-file --refresh";
+      # add "--refresh" to any "nix develop" command that you want to update inputs
+      h810 = "nix develop github:input-output-hk/devx#ghc810 --no-write-lock-file";
+      h92 = "nix develop github:input-output-hk/devx#ghc92 --no-write-lock-file";
+      h94 = "nix develop github:input-output-hk/devx#ghc94 --no-write-lock-file";
+      h96 = "nix develop github:input-output-hk/devx#ghc96 --no-write-lock-file";
+      h810-iog = "nix develop github:input-output-hk/devx#ghc810-iog --no-write-lock-file";
+      h92-iog = "nix develop github:input-output-hk/devx#ghc92-iog --no-write-lock-file";
+      h94-iog = "nix develop github:input-output-hk/devx#ghc94-iog --no-write-lock-file";
+      h96-iog = "nix develop github:input-output-hk/devx#ghc96-iog --no-write-lock-file";
       plutus-apps12 = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 

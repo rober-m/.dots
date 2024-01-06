@@ -5,7 +5,7 @@
     ./modules/zsh.nix
     #./modules/gui/gtk.nix
     #./modules/vscode-linux.nix
-    ./modules/firefox.nix
+    #./modules/firefox.nix
     ./modules/ssh.nix
   ];
 in {
@@ -25,8 +25,10 @@ in {
     telegram-desktop # Telegram for Linux
     emote # emoji picker
     variety # Wallpaper manager
-    google-chrome # Google Chrome browser
+    #google-chrome # Google Chrome browser
+    firefox # Firefox browser
     # HLS 2.2.0 doesn't work in MacOS :(
-    (haskell-language-server.override {supportedGhcVersions = ["810" "925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
+    #haskell-language-server
+    #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
   ];
 }

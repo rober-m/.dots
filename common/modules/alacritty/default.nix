@@ -45,6 +45,7 @@
       };
       window = {
         opacity = user-options.opacity;
+        startup_mode = "Maximized";
         #decorations = "none";
         padding = {
           x = 8;

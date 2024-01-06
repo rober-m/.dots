@@ -27,6 +27,7 @@ in {
     variety # Wallpaper manager
     #google-chrome # Google Chrome browser
     firefox # Firefox browser
+    obsidian
     # HLS 2.2.0 doesn't work in MacOS :(
     #haskell-language-server
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix

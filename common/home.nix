@@ -95,4 +95,6 @@ in {
     # Flutter
     flutter
   ];
+
+  home.file.".config/neofetch/config.conf".source = ./modules/neofetch.conf;
 }

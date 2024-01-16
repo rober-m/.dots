@@ -8,7 +8,9 @@
   system = "x86_64-linux";
 
   nixpkgsWithConfig = {
-    config = {allowUnfree = true;};
+    config = {
+      allowUnfree = true;
+    };
   };
 in {
   # My `Framework` config

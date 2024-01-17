@@ -31,5 +31,8 @@ in {
     # HLS 2.2.0 doesn't work in MacOS :(
     #haskell-language-server
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
+    rofi # Rofi launcher
   ];
+
+  home.file.".config/rofi/config.rasi".source = ./modules/gui/config.rasi;
 }

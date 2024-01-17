@@ -71,6 +71,9 @@
           fi
       fi
 
+      # Initialize zoxide (z)
+      eval "$(zoxide init zsh)"
+
       #Print neofetch
       neofetch
     '';

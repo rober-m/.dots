@@ -99,6 +99,7 @@ local servers = {
   'cssls',         -- CSS    (vscode-langservers-extracted)
   'eslint',        -- ESLint (vscode-langservers-extracted)
   'jsonls',        -- JSON   (vscode-langservers-extracted)
+  --'tailwindcss',   -- Tailwind CSS FIXME: Uncomment after installation is fixed
   'marksman',      -- Markdown
   'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown

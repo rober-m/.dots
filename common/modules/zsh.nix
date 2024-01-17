@@ -70,6 +70,9 @@
           source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
           fi
       fi
+
+      #Print neofetch
+      neofetch
     '';
 
     profileExtra = ''

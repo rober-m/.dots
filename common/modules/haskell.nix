@@ -6,11 +6,11 @@
   # Haskell packages
   home.packages = with pkgs; [
     # GHC VS boot libraries version: https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/libraries/version-history
-    haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
+    #haskell.compiler.ghc810 #(GHC: 8.10.7 && base: 4.14.3.0)
     #haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
     #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
     #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
-    #haskell.compiler.ghc96 #(GHC: 9.6.2  && base: 4.18.0.0)
+    haskell.compiler.ghc96 #(GHC: 9.6.2  && base: 4.18.0.0)
     #(haskell-language-server.override {supportedGhcVersions = ["810" "925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
     #(haskell-language-server.override {supportedGhcVersions = ["810"];}) #Also installed in modules/nvim/lsp-config.nix
     haskellPackages.cabal-install

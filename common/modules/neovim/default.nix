@@ -38,6 +38,7 @@
     plugins = with pkgs.vimPlugins; [
       copilot-vim # GitHub Copilot
       packer-nvim # This might be related to packerpath error. Always install, just in case
+      twilight-nvim # Dim inactive portions of the code you're editing
     ];
 
     extraPackages = with pkgs; [

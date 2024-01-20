@@ -52,8 +52,6 @@
     keyboard.zsa.enable = true; # Enable udev rules to flash new configurations to the ZSA Moonlander
   };
 
-  security.rtkit.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user-options.username} = {
     isNormalUser = true;

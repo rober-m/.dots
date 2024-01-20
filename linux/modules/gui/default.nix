@@ -5,5 +5,6 @@
     #./gnome.nix
     ./kde.nix
     #./autorandr.nix
+    ./wayland
   ];
 }

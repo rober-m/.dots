@@ -45,9 +45,9 @@ in {
     zsh # Linux shell
     lsd
     bat # `cat` with wings
-    fd
+    fd # Simplified `find`
     fzf # Fuzzy finder
-    jq
+    jq # JSON processor
     zoxide # Also installed in modules/nvim
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
@@ -94,6 +94,9 @@ in {
 
     # Flutter
     #flutter
+
+    # Other
+    anki # Flashcards
   ];
 
   home.file.".config/neofetch/config.conf".source = ./modules/neofetch.conf;

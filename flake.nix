@@ -24,10 +24,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    xmonad-contexts = {
-      url = "github:Procrat/xmonad-contexts";
-      flake = false;
-    };
+    xremap-flake.url = "github:xremap/nix-flake";
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.

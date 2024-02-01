@@ -12,7 +12,8 @@
   users.groups.input.members = [user-options.username];
 
   services.xremap = {
-    withHypr = true; # Work with Hyprlnd
+    #withHypr = true; # Work with Hyprlnd
+    withWlroots = true; # Work with Wayland
     userName = user-options.username;
     #yamlConfig = builtins.readFile ./xremap.yml;
     config = {

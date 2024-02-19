@@ -55,6 +55,7 @@ in {
     gh # GitHub CLI
     eza # Easy aliases for zsh
     btop # Resource monitor (htop wiht steroids)
+    zlib # Compression library. Needed to use Haskell's zlib package
 
     # Virtualization
     docker

@@ -74,7 +74,7 @@ ht.tools = { -- haskell-tools options
     -- Stylize markdown (the builtin lsp's default behaviour).
     -- Setting this option to false sets the file type to markdown and enables
     -- Treesitter syntax highligting for Haskell snippets if nvim-treesitter is installed
-    stylize_markdown = true
+    stylize_markdown = false
   },
 }
 

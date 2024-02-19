@@ -7,6 +7,7 @@
     #./modules/vscode-linux.nix
     #./modules/firefox.nix
     ./modules/ssh.nix
+    ./modules/prisma-engines.nix
   ];
 in {
   inherit imports;
@@ -29,7 +30,7 @@ in {
     firefox # Firefox browser
     obsidian # Can't use it because of old Electron version :(
     # HLS 2.2.0 doesn't work in MacOS :(
-    haskell-language-server
+    #haskell-language-server
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
   ];
 

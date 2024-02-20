@@ -12,7 +12,8 @@
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
-      colors = with config.colorScheme.colors; {
+      colors = with config.colorScheme.palette; {
+        draw_bold_text_with_bright_colors = true;
         # Default colors
         primary = {
           background = "0x${base00}";
@@ -57,13 +58,11 @@
         #normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
         normal.family = "Hack Nerd Font"; # Hack Nerd Font
       };
-      draw_bold_text_with_bright_colors = true;
       cursor = {
         style.shape = "Block";
-        blinking = "Off";
       };
       # TODO: Change commands depending on the operating system. Do I have to?
-      key_bindings = [
+      keyboard.bindings = [
         #{ key = ""; mods = ""; chars/action = ""; }
         ######## Common ########
         {

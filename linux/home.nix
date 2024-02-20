@@ -22,7 +22,7 @@ in {
   home.packages = with pkgs; [
     protonvpn-gui # Proton VPN
     bitwarden # Password manager
-    megasync # MegaSync (MEGA Cloud Drive)
+    megasync # MegaSync (MEGA Cloud Drive) - Installed using Flatpak
     telegram-desktop # Telegram for Linux
     emote # emoji picker
     variety # Wallpaper manager

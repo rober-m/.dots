@@ -24,10 +24,12 @@
     };
 
     # Configure keymap in X11
-    layout = "us,es";
     # If xkb config doesn't seem to take effect, see:
     # https://discourse.nixos.org/t/problem-with-xkboptions-it-doesnt-seem-to-take-effect/5269/2
-    xkbVariant = "";
+    xkb = {
+      layout = "us,es";
+      variant = "";
+    };
     #xkbOptions = "caps:swapescape";
 
     # Enable touchpad support (enabled default in most desktopManager).

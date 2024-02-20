@@ -69,12 +69,12 @@ in {
     # telegram
 
     # Python and Jupyter
-    python310Packages.pip
-    python310Packages.jupyter
-    python310Packages.jupyter_core
-    python310Packages.jupyter-client
-    python310Packages.jupyterlab
-    python310Packages.notebook
+    #python310Packages.pip
+    #python310Packages.jupyter
+    #python310Packages.jupyter_core
+    #python310Packages.jupyter-client
+    #python310Packages.jupyterlab
+    #python310Packages.notebook
 
     # WebDev stuff
     deno

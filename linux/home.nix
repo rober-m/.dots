@@ -32,12 +32,20 @@ in {
     # HLS 2.2.0 doesn't work in MacOS :(
     #haskell-language-server
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
+    cabal2nix # Cabal to Nix
   ];
 
-  home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/config.rasi;
+  # TODO: Move these config files to the hyprland module
+  home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/rofi/config.rasi;
   home.file.".config/hypr/hyprland.conf".source = ./modules/gui/wayland/hyprland/hyprland.conf;
   home.file.".config/hypr/start.sh" = {
     source = ./modules/gui/wayland/hyprland/start.sh;
     executable = true;
+  };
+  home.file = {
+    ".config/waybar/" = {
+      source = ./modules/gui/wayland/waybar;
+      recursive = true;
+    };
   };
 }

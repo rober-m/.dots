@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  imports,
+  ...
+}: {
   programs.hyprland = {
     enable = true; # Doesn't work on NVIDIA
     xwayland.enable = true; # To run X11 apps
@@ -22,4 +26,11 @@
 
   xdg.portal.enable = true; # For aps to comunicate
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
+  # imports.imports.home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/config.rasi;
+  # imports.home.file.".config/hypr/hyprland.conf".source = ./modules/gui/wayland/hyprland/hyprland.conf;
+  # imports.home.file.".config/hypr/start.sh" = {
+  #   source = ./modules/gui/wayland/hyprland/start.sh;
+  #   executable = true;
+  # };
 }

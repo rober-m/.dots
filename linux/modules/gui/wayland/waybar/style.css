@@ -58,9 +58,9 @@ window#waybar {
 
 #battery {}
 
-#battery icon {
-  color: red;
-}
+/* #battery icon { */
+/*   color: red; */
+/* } */
 
 #battery.charging {
   color: #00ff00;
@@ -101,6 +101,15 @@ window#waybar {
 #cpu {}
 
 #memory {}
+
+#temperature.critical {
+  color: red;
+  animation-name: blink-critical;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
 #network {}
 

@@ -13,9 +13,10 @@
   ],
   "modules-right": [
     "pulseaudio",
-    "network",
+    //"network",
     "cpu",
     "memory",
+    "temperature",
     "battery",
     "tray",
     "clock"
@@ -60,6 +61,7 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon} ",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
@@ -70,12 +72,12 @@
       " "
     ]
   },
-  "network": {
-    // "interface": "wlp2s0", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    "format-disconnected": "Disconnected ⚠"
-  },
+  // "network": {
+  //   // "interface": "wlp2s0", // (Optional) To force the use of this interface
+  //   "format-wifi": "{essid} ({signalStrength}%) ",
+  //   "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+  //   "format-disconnected": "Disconnected ⚠"
+  // },
   "pulseaudio": {
     //"scroll-step": 1,
     "format": "{volume}% {icon}",
@@ -94,5 +96,12 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+    // "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C "
   }
 }

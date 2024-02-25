@@ -62,19 +62,37 @@ window#waybar {
   color: red;
 }
 
-#battery.charging {}
+#battery.charging {
+  color: #00ff00;
+}
 
-@keyframes blink {
+@keyframes blink-warning {
   to {
     background-color: #ffffff;
     color: black;
   }
 }
 
+@keyframes blink-critical {
+  to {
+    background-color: red;
+    color: black;
+  }
+}
+
 #battery.warning:not(.charging) {
   color: white;
-  animation-name: blink;
+  animation-name: blink-warning;
   animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+  color: red;
+  animation-name: blink-critical;
+  animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;

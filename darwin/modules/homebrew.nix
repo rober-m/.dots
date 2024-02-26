@@ -13,7 +13,7 @@
       "libmagic"
       "cairo"
       "pkg-config"
-      "haskell-stack"
+      #"haskell-stack"
       "pango"
     ];
     taps = [

@@ -94,7 +94,7 @@ in {
     rustup
 
     # Flutter
-    #flutter
+    flutter
 
     # Other
     anki # Flashcards

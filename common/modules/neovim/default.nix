@@ -12,7 +12,7 @@
     ./leap.nix # General-purpose motion plugin
     ./nvim-tree.nix # Tree file explorer
     ./comments.nix # To easily comment/uncomment code
-    ./haskell.nix # All my Haskell config (using haskell-tools)
+    #./haskell.nix # All my Haskell config (using haskell-tools)
     ./toggleterm.nix # Persist and toggle multiple terminals
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI

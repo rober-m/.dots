@@ -86,7 +86,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
--- Servers without specific config (Haskell server managed in haskell.nix)
+-- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
 local servers = {
   'tsserver',      -- Typescript
   'nil_ls',        -- Nix
@@ -111,6 +111,20 @@ for _, server in ipairs(servers) do
     flags = lsp_flags,
   }
 end
+
+require('lspconfig')['hls'].setup {
+  on_attach = on_attach,
+  -- filetypes = { 'haskell', 'lhaskell', 'cabal' },
+  -- rootPatterns = { "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" },
+  settings = {
+    haskell = {
+      -- checkParents = "CheckOnSave",
+      -- checkProject = true,
+      -- cabalFormattingProvider = "cabalfmt",
+      formattingProvider = 'stylish-haskell',
+    },
+  },
+}
 
 require('lspconfig').nil_ls.setup {
   on_attach = on_attach,

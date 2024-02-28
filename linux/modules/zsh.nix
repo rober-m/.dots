@@ -10,5 +10,12 @@
         "ssh-agent" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
       ];
     };
+
+    # Linux-specific extra commands that should be added to {file}`.zshrc`.
+    initExtra = ''
+      # Linux-specific ZSH configuration
+      export PATH=$HOME/.local/bin/:$PATH
+      weather-cli -l 38.7 -g 9.1
+    '';
   };
 }

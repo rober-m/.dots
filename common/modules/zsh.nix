@@ -53,13 +53,9 @@
       plutus-apps12 = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
     };
 
-    # Extra commands that should be added to {file}`.zshrc`.
+    # Multi-platform extra commands that should be added to {file}`.zshrc`.
+    # MacOS and Linux-specific commands are provided in the respective sections.
     initExtra = ''
-      # MacOS-specific ZSH configuration
-      if [[ $(uname) == "Darwin" ]]; then
-          eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
-      fi
-
       # Aiken-specific configuration
       # If aiken binary is present in nix-profile, add completion
       if [[ -f "/Users/${user-options.username}/.nix-profile/bin/aiken" ]]; then
@@ -75,7 +71,7 @@
       eval "$(zoxide init zsh)"
 
       #Print neofetch
-      neofetch
+      #neofetch
     '';
 
     profileExtra = ''
@@ -83,7 +79,6 @@
     '';
 
     sessionVariables = {
-      HOMEBREW_NO_ANALYTICS = 1;
       IHP_EDITOR = "code --goto";
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#888"; # Change autosuggest highligh color
       VI_MODE_RESET_PROMPT_ON_MODE_CHANGE = true; # For oh-my-zsh vi-mode

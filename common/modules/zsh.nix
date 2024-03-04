@@ -67,6 +67,9 @@
           fi
       fi
 
+      # Add Dart to path
+      export PATH=$HOME/.pub-cache/bin:$PATH
+
       # Initialize zoxide (z)
       eval "$(zoxide init zsh)"
 

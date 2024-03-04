@@ -24,6 +24,7 @@ in {
     bitwarden # Password manager
     #megasync # MegaSync (MEGA Cloud Drive) - Installed using Flatpak
     telegram-desktop # Telegram for Linux
+    #element-desktop # Element (Matrix) for Linux
     emote # emoji picker
     variety # Wallpaper manager
     #google-chrome # Google Chrome browser

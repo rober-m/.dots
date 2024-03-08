@@ -97,7 +97,7 @@ in {
     flutter
 
     # Other
-    anki # Flashcards
+    #anki # Flashcards
   ];
 
   home.file.".config/neofetch/config.conf".source = ./modules/neofetch.conf;

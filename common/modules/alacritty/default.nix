@@ -55,8 +55,8 @@
       };
       font = {
         size = 19;
-        #normal.family = "Fira Code Nerd Font Mono"; # Hack Nerd Font
-        normal.family = "Hack Nerd Font"; # Hack Nerd Font
+        normal.family = "FiraCode Nerd Font Mono";
+        #normal.family = "Hack Nerd Font";
       };
       cursor = {
         style.shape = "Block";

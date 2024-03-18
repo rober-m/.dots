@@ -2,6 +2,7 @@
   imports = [
     ./neovim
     ./alacritty
+    ./kitty.nix
     ./tmux
     ./git.nix
     ./zsh.nix

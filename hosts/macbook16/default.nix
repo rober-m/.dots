@@ -8,7 +8,10 @@
   system = "aarch64-darwin";
 
   nixpkgsWithConfig = {
-    config = {allowUnfree = true;};
+    config = {
+      allowUnfree = true;
+      android_sdk.accept_license = true;
+    };
   };
 in {
   # My `nix-darwin` configs

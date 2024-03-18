@@ -15,7 +15,7 @@
     initExtra = ''
       # Linux-specific ZSH configuration
       export PATH=$HOME/.local/bin/:$PATH
-      weather-cli -l 38.7 -g 9.1
+      #weather-cli -l 38.7 -g 9.1
 
       # Flutter can't find chrome on linux
       export CHROME_EXECUTABLE=google-chrome-stable

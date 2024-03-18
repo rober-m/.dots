@@ -15,6 +15,7 @@
       "pkg-config"
       #"haskell-stack"
       "pango"
+      "zlib"
     ];
     taps = [
       "homebrew/cask"

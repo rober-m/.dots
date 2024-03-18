@@ -56,6 +56,8 @@ in {
     eza # Easy aliases for zsh
     btop # Resource monitor (htop wiht steroids)
     zlib # Compression library. Needed to use Haskell's zlib package
+    gnupg # GnuPG (Contains gpg and gpg-agent)
+    pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
 
     # Virtualization
     docker
@@ -83,6 +85,7 @@ in {
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions
     nodePackages.firebase-tools # firebase CLI
+    nodePackages.vercel # Vercel CLI
 
     # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix

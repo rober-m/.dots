@@ -3,7 +3,7 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     dotDir = ".config/zsh";
 
     oh-my-zsh = {

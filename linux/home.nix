@@ -34,6 +34,9 @@ in {
     #haskell-language-server
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
     cabal2nix # Cabal to Nix
+
+    gnupg # GnuPG (Contains gpg and gpg-agent)
+    pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
   ];
 
   # TODO: Move these config files to the hyprland module

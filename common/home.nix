@@ -56,8 +56,6 @@ in {
     eza # Easy aliases for zsh
     btop # Resource monitor (htop wiht steroids)
     zlib # Compression library. Needed to use Haskell's zlib package
-    gnupg # GnuPG (Contains gpg and gpg-agent)
-    pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
 
     # Virtualization
     docker

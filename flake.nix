@@ -38,6 +38,10 @@
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   ###############################################################################################
@@ -52,6 +56,7 @@
     alejandra,
     flake-utils,
     flake-compat,
+    nixos-generators,
     ...
   } @ inputs: let
     colorschemes = {
@@ -71,6 +76,8 @@
       fonts = ["Hack" "FiraCode" "DroidSansMono"];
     };
   in {
+    ##################################################################
+    ###################### Physical Machines ########################
     darwinConfigurations =
       # Darwin Configurations
       import ./hosts/macbook16 {
@@ -84,5 +91,25 @@
         inherit (nixpkgs) lib;
         inherit inputs nixpkgs-unstable home-manager user-options;
       };
+
+    ##################################################################
+    ################ Virtual Machines and Containers ################
+    # See: https://github.com/nix-community/nixos-generators
+    packages.x86_64-linux = {
+      # Build with `nix build .#vmware-machine`
+      vmware-machine = nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
+        modules = [
+          # you can include your own nixos configuration here, i.e.
+          # ./configuration.nix
+        ];
+        format = "vmware";
+      };
+      # Build with `nix build .#vbox`
+      vbox = nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
+        format = "virtualbox";
+      };
+    };
   };
 }

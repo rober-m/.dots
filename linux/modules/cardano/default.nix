@@ -1,0 +1,5 @@
+{...}: {
+  imports = [
+    ./cardano-node.nix
+  ];
+}

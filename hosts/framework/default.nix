@@ -24,6 +24,7 @@ in {
       ../../linux/configuration.nix
       # `home-manager` module
       home-manager.nixosModules.home-manager
+      inputs.cardano-node.nixosModules.cardano-node
       {
         nixpkgs = nixpkgsWithConfig;
         # `home-manager` config

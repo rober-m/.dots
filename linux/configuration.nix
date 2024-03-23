@@ -11,6 +11,7 @@
     ./modules/fingerprint.nix # Config to use fingerprint sensor
     ./modules/flatpak.nix # Use flatpak
     ./modules/android.nix # Android development tools
+    ./modules/cardano # Cardano-related tools/config
   ];
 
   #################################################################################################
@@ -97,6 +98,5 @@
     zsh.enable = true;
     #nix-index.enable = true;
     steam.enable = false; # Set to true if bored :P
-    adb.enable = true; # Android Debug Bridge
   };
 }

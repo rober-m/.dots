@@ -25,6 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap-flake.url = "github:xremap/nix-flake";
+    cardano-node.url = "github:IntersectMBO/cardano-node/8.9.0";
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.
@@ -57,6 +58,7 @@
     flake-utils,
     flake-compat,
     nixos-generators,
+    cardano-node,
     ...
   } @ inputs: let
     colorschemes = {

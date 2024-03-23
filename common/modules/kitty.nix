@@ -11,6 +11,7 @@
       "--single-instance"
       "--directory=/tmp/my-dir"
       "--listen-on=unix:/tmp/my-socket"
+      #"--start-as=maximized"
     ];
 
     theme = "Catppuccin-Frappe"; # TODO: map to user-options.theme
@@ -19,10 +20,13 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
       update_check_interval = 0;
+      remember_window_size = false;
+      initial_window_width = 1000;
+      initial_window_height = 800;
     };
 
     font.name = "FiraCode Nerd Font";
-    font.size = 14;
+    font.size = 15;
 
     # TODO: Add keybindings based on Alacritty's ones
     # keybindings = {

@@ -26,6 +26,7 @@
     };
     xremap-flake.url = "github:xremap/nix-flake";
     cardano-node.url = "github:IntersectMBO/cardano-node/8.9.0";
+    aiken_flake.url = "github:aiken-lang/aiken";
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.

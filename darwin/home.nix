@@ -1,6 +1,7 @@
 {
   pkgs,
   user-options,
+  inputs,
   ...
 }: let
   imports = [
@@ -21,6 +22,7 @@ in {
   home.packages = with pkgs; [
     cocoapods
     m-cli # useful macOS CLI commands
+    inputs.aiken_flake.packages.aarch64-darwin.aiken # Aiken CLI
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{

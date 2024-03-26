@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   imports = [
     ../common/home.nix # Common Home configuration
     # Start of Linux specific configuration
@@ -37,6 +41,8 @@ in {
 
     gnupg # GnuPG (Contains gpg and gpg-agent)
     pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
+
+    inputs.aiken_flake.packages.x86_64-linux.aiken # Aiken CLI
   ];
 
   # TODO: Move these config files to the hyprland module

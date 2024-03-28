@@ -92,7 +92,8 @@ in {
     nix-tree # visualize the dependency graph of a nix derivation
 
     #Rust
-    rustup
+    gcc # GNU Compiler Collection
+    rustup # Rust toolchain installer (using this to install rust tooling)
 
     # Flutter
     flutter

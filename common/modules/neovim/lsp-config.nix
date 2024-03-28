@@ -13,7 +13,7 @@
       # LANGUAGE SERVERS
       nil # Nix
       lua-language-server # Lua
-      rust-analyzer # Rust
+      #rust-analyzer # Rust (Using rustup to install it instead of nixpkgs)
       nodePackages.vim-language-server # Vim
       nodePackages.typescript-language-server # Typescript
       nodePackages.yaml-language-server # Yaml

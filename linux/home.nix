@@ -16,10 +16,9 @@
 in {
   inherit imports;
 
-  # home = {
-  #   username = user;
-  #   homeDirectory = "/Users/${user}";
-  # };
+  custom_tmux.enable = true;
+  custom_neovim.enable = true;
+  custom_alacritty.enable = true;
 
   home.keyboard = null; # Configured in `configuration.nix`.
 

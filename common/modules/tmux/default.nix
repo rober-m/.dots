@@ -1,17 +1,31 @@
-{pkgs, ...}: {
-  programs.tmux = {
-    enable = true;
-    shortcut = "a";
-    baseIndex = 1;
-    newSession = true;
-    # Stop tmux+escape craziness.
-    #escapeTime = 0;
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
+  # Custom option config to enable tmux with some plugins.
+  options = {
+    custom_tmux.enable =
+      lib.mkEnableOption "Enable tmux with personal config";
+  };
 
-    plugins = with pkgs.tmuxPlugins; [
-      better-mouse-mode
-      catppuccin
-    ];
+  config = lib.mkIf config.custom_tmux.enable {
+    # Enable tmux with some plugins.
+    programs.tmux = {
+      enable = true;
+      shortcut = "a";
+      baseIndex = 1;
+      newSession = true;
+      # Stop tmux+escape craziness.
+      #escapeTime = 0;
 
-    extraConfig = builtins.readFile ./tmux.conf;
+      plugins = with pkgs.tmuxPlugins; [
+        better-mouse-mode
+        catppuccin
+      ];
+
+      extraConfig = builtins.readFile ./tmux.conf;
+    };
   };
 }

@@ -14,6 +14,10 @@
 in {
   inherit imports;
 
+  custom_tmux.enable = true;
+  custom_neovim.enable = true;
+  custom_alacritty.enable = true;
+
   home = {
     username = user-options.username;
     homeDirectory = "/Users/${user-options.username}";

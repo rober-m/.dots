@@ -27,6 +27,7 @@
     xremap-flake.url = "github:xremap/nix-flake";
     cardano-node.url = "github:IntersectMBO/cardano-node/8.9.0";
     aiken_flake.url = "github:aiken-lang/aiken";
+    aiken_flake_20.url = "github:aiken-lang/aiken/v1.0.20-alpha"; # Newer versions don't compile in Darwin
 
     # Nix tools
     flake-utils.url = "github:numtide/flake-utils"; # TODO: use this.

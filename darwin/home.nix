@@ -26,7 +26,8 @@ in {
   home.packages = with pkgs; [
     cocoapods
     m-cli # useful macOS CLI commands
-    inputs.aiken_flake.packages.aarch64-darwin.aiken # Aiken CLI
+    # INFO: Aiken CLI above v0.0.20-alpha doesn't compile on darwin. Using `nix profile` for now
+    inputs.aiken_flake_20.packages.aarch64-darwin.aiken # Aiken CLI
   ];
 
   # Misc configuration files --------------------------------------------------------------------{{{

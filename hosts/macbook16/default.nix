@@ -16,7 +16,7 @@
   home-modules = {...}: {
     imports = [
       ../../modules/shared/home
-      ../../modules/linux/home
+      ../../modules/darwin/home
     ];
   };
 in {

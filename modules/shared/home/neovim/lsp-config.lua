@@ -103,6 +103,7 @@ local servers = {
   'marksman',      -- Markdown
   'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown
+  'terraformls',   -- Terraform
 }
 
 for _, server in ipairs(servers) do

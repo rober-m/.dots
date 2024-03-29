@@ -22,6 +22,7 @@
       #tailwindcss-language-server # TailwindCSS FIXME: I think it is not working because nixpkgs is not up to date
       #marksman # Markdown. IMPORTANT: I had to install it using "nix profile install nixpkgs#marksman"
       #ltex-ls # LaTeX and Markdown, and others (https://github.com/valentjn/ltex-ls)
+      terraform-ls # Terraform
     ];
   };
 }

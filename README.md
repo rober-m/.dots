@@ -34,6 +34,25 @@ Folder dependency (higher depends on lower):
 - [x] Organize files in `hosts/*` and generalize `darwin` and `linux` config.
 - [ ] Add better instructions to README.
 - [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
+- [ ] Reestructure repo like this:
+    ```
+    - darwin
+        - home
+        - nix-darwin
+    -hosts
+        - framework
+        - macbook16
+    - linux
+        - home
+        - nixos
+    - overlays
+    - scripts
+    - shared
+        - system-modules
+        - home-modules
+    - wallpapers
+    ```
+    
 
 ## Installation
 

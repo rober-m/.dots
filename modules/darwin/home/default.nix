@@ -5,11 +5,9 @@
   ...
 }: let
   imports = [
-    ../common/home.nix # Common Home configuration
-    # Start of the macOS specific configuration
-    ./modules/zsh.nix
-    ./modules/ssh.nix
-    ./modules/custom-launcher.nix
+    ./zsh.nix
+    ./ssh.nix
+    ./custom-launcher.nix
   ];
 in {
   inherit imports;
@@ -30,7 +28,7 @@ in {
     inputs.aiken_flake_20.packages.aarch64-darwin.aiken # Aiken CLI
   ];
 
-  # Misc configuration files --------------------------------------------------------------------{{{
+  # ------------------------------ Misc configuration files ---------------------------------------
 
-  home.file.".config/karabiner/karabiner.json".source = ./modules/karabiner.json;
+  home.file.".config/karabiner/karabiner.json".source = ./karabiner.json;
 }

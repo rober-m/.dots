@@ -36,20 +36,21 @@ Folder dependency (higher depends on lower):
 - [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
 - [ ] Reestructure repo like this:
     ```
-    - darwin
-        - home
-        - nix-darwin
+    - modules
+        - shared
+            - system
+            - home
+        - darwin
+            - home
+            - nix-darwin
+        - linux
+            - home
+            - nixos
     -hosts
         - framework
         - macbook16
-    - linux
-        - home
-        - nixos
     - overlays
     - scripts
-    - shared
-        - system-modules
-        - home-modules
     - wallpapers
     ```
     

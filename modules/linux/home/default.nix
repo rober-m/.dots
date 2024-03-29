@@ -4,14 +4,12 @@
   ...
 }: let
   imports = [
-    ../common/home.nix # Common Home configuration
-    # Start of Linux specific configuration
-    ./modules/zsh.nix
-    #./modules/gui/gtk.nix
-    #./modules/vscode-linux.nix
-    #./modules/firefox.nix
-    ./modules/ssh.nix
-    ./modules/prisma-engines.nix
+    ./zsh.nix
+    #./gui/gtk.nix
+    #./vscode-linux.nix
+    #./firefox.nix
+    ./ssh.nix
+    ./prisma-engines.nix
   ];
 in {
   inherit imports;
@@ -46,15 +44,15 @@ in {
   ];
 
   # TODO: Move these config files to the hyprland module
-  home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/rofi/config.rasi;
-  home.file.".config/hypr/hyprland.conf".source = ./modules/gui/wayland/hyprland/hyprland.conf;
+  home.file.".config/rofi/config.rasi".source = ../nixos/gui/wayland/rofi/config.rasi;
+  home.file.".config/hypr/hyprland.conf".source = ../nixos/gui/wayland/hyprland/hyprland.conf;
   home.file.".config/hypr/start.sh" = {
-    source = ./modules/gui/wayland/hyprland/start.sh;
+    source = ../nixos/gui/wayland/hyprland/start.sh;
     executable = true;
   };
   home.file = {
     ".config/waybar/" = {
-      source = ./modules/gui/wayland/waybar;
+      source = ../nixos/gui/wayland/waybar;
       recursive = true;
     };
   };

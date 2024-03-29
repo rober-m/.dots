@@ -5,17 +5,16 @@
   ...
 }: {
   imports = [
-    ../common/configuration.nix # Common all-systems configuration
-    ./modules/base # base system (basic linux-systems configurations)
-    ./modules/gui # Graphical User Interface config (Desktop and WM)
-    ./modules/fingerprint.nix # Config to use fingerprint sensor
-    ./modules/flatpak.nix # Use flatpak
-    ./modules/android.nix # Android development tools
-    ./modules/cardano # Cardano-related tools/config
+    ./base # base system (basic linux-systems configurations)
+    ./gui # Graphical User Interface config (Desktop and WM)
+    ./fingerprint.nix # Config to use fingerprint sensor
+    ./flatpak.nix # Use flatpak
+    ./android.nix # Android development tools
+    ./cardano # Cardano-related tools/config
   ];
 
-  #################################################################################################
-  ################################# NIXOS-SPECIFIC NIX CONFIG #####################################
+  #------------------------------------------------------------------------------------------------
+  #-------------------------------- NIXOS-SPECIFIC NIX CONFIG -------------------------------------
 
   system.stateVersion = "23.05";
 
@@ -28,7 +27,7 @@
 
   # Overlay to update MEGASync to the latest version
   nixpkgs.overlays = [
-    (import ./overlays/magasync.nix)
+    (import ../../../overlays/magasync.nix)
   ];
 
   # Auto-upgrade system
@@ -44,8 +43,8 @@
     randomizedDelaySec = "1d";
   };
 
-  #################################################################################################
-  ########################### REST OF CONFIG (I HAVE TO TIDY A BIT) ###############################
+  #------------------------------------------------------------------------------------------------
+  #-------------------------- REST OF CONFIG (I HAVE TO TIDY A BIT) -------------------------------
 
   virtualisation.docker.enable = true;
 

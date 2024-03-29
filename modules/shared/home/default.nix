@@ -5,7 +5,14 @@
   ...
 }: let
   imports = [
-    ./modules
+    ./neovim
+    ./alacritty
+    ./kitty.nix
+    ./tmux
+    ./git.nix
+    ./zsh.nix
+    ./haskell.nix # Haskell-related binaries and config (withot nvim config)
+    ./vscode
     inputs.nix-colors.homeManagerModules.default
   ];
 in {
@@ -102,5 +109,5 @@ in {
     #anki # Flashcards
   ];
 
-  home.file.".config/neofetch/config.conf".source = ./modules/neofetch.conf;
+  home.file.".config/neofetch/config.conf".source = ./neofetch.conf;
 }

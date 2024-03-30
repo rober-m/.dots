@@ -104,6 +104,7 @@ local servers = {
   'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown
   'terraformls',   -- Terraform
+  'dartls',        -- Dart (Language Server provided by `dart`)
 }
 
 for _, server in ipairs(servers) do

@@ -21,10 +21,10 @@ end
 vim.g.mapleader = " " -- Leader key
 
 -- Visual
-vim.opt.wrap = false -- Wrap text?
-vim.opt.cursorline = true -- Highlight cursor line
-vim.opt.scrolloff = 15 -- Screen lines above and below cursor
-vim.opt.list = false -- List mode: Show invisible chararcters
+vim.opt.wrap = false                        -- Wrap text?
+vim.opt.cursorline = true                   -- Highlight cursor line
+vim.opt.scrolloff = 15                      -- Screen lines above and below cursor
+vim.opt.list = false                        -- List mode: Show invisible chararcters
 vim.opt.listchars =
 "eol:¬,tab:>·,extends:>,precedes:<,space:·" -- Specify how to show invisible chars (`list = true` needed)
 
@@ -53,6 +53,14 @@ packer.startup(function()
     --requires = { 'nvim-treesitter/nvim-treesitter' }   -- Needed  to parse the config
   }
   use 'aiken-lang/editor-integration-nvim'
+  -- use {
+  --   'akinsho/flutter-tools.nvim',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'stevearc/dressing.nvim', -- optional for vim.ui.select
+  --   },
+  -- }
 end)
 
 require("devcontainer").setup {}
+--require("flutter-tools").setup {}

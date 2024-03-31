@@ -26,7 +26,7 @@
     };
 
     font.name = "FiraCode Nerd Font";
-    font.size = 15;
+    font.size = 13;
 
     # TODO: Add keybindings based on Alacritty's ones
     # keybindings = {

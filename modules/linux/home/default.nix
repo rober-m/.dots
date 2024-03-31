@@ -14,9 +14,11 @@
 in {
   inherit imports;
 
-  custom_tmux.enable = true;
-  custom_neovim.enable = true;
-  custom_alacritty.enable = true;
+  customized = {
+    tmux.enable = true;
+    neovim.enable = true;
+    alacritty.enable = false;
+  };
 
   home.keyboard = null; # Configured in `configuration.nix`.
 

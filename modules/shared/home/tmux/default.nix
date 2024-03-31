@@ -6,11 +6,11 @@
 }: {
   # Custom option config to enable tmux with some plugins.
   options = {
-    custom_tmux.enable =
+    customized.tmux.enable =
       lib.mkEnableOption "Enable tmux with personal config";
   };
 
-  config = lib.mkIf config.custom_tmux.enable {
+  config = lib.mkIf config.customized.tmux.enable {
     # Enable tmux with some plugins.
     programs.tmux = {
       enable = true;

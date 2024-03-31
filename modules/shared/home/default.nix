@@ -18,6 +18,11 @@
 in {
   inherit imports;
 
+  # TODO: Does this make sense? What about linux desktop vs server?:
+  # Don't enable/disable customized options here. This file serves only as a
+  # configuration aggregator. Enable/disable your custom options in the
+  # respective modules (linux/home, darwin/home).
+
   colorScheme = inputs.nix-colors.colorSchemes.${user-options.colorscheme};
 
   home.stateVersion = "22.05";

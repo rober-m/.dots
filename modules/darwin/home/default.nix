@@ -12,9 +12,11 @@
 in {
   inherit imports;
 
-  custom_tmux.enable = true;
-  custom_neovim.enable = true;
-  custom_alacritty.enable = true;
+  customized = {
+    zsh.enable = true;
+    ssh.enable = true;
+    custom-launcher.enable = true;
+  };
 
   home = {
     username = user-options.username;

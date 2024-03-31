@@ -29,10 +29,10 @@
   ];
 
   options = {
-    custom_neovim.enable =
+    customized.neovim.enable =
       lib.mkEnableOption "Enable Neovim with personal config";
   };
-  config = lib.mkIf config.custom_neovim.enable {
+  config = lib.mkIf config.customized.neovim.enable {
     # Docs: https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
     programs.neovim = {
       enable = true;

@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    custom_alacritty.enable = lib.mkEnableOption "Enable custom alacritty configuration";
+    customized.alacritty.enable = lib.mkEnableOption "Enable custom alacritty configuration";
   };
 
-  config = lib.mkIf config.custom_alacritty.enable {
+  config = lib.mkIf config.customized.alacritty.enable {
     programs.alacritty = {
       enable = true;
       settings = {

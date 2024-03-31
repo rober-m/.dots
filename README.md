@@ -58,7 +58,7 @@ darwin (nix-darwin, home)     linux (NixOS, home)
 - [x] Organize files in `hosts/*` and generalize `darwin` and `linux` config.
 - [ ] Add better instructions to README.
 - [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
-- [ ] Reestructure repo like this:
+- [x] Reestructure repo.
     
 
 ## Installation

@@ -103,7 +103,7 @@ in {
     rustup # Rust toolchain installer (using this to install rust tooling)
 
     # Flutter
-    flutter
+    #flutter
 
     # Other
     #anki # Flashcards

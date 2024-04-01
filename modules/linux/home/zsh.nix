@@ -2,6 +2,7 @@
   programs.zsh = {
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ~/.dots#framework";
+      collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
     };
 
     oh-my-zsh = {

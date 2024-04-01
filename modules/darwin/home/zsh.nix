@@ -2,6 +2,7 @@
   programs.zsh = {
     shellAliases = {
       rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
+      collect-garbage = "echo 'TODO: Implement collect-garbage in Darwin'";
     };
 
     # MacOS-specific extra commands that should be added to {file}`.zshrc`.

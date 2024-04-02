@@ -36,12 +36,9 @@ in {
       inputs.cardano-node.nixosModules.cardano-node
       {
         nixpkgs = nixpkgsWithConfig;
-        # `home-manager` config
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {inherit user-options inputs;}; # Pass flake variables
-        #home-manager.users.${user-options.username} = (import ../../modules/shared/home) // (import ../../modules/linux/home);
-        #home-manager.users.${user-options.username} = (import ../../modules/shared/home { inherit pkgs inputs user-options; }) // (import ../../modules/linux/home { inherit pkgs inputs user-options; });
         home-manager.users.${user-options.username} = home-modules;
       }
     ];

@@ -3,6 +3,7 @@
   imports,
   ...
 }: {
+  # TODO: Move this config to home manager (non-nix config files already are)
   programs.hyprland = {
     enable = true; # Doesn't work on NVIDIA
     xwayland.enable = true; # To run X11 apps

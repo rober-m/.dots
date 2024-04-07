@@ -100,7 +100,7 @@ local servers = {
   'eslint',        -- ESLint (vscode-langservers-extracted)
   'jsonls',        -- JSON   (vscode-langservers-extracted)
   --'tailwindcss',   -- Tailwind CSS FIXME: Uncomment after installation is fixed
-  'marksman',      -- Markdown
+  'marksman',      -- Markdown (INFO: Format requests will fail because the LSP isn't capable of formatting!! See features: https://github.com/artempyanykh/marksman/blob/main/docs/features.md)
   'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown
   'terraformls',   -- Terraform

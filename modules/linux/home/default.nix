@@ -4,7 +4,6 @@
   ...
 }: let
   imports = [
-    ./zsh.nix
     #./gui/gtk.nix
     #./vscode-linux.nix
     #./firefox.nix
@@ -18,6 +17,7 @@ in {
 
   #---------------------------- Customized packages ----------------------------#
   customized = {
+    zsh.enable = true;
     tmux.enable = true;
     neovim.enable = true;
     alacritty.enable = false;

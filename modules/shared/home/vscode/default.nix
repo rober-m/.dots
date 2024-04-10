@@ -1,52 +1,59 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
-  #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
-  programs.vscode = {
-    enable = true;
-    #userSettings = lib.importJSON ./settings.json; # Commenting this because it's too cumbersome
-    extensions = with pkgs.vscode-extensions; [
-      # General
-      vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
-      github.copilot # Copilot (https://marketplace.visualstudio.com/items?itemName=github.copilot)
-      arrterian.nix-env-selector # Nix Env Selector (https://marketplace.visualstudio.com/items?itemName=arrterian.nix-env-selector)
+  options = {
+    customized.vscode.enable = lib.mkEnableOption "Enable custom VSCode configuration";
+  };
 
-      # Git
-      github.vscode-pull-request-github # GitHub Pull Requests (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
-      eamodio.gitlens # GitLens (https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  config = lib.mkIf config.customized.vscode.enable {
+    #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
+    programs.vscode = {
+      enable = true;
+      #userSettings = lib.importJSON ./settings.json; # Commenting this because it's too cumbersome
+      extensions = with pkgs.vscode-extensions; [
+        # General
+        vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+        github.copilot # Copilot (https://marketplace.visualstudio.com/items?itemName=github.copilot)
+        arrterian.nix-env-selector # Nix Env Selector (https://marketplace.visualstudio.com/items?itemName=arrterian.nix-env-selector)
 
-      # Containers and remote
-      #ms-vscode-remote.remote-containers # Dev containers (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-      #ms-vscode-remote.remote-ssh # SSH (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
-      ms-azuretools.vscode-docker # Docker (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-      #ms-vscode-remote.remote-ssh-edit # SSH Editing (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
+        # Git
+        github.vscode-pull-request-github # GitHub Pull Requests (https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+        eamodio.gitlens # GitLens (https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-      # Languages
-      haskell.haskell # Haskell (https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
-      justusadam.language-haskell # Haskell Syntax Highlighting (https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell)
-      bbenoist.nix # Nix (https://marketplace.visualstudio.com/items?itemName=bbenoist.nix)
-      jnoortheen.nix-ide # Nix IDE (https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide)
+        # Containers and remote
+        #ms-vscode-remote.remote-containers # Dev containers (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+        #ms-vscode-remote.remote-ssh # SSH (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+        ms-azuretools.vscode-docker # Docker (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+        #ms-vscode-remote.remote-ssh-edit # SSH Editing (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit)
 
-      # Frontend
-      dbaeumer.vscode-eslint # ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-      esbenp.prettier-vscode # Prettier (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-      bradlc.vscode-tailwindcss # Tailwind CSS (https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+        # Languages
+        haskell.haskell # Haskell (https://marketplace.visualstudio.com/items?itemName=haskell.haskell)
+        justusadam.language-haskell # Haskell Syntax Highlighting (https://marketplace.visualstudio.com/items?itemName=justusadam.language-haskell)
+        bbenoist.nix # Nix (https://marketplace.visualstudio.com/items?itemName=bbenoist.nix)
+        jnoortheen.nix-ide # Nix IDE (https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide)
 
-      # Themes
-      dracula-theme.theme-dracula # Dracula Official (https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
-      pkief.material-icon-theme # Material Icon Theme (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-      catppuccin.catppuccin-vsc # Catppuccin theme (https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
+        # Frontend
+        dbaeumer.vscode-eslint # ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+        esbenp.prettier-vscode # Prettier (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+        bradlc.vscode-tailwindcss # Tailwind CSS (https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
-      # Missing from Nixpkgs:
-      # direnv (https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-direnv)
-      # Haskell HSX (https://marketplace.visualstudio.com/items?itemName=s0kil.vscode-hsx)
-      # ES7+ React/Redux/React-Native snippets (https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-      # Prettier ESLint (https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
-      # Remote Explorer (https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
-      # stylish-haskell (https://marketplace.visualstudio.com/items?itemName=vigoo.stylish-haskell)
-      # TODO Highlight (https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-    ];
+        # Themes
+        dracula-theme.theme-dracula # Dracula Official (https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+        pkief.material-icon-theme # Material Icon Theme (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+        catppuccin.catppuccin-vsc # Catppuccin theme (https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
+
+        # Missing from Nixpkgs:
+        # direnv (https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-direnv)
+        # Haskell HSX (https://marketplace.visualstudio.com/items?itemName=s0kil.vscode-hsx)
+        # ES7+ React/Redux/React-Native snippets (https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+        # Prettier ESLint (https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint)
+        # Remote Explorer (https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer)
+        # stylish-haskell (https://marketplace.visualstudio.com/items?itemName=vigoo.stylish-haskell)
+        # TODO Highlight (https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+      ];
+    };
   };
 }

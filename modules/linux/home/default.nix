@@ -5,7 +5,6 @@
 }: let
   imports = [
     #./gui/gtk.nix
-    #./vscode-linux.nix
     #./firefox.nix
     ./prisma-engines.nix
   ];
@@ -21,6 +20,7 @@ in {
     tmux.enable = true;
     neovim.enable = true;
     alacritty.enable = false;
+    vscode.enable = true;
   };
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [

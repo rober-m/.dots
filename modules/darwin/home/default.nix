@@ -5,7 +5,6 @@
   ...
 }: let
   imports = [
-    ./zsh.nix
     ./custom-launcher.nix
   ];
 in {
@@ -24,6 +23,7 @@ in {
     tmux.enable = true;
     neovim.enable = true;
     alacritty.enable = false;
+    vscode.enable = true;
   };
 
   #-------------------------- Default-config packages --------------------------#

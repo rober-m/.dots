@@ -72,6 +72,10 @@
         // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
           rebuild = "sudo nixos-rebuild switch --flake ~/.dots#framework";
           collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
+        }
+        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+          rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
+          collect-garbage = "echo 'TODO: Implement collect-garbage in Darwin'";
         };
 
       # Multi-platform extra commands that should be added to {file}`.zshrc`.
@@ -102,10 +106,18 @@
         ''
           # Linux-specific ZSH configuration
           export PATH=$HOME/.local/bin/:$PATH
-          #weather-cli -l 38.7 -g 9.1
+          #weather-cli -l 38 -g 9
 
           # Flutter can't find chrome on linux
           export CHROME_EXECUTABLE=google-chrome-stable
+        ''
+        + lib.optionalString pkgs.stdenv.hostPlatform.isDarwin
+        ''
+          # MacOS-specific ZSH configuration
+          eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew
+
+          export PATH=$HOME/.cabal/bin/:$PATH # Add cabal-installed binaries to PATH
+          #weather-cli -l 38 -g 9
         '';
       profileExtra = ''
         # export KEYTIMEOUT=1 # Needed for ZSH vi mode
@@ -119,6 +131,9 @@
         }
         // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
           #CHROME_EXECUTABLE = "google-chrome-stable"; # Flutter can't find chrome on linux
+        }
+        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+          HOMEBREW_NO_ANALYTICS = 1;
         };
     };
   };

@@ -14,12 +14,14 @@ in {
   home.keyboard = null; # Configured at the system level.
 
   #---------------------------- Customized packages ----------------------------#
+  # Most of these are in the `shared/home` config files.
   customized = {
     ssh.enable = true;
     zsh.enable = true;
     tmux.enable = true;
     neovim.enable = true;
     alacritty.enable = false;
+    kitty.enable = true;
     vscode.enable = true;
   };
   #-------------------------- Default-config packages --------------------------#

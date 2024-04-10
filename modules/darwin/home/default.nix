@@ -16,6 +16,7 @@ in {
   };
 
   #---------------------------- Customized packages ----------------------------#
+  # Most of these are in the `shared/home` config files.
   customized = {
     ssh.enable = true;
     zsh.enable = true;
@@ -23,6 +24,7 @@ in {
     tmux.enable = true;
     neovim.enable = true;
     alacritty.enable = false;
+    kitty.enable = true;
     vscode.enable = true;
   };
 

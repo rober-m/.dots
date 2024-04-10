@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   ###############################################################################
   ################################# Android SDK #################################
   android-config = pkgs.androidenv.composeAndroidPackages {
@@ -30,12 +35,18 @@
     systemImageType = "google_apis_playstore";
   };
 in {
-  programs = {
-    adb.enable = true; # Android Debug Bridge
+  options = {
+    customized.android.enable = lib.mkEnableOption "Enable custom Android configuration";
   };
 
-  environment.systemPackages = [
-    android-config.androidsdk
-    android-emulator
-  ];
+  config = lib.mkIf config.customized.android.enable {
+    programs = {
+      adb.enable = true; # Android Debug Bridge
+    };
+
+    environment.systemPackages = [
+      android-config.androidsdk
+      android-emulator
+    ];
+  };
 }

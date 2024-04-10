@@ -18,6 +18,9 @@
   # Most of these are in the `shared/home` config files.
   customized = {
     android.enable = true;
+    cardano = {
+      cardano-node.enable = false; # Run cardano-node as a service
+    };
   };
   #------------------------------------------------------------------------------------------------
   #-------------------------------- NIXOS-SPECIFIC NIX CONFIG -------------------------------------

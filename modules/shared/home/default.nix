@@ -4,7 +4,9 @@
   user-options,
   ...
 }: let
+  #---------------------------- Customized packages ----------------------------#
   imports = [
+    ./ssh.nix
     ./neovim
     ./alacritty
     ./kitty.nix
@@ -23,16 +25,15 @@ in {
   # configuration aggregator. Enable/disable your custom options in the
   # respective modules (linux/home, darwin/home).
 
-  colorScheme = inputs.nix-colors.colorSchemes.${user-options.colorscheme};
-
   home.stateVersion = "22.05";
+  colorScheme = inputs.nix-colors.colorSchemes.${user-options.colorscheme};
+  fonts.fontconfig.enable = true;
 
   # https://github.com/malob/nixpkgs/blob/master/home/default.nix
   # Direnv, load and unload environment variables depending on the current directory.
-  # https://direnv.net
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
+  #-------------------------- Default-config programs --------------------------#
   programs = {
-    ssh.enable = false;
+    # Docs: https://direnv.net
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -42,9 +43,7 @@ in {
       settings.show_program_path = true;
     };
   };
-
-  fonts.fontconfig.enable = true;
-
+  #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [
     # Terminal
     (pkgs.nerdfonts.override {fonts = user-options.fonts;})
@@ -113,6 +112,6 @@ in {
     # Other
     #anki # Flashcards
   ];
-
+  #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;
 }

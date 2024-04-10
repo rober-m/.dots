@@ -7,7 +7,6 @@
     #./gui/gtk.nix
     #./vscode-linux.nix
     #./firefox.nix
-    ./ssh.nix
     ./prisma-engines.nix
   ];
 in {
@@ -17,6 +16,7 @@ in {
 
   #---------------------------- Customized packages ----------------------------#
   customized = {
+    ssh.enable = true;
     zsh.enable = true;
     tmux.enable = true;
     neovim.enable = true;

@@ -6,23 +6,27 @@
 }: let
   imports = [
     ./zsh.nix
-    ./ssh.nix
     ./custom-launcher.nix
   ];
 in {
   inherit imports;
-
-  customized = {
-    zsh.enable = true;
-    ssh.enable = true;
-    custom-launcher.enable = true;
-  };
 
   home = {
     username = user-options.username;
     homeDirectory = "/Users/${user-options.username}";
   };
 
+  #---------------------------- Customized packages ----------------------------#
+  customized = {
+    ssh.enable = true;
+    zsh.enable = true;
+    custom-launcher.enable = true;
+    tmux.enable = true;
+    neovim.enable = true;
+    alacritty.enable = false;
+  };
+
+  #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [
     cocoapods
     m-cli # useful macOS CLI commands

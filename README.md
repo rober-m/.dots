@@ -72,6 +72,21 @@ I'm not sure about this, but if Neovim has problems loading modules or finding p
 2. Run `:PackerInstall`
 3. Rebuild
 
+## Related docs
+- [Nix language Manual](https://nixos.org/manual/nix/stable/)
+
+- [Nixpkgs Manual](https://nixos.org/manual/nixpkgs/stable/)
+
+- [NixOS Manual](https://nixos.org/manual/nixos/stable/)
+- [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)
+- [NixOS Options](https://nixos.org/manual/nixos/stable/options.html)
+
+- [Nix-darwin](https://github.com/LnL7/nix-darwin)
+- [Nix-darwin Options](https://daiderd.com/nix-darwin/manual/index.html)
+
+- [Home Manager Manual](https://nix-community.github.io/home-manager)
+
 ## Inspiration
 
-- [Matthias Benaets config](https://github.com/MatthiasBenaets/nixos-config)
+- [Matthias Benaets's config](https://github.com/MatthiasBenaets/nixos-config)
+- [malob's config](https://github.com/malob/nixpkgs)

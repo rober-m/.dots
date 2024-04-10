@@ -24,6 +24,7 @@ in {
     alacritty.enable = false;
     kitty.enable = true;
     vscode.enable = true;
+    haskell.enable = true;
   };
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [

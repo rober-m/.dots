@@ -17,6 +17,7 @@ in {
   # Most of these are in the `shared/home` config files.
   customized = {
     ssh.enable = true;
+    git.enable = true;
     zsh.enable = true;
     tmux.enable = true;
     neovim.enable = true;

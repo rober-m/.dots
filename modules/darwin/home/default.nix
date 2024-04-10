@@ -19,6 +19,7 @@ in {
   # Most of these are in the `shared/home` config files.
   customized = {
     ssh.enable = true;
+    git.enable = true;
     zsh.enable = true;
     custom-launcher.enable = true;
     tmux.enable = true;

@@ -5,7 +5,7 @@
 }: let
   imports = [
     #./gui/gtk.nix
-    #./firefox.nix
+    ./firefox.nix
     ./prisma-engines.nix
   ];
 in {
@@ -25,6 +25,11 @@ in {
     kitty.enable = true;
     vscode.enable = true;
     haskell.enable = true;
+    prisma-engines.enable = true;
+    firefox = {
+      enable = true;
+      withConfig = false;
+    };
   };
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [
@@ -36,7 +41,6 @@ in {
     emote # emoji picker
     variety # Wallpaper manager
     #google-chrome # Google Chrome browser
-    firefox # Firefox browser
     obsidian # Can't use it because of old Electron version :(
     # HLS 2.2.0 doesn't work in MacOS :(
     #haskell-language-server

@@ -73,7 +73,7 @@
           rebuild = "sudo nixos-rebuild switch --flake ~/.dots#framework";
           collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
         }
-        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
           rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
           collect-garbage = "echo 'TODO: Implement collect-garbage in Darwin'";
         };

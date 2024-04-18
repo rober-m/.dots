@@ -31,9 +31,17 @@ in {
       ../../modules/shared/system
       # NixOS system config
       ../../modules/linux/nixos
-      # `home-manager` module
+      # `home-manager` modules
       home-manager.nixosModules.home-manager
       inputs.cardano-node.nixosModules.cardano-node
+      {
+        nixpkgs.overlays = [
+          (_: _: {
+            cardano-pkgs.node = inputs.cardano-node.packages.${system};
+            cardano-pkgs.aiken = inputs.aiken_flake.packages.${system}.aiken;
+          })
+        ];
+      }
       {
         nixpkgs = nixpkgsWithConfig;
         home-manager.useGlobalPkgs = true;

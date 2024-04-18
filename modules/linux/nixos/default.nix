@@ -19,7 +19,7 @@
   customized = {
     android.enable = true;
     cardano = {
-      cardano-node.enable = false; # Run cardano-node as a service
+      cardano-node.enable = true; # Run cardano-node as a service
     };
   };
   #------------------------------------------------------------------------------------------------

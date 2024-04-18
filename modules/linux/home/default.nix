@@ -13,7 +13,9 @@ in {
 
   home.keyboard = null; # Configured at the system level.
 
+  #-----------------------------------------------------------------------------#
   #---------------------------- Customized packages ----------------------------#
+
   # Most of these are in the `shared/home` config files.
   customized = {
     ssh.enable = true;
@@ -31,7 +33,10 @@ in {
       withConfig = false;
     };
   };
+
+  #-----------------------------------------------------------------------------#
   #-------------------------- Default-config packages --------------------------#
+
   home.packages = with pkgs; [
     protonvpn-gui # Proton VPN
     bitwarden # Password manager
@@ -47,15 +52,19 @@ in {
     #(haskell-language-server.override {supportedGhcVersions = ["925" "928"];}) #Also installed in modules/nvim/lsp-config.nix
     cabal2nix # Cabal to Nix
     safeeyes # Eye-strain protection
-
     gnupg # GnuPG (Contains gpg and gpg-agent)
     pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
-
-    inputs.aiken_flake.packages.x86_64-linux.aiken # Aiken CLI
+    cardano-pkgs.aiken # Aiken CLI
   ];
+
+  #-----------------------------------------------------------------------------#
   #-------------------------- Default-config programs --------------------------#
+
   programs.obs-studio.enable = true; # OBS Studio for screen recording
+
+  #-----------------------------------------------------------------------------#
   #----------------------------- Other config files ----------------------------#
+
   # TODO: Move these config files to the hyprland module
   home.file.".config/rofi/config.rasi".source = ../nixos/gui/wayland/rofi/config.rasi;
   home.file.".config/hypr/hyprland.conf".source = ../nixos/gui/wayland/hyprland/hyprland.conf;

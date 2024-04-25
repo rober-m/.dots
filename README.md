@@ -46,6 +46,7 @@ darwin (nix-darwin, home)     linux (NixOS, home)
 ### TODOs
 
 - [ ] Add better instructions to README.
+- [ ] Add secrets management.
 - [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
 
 ## Installation

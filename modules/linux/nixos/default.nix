@@ -20,6 +20,7 @@
     android.enable = true;
     cardano = {
       cardano-node.enable = false; # Run cardano-node as a service and install cardano-cli
+      hydraw.enable = false; # Enable cardano-node (with cli) + hydra-node + example hydraw application
     };
   };
   #------------------------------------------------------------------------------------------------

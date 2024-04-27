@@ -16,6 +16,7 @@
       #rust-analyzer # Rust (Using rustup to install it instead of nixpkgs)
       nodePackages.vim-language-server # Vim
       nodePackages.typescript-language-server # Typescript
+      deno
       nodePackages.yaml-language-server # Yaml
       nodePackages.bash-language-server # Bash
       nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint extracted from VSCode

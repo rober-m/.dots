@@ -89,6 +89,7 @@ local lsp_flags = {
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
 local servers = {
   'tsserver',      -- Typescript
+  'denols',        -- Deno
   'nil_ls',        -- Nix
   'lua_ls',        -- Lua
   'rust_analyzer', -- Rust

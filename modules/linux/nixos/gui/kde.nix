@@ -7,33 +7,37 @@
   #  GTK_THEME = "Nordic:dark";
   #};
 
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    displayManager.defaultSession = "plasmawayland";
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-
-    desktopManager.plasma5 = {
-      enable = true;
-      #useQtScaling = true; # TODO: Try this if fractional scaling keeps giving problems
-    };
-
-    # Configure keymap in X11
-    # If xkb config doesn't seem to take effect, see:
-    # https://discourse.nixos.org/t/problem-with-xkboptions-it-doesnt-seem-to-take-effect/5269/2
-    xkb = {
-      layout = "us,es";
-      variant = "";
-    };
-    #xkbOptions = "caps:swapescape";
-
+  services = {
     # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
+
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+      # Enable the KDE Plasma Desktop Environment.
+      defaultSession = "plasmawayland";
+    };
+
+    xserver = {
+      # Enable the X11 windowing system.
+      enable = true;
+
+      desktopManager.plasma5 = {
+        enable = true;
+        #useQtScaling = true; # TODO: Try this if fractional scaling keeps giving problems
+      };
+
+      # Configure keymap in X11
+      # If xkb config doesn't seem to take effect, see:
+      # https://discourse.nixos.org/t/problem-with-xkboptions-it-doesnt-seem-to-take-effect/5269/2
+      xkb = {
+        layout = "us,es";
+        variant = "";
+      };
+      #xkbOptions = "caps:swapescape";
+    };
   };
 
   # Exclude these packages from instalation

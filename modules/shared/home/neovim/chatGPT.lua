@@ -3,7 +3,7 @@
 --
 
 require("chatgpt").setup({
-  api_key_cmd = nil, -- FIXME: Add api_key following: https://github.com/jackMort/ChatGPT.nvim#secrets-management
+  api_key_cmd = "gpg --decrypt ~/.dots/secrets/openai-secret-key.txt.gpg",
   yank_register = "+",
   edit_with_instructions = {
     diff = false,

@@ -7,5 +7,9 @@
         config = builtins.readFile ./chatGPT.lua;
       }
     ];
+
+    extraPackages = with pkgs; [
+      bitwarden-cli # To provide OpenAI API key
+    ];
   };
 }

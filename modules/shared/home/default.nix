@@ -67,6 +67,7 @@ in {
     eza # Easy aliases for zsh
     btop # Resource monitor (htop wiht steroids)
     zlib # Compression library. Needed to use Haskell's zlib package
+    watchman # File watching service
 
     # Virtualization
     docker
@@ -111,7 +112,7 @@ in {
 
     # Other
     #anki # Flashcards
-    elmPackages.elm
+    #elmPackages.elm
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

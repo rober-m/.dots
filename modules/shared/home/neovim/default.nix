@@ -22,7 +22,7 @@
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
-    ./chatGPT.nix # ChatGPT integration TODO: Configure it
+    #./chatGPT.nix # ChatGPT integration TODO: Configure it
     # which-key must be the last import for it to recognize the keybindings of
     # previous imports.
     ./which-key.nix # Pannel showing available keymappings live.
@@ -47,6 +47,9 @@
       plugins = with pkgs.vimPlugins; [
         copilot-vim # GitHub Copilot
         packer-nvim # This might be related to packerpath error. Always install, just in case
+        plenary-nvim # Lua functions that many plugins depend on
+        lazy-nvim # Lazy package management for Neovim
+
         {
           plugin = twilight-nvim; # Dim inactive portions of the code you're editing
           type = "lua";

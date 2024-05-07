@@ -68,6 +68,7 @@ in {
     btop # Resource monitor (htop wiht steroids)
     zlib # Compression library. Needed to use Haskell's zlib package
     watchman # File watching service
+    cmake # Cross-platform build system
 
     # Virtualization
     docker

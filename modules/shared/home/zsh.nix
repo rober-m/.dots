@@ -88,9 +88,24 @@
               if [[ -f "/Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken" ]]; then
                   source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
               else
-              aiken completion zsh > /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
-              source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
+                aiken completion zsh > /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
+                source /Users/${user-options.username}/.nix-profile/share/zsh/site-functions/_aiken
               fi
+          fi
+          # If aiken binary is present in .aiken/bin, add to PATH and add completion
+          ### if [[ -f "/Users/${user-options.username}/.aiken/bin/aiken" ]]; then
+          ###     if [[ -f "/usr/share/zsh/site-functions/_aiken" ]]; then
+          ###         source /usr/share/zsh/site-functions/_aiken
+          ###     else
+          ###       export PATH=$HOME/.aiken/bin:$PATH
+          ###       aiken completion zsh > /usr/share/zsh/site-functions/_aiken
+          ###       source /usr/share/zsh/site-functions/_aiken
+          ###     fi
+          ### fi
+
+          # Add Yaci-Devkit to path
+          if [[ -f "/Users/${user-options.username}/.yaci-devkit/bin" ]]; then
+            export PATH="$HOME/.yaci-devkit/bin:$PATH"
           fi
 
           # Add Dart to path

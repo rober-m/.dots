@@ -3,6 +3,7 @@
   #--------------------------------- SHARED SYSTEM CONFIG -----------------------------------------
 
   environment.variables.EDITOR = "nvim";
+  environment.pathsToLink = ["/share/zsh"]; # Needed by https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enableCompletion
 
   #------------------------------------------------------------------------------------------------
   #----------------------------------- SHARED NIX CONFIG ------------------------------------------

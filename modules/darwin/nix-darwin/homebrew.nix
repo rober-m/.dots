@@ -16,10 +16,12 @@
       #"haskell-stack"
       "pango"
       "zlib"
+      "aikup"
     ];
     taps = [
       "homebrew/cask"
       "koekeishiya/formulae" # yabai
+      "aiken-lang/homebrew-tap"
       #"microsoft/git" # git-credential-manager-core
     ];
     caskArgs = {

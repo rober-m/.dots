@@ -104,9 +104,10 @@
           ### fi
 
           # Add Yaci-Devkit to path
-          if [[ -f "/Users/${user-options.username}/.yaci-devkit/bin" ]]; then
-            export PATH="$HOME/.yaci-devkit/bin:$PATH"
-          fi
+          export PATH="$HOME/.yaci-devkit/bin:$PATH"
+          #if [[ -f "/Users/${user-options.username}/.yaci-devkit/bin" ]]; then
+          #  export PATH="$HOME/.yaci-devkit/bin:$PATH"
+          #fi
 
           # Add Dart to path
           export PATH=$HOME/.pub-cache/bin:$PATH

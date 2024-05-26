@@ -52,6 +52,7 @@
           # Git-related
           # See oh-my-zsh -> plugins -> git
           lg = "lazygit";
+          lzd = "lazydocker";
 
           # Quick movement
           dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly

@@ -53,6 +53,7 @@ in {
     git
     dua # Disk Usage Analyzer
     lazygit # Also installed in modules/nvim
+    lazydocker # Lazygit for Docker
     zsh # Linux shell
     lsd
     bat # `cat` with wings

@@ -118,6 +118,12 @@
 
           #Print neofetch
           #neofetch
+
+          # Start tmux session if not in one
+          if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]]; then
+            tmux new-session -A -s main
+          fi
+
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isLinux
         ''

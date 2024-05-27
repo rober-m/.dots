@@ -89,7 +89,7 @@ local lsp_flags = {
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
 local servers = {
   'tsserver',      -- Typescript
-  'denols',        -- Deno
+  -- 'denols',        -- Deno (It works, but it's annoying when using NodeJS)
   'nil_ls',        -- Nix
   'lua_ls',        -- Lua
   'rust_analyzer', -- Rust
@@ -100,7 +100,7 @@ local servers = {
   'cssls',         -- CSS    (vscode-langservers-extracted)
   'eslint',        -- ESLint (vscode-langservers-extracted)
   'jsonls',        -- JSON   (vscode-langservers-extracted)
-  --'tailwindcss',   -- Tailwind CSS FIXME: Uncomment after installation is fixed
+  'tailwindcss',   -- Tailwind CSS FIXME: Uncomment after installation is fixed
   'marksman',      -- Markdown (INFO: Format requests will fail because the LSP isn't capable of formatting!! See features: https://github.com/artempyanykh/marksman/blob/main/docs/features.md)
   'aiken',         -- Aiken
   --,'ltex'         -- LaTeX and Markdown

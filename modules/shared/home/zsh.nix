@@ -114,7 +114,7 @@
           export PATH=$HOME/.pub-cache/bin:$PATH
 
           # Initialize zoxide (z)
-          eval "$(zoxide init zsh)"
+          eval "$(zoxide init --cmd cd zsh)"
 
           #Print neofetch
           #neofetch

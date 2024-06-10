@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
+{pkgs, ...}: let
   imports = [
     #./gui/gtk.nix
     ./firefox.nix

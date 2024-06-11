@@ -94,15 +94,7 @@
               fi
           fi
           # If aiken binary is present in .aiken/bin, add to PATH and add completion
-          ### if [[ -f "/Users/${user-options.username}/.aiken/bin/aiken" ]]; then
-          ###     if [[ -f "/usr/share/zsh/site-functions/_aiken" ]]; then
-          ###         source /usr/share/zsh/site-functions/_aiken
-          ###     else
-          ###       export PATH=$HOME/.aiken/bin:$PATH
-          ###       aiken completion zsh > /usr/share/zsh/site-functions/_aiken
-          ###       source /usr/share/zsh/site-functions/_aiken
-          ###     fi
-          ### fi
+          export PATH=$HOME/.aiken/versions/v1.0.29-alpha/aiken-aarch64-apple-darwin/:$PATH # TODO: Do it the right way
 
           # Add Yaci-Devkit to path
           export PATH="$HOME/.yaci-devkit/bin:$PATH"

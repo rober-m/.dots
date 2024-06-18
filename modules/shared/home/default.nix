@@ -45,15 +45,16 @@ in {
   };
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [
-    # Terminal
+    # Generic Terminal
     (pkgs.nerdfonts.override {fonts = user-options.fonts;})
     coreutils
     curl
     wget
     git
-    dua # Disk Usage Analyzer
+    gh # GitHub CLI
+    gitleaks # Git leaks detector CLI
     lazygit # Also installed in modules/nvim
-    lazydocker # Lazygit for Docker
+    dua # Disk Usage Analyzer
     zsh # Linux shell
     lsd
     bat # `cat` with wings
@@ -64,7 +65,6 @@ in {
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
     tree # Print folder structure as a tree
-    gh # GitHub CLI
     eza # Easy aliases for zsh
     btop # Resource monitor (htop wiht steroids)
     zlib # Compression library. Needed to use Haskell's zlib package
@@ -72,6 +72,7 @@ in {
     cmake # Cross-platform build system
 
     # Virtualization
+    lazydocker # Lazygit for Docker
     docker
     docker-compose
 
@@ -93,6 +94,7 @@ in {
     # WebDev stuff
     deno
     nodejs
+    yarn
     nodePackages.typescript
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions

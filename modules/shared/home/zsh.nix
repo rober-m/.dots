@@ -56,8 +56,8 @@
 
           # Quick movement
           dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
-          sc = "cd ~/scratchpad";
-          pr = "cd ~/projects";
+          scr = "cd ~/scratchpad";
+          pro = "cd ~/projects";
           iog = "cd ~/IOG";
 
           # Nix-related

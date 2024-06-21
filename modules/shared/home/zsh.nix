@@ -57,6 +57,8 @@
           # Quick movement
           dots = "cd ~/.dots && nvim ."; # cd before so nvim plugis work properly
           sc = "cd ~/scratchpad";
+          pr = "cd ~/projects";
+          iog = "cd ~/IOG";
 
           # Nix-related
           # add "--refresh" to any "nix develop" command that you want to update inputs

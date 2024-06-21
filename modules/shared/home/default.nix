@@ -117,6 +117,7 @@ in {
     # Other
     #anki # Flashcards
     #elmPackages.elm
+    typst # LaTeX alternative
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

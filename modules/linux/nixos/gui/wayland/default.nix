@@ -3,7 +3,7 @@
   imports,
   ...
 }: {
-  # TODO: Move this config to home manager (non-nix config files already are)
+  # TODO: Can I move this config to home manager? (non-nix config files already are)
   programs.hyprland = {
     enable = true; # Doesn't work on NVIDIA
     xwayland.enable = true; # To run X11 apps
@@ -24,6 +24,10 @@
 
     networkmanagerapplet # Network manager menu in the status bar
   ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
+  };
 
   xdg.portal.enable = true; # For aps to comunicate
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];

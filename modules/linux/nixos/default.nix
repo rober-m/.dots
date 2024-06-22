@@ -1,11 +1,11 @@
 {
   pkgs,
   user-options,
-  inputs,
   ...
 }: {
   imports = [
     ./base # base system (basic linux-systems configurations)
+    ./nix.nix # Nix-related configurations
     ./gui # Graphical User Interface config (Desktop and WM)
     ./fingerprint.nix # Config to use fingerprint sensor
     ./flatpak.nix # Use flatpak
@@ -15,6 +15,7 @@
 
   #------------------------------------------------------------------------------------------------
   #----------------------------------- CUSTOMIZED PACKAGES ----------------------------------------
+
   # Most of these are in the `shared/home` config files.
   customized = {
     android.enable = true;
@@ -28,42 +29,9 @@
   #----------------------------------- SYSTEM-LEVEL SERVICES ----------------------------------------
 
   virtualisation.docker.enable = true;
-
-  services.thermald.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  #------------------------------------------------------------------------------------------------
-  #-------------------------------- NIXOS-SPECIFIC NIX CONFIG -------------------------------------
-
-  system.stateVersion = "23.05";
-
-  # Collect garbage every week
-  nix.gc.dates = "weekly";
-
-  # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = pkgs.lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
-  };
-
-  # Overlay to update MEGASync to the latest version
-  nixpkgs.overlays = [
-    #(import ../../../overlays/magasync.nix)
-  ];
-
-  # Auto-upgrade system
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L" # print build logs
-    ];
-    dates = "weekly";
-    randomizedDelaySec = "1d";
+  services = {
+    thermald.enable = true; # Enable thermald to prevent overheating.
+    printing.enable = true; # Enable CUPS to print documents.
   };
 
   #------------------------------------------------------------------------------------------------
@@ -81,10 +49,6 @@
     extraGroups = ["networkmanager" "wheel" "docker" "adbusers"];
     shell = pkgs.zsh;
     # packages = with pkgs; [ ];
-  };
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
   };
 
   programs = {

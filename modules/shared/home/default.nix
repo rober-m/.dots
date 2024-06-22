@@ -106,6 +106,7 @@ in {
     comma # run software from without installing it
     niv # easy dependency management for nix projects
     nix-tree # visualize the dependency graph of a nix derivation
+    alejandra
 
     #Rust
     gcc # GNU Compiler Collection

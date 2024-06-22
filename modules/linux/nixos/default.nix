@@ -23,6 +23,17 @@
       hydraw.enable = false; # Enable cardano-node (with cli) + hydra-node + example hydraw application
     };
   };
+
+  #------------------------------------------------------------------------------------------------
+  #----------------------------------- SYSTEM-LEVEL SERVICES ----------------------------------------
+
+  virtualisation.docker.enable = true;
+
+  services.thermald.enable = true;
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
   #------------------------------------------------------------------------------------------------
   #-------------------------------- NIXOS-SPECIFIC NIX CONFIG -------------------------------------
 
@@ -58,13 +69,6 @@
   #------------------------------------------------------------------------------------------------
   #-------------------------- REST OF CONFIG (I HAVE TO TIDY A BIT) -------------------------------
 
-  virtualisation.docker.enable = true;
-
-  services.thermald.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   hardware = {
     bluetooth.enable = true; # Enable Bloetooth
     keyboard.zsa.enable = true; # Enable udev rules to flash new configurations to the ZSA Moonlander
@@ -79,10 +83,9 @@
     # packages = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [
-    wget
-    alejandra
-  ];
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
+  };
 
   programs = {
     zsh.enable = true;

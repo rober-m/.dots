@@ -49,7 +49,17 @@
         packer-nvim # This might be related to packerpath error. Always install, just in case
         plenary-nvim # Lua functions that many plugins depend on
         lazy-nvim # Lazy package management for Neovim
-
+        {
+          plugin = otter-nvim; # LSP for code embeded in documents
+          type = "lua";
+          config =
+            /*
+            lua
+            */
+            ''
+              require("otter").activate({"lua", "javascript"}, true, true, nil)
+            '';
+        }
         {
           plugin = twilight-nvim; # Dim inactive portions of the code you're editing
           type = "lua";

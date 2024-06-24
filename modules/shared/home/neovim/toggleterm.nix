@@ -4,15 +4,19 @@
       {
         plugin = toggleterm-nvim;
         type = "lua";
-        config = ''
+        config =
+          /*
+          lua
+          */
+          ''
 
-          ------------------------------------ TOGGLETERM -----------------------------------------
-          -- Docs: https://github.com/akinsho/toggleterm.nvim/
-          require("toggleterm").setup {
-            open_mapping = [[<c-\>]],
-          }
-          -----------------------------------------------------------------------------------------
-        '';
+            ------------------------------------ TOGGLETERM -----------------------------------------
+            -- Docs: https://github.com/akinsho/toggleterm.nvim/
+            require("toggleterm").setup {
+              open_mapping = [[<c-\>]],
+            }
+            -----------------------------------------------------------------------------------------
+          '';
       }
     ];
   };

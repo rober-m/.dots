@@ -120,6 +120,9 @@
 
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isLinux
+        /*
+        bash
+        */
         ''
           # Linux-specific ZSH configuration
           export PATH=$HOME/.local/bin/:$PATH
@@ -129,6 +132,9 @@
           export CHROME_EXECUTABLE=google-chrome-stable
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isDarwin
+        /*
+        bash
+        */
         ''
           # MacOS-specific ZSH configuration
           eval "$(/opt/homebrew/bin/brew shellenv)" # Needed for homebrew

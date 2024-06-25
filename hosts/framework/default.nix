@@ -38,7 +38,8 @@ in {
         nixpkgs.overlays = [
           (_: _: {
             cardano-pkgs.node = inputs.cardano-node.packages.${system};
-            cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;
+            #cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;
+            cardano-pkgs.aiken = inputs.aiken_bump_nix_pr.packages.${system}.aiken;
           })
         ];
       }

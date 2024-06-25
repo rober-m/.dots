@@ -57,7 +57,22 @@
             lua
             */
             ''
-              require("otter").activate({"lua", "javascript"}, true, true, nil)
+              ------------------------------------ OTTER -------------------------------------------
+              -- WARNING: This doesn't work. I don't know why.
+              -- Docs: https://github.com/jmbuhr/otter.nvim
+              -- table of embedded languages to look for.
+              -- default = nil, which will activate
+              -- any embedded languages found
+              local languages = {'lua'}
+              --local languages = nil
+              -- enable completion/diagnostics
+              -- defaults are true
+              local completion = true
+              local diagnostics = true
+              -- treesitter query to look for embedded languages
+              -- uses injections if nil or not set
+              local tsquery = nil
+              require('otter').activate(languages, completion, diagnostics, tsquery)
             '';
         }
         {
@@ -90,8 +105,8 @@
                 },
                 exclude = {}, -- exclude these filetypes
               }
-              -----------------------------------------------------------------------------------------
 
+              -----------------------------------------------------------------------------------------
             '';
         }
       ];
@@ -102,11 +117,15 @@
         proselint # A linter for English prose
       ];
 
-      extraConfig = ''
-        lua << EOF
-        ${builtins.readFile ./default.lua}
-        EOF
-      '';
+      extraConfig =
+        /*
+        vim
+        */
+        ''
+          lua << EOF
+          ${builtins.readFile ./default.lua}
+          EOF
+        '';
     };
   };
 }

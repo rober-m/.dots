@@ -79,3 +79,4 @@ I'm not sure about this, but if Neovim has problems loading modules or finding p
 - [Matthias Benaets's config](https://github.com/MatthiasBenaets/nixos-config)
 - [malob's config](https://github.com/malob/nixpkgs)
 - [Srid's config](https://github.com/srid/nixos-config)
+- [Misterio77's config](https://github.com/Misterio77/nix-config)

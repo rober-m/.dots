@@ -1,7 +1,6 @@
 {
   pkgs,
   user-options,
-  inputs,
   ...
 }: let
   imports = [

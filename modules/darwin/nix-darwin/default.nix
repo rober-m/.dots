@@ -80,13 +80,14 @@
   };
 
   # Fonts TODO: Extract to common
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      recursive
-      (nerdfonts.override {fonts = user-options.fonts;})
-    ];
-  };
+  # TODO: fonts.fonts has been renamed to fonts.packages should I use it?
+  # fonts = {
+  #   fontDir.enable = true;
+  #   fonts = with pkgs; [
+  #     recursive
+  #     (nerdfonts.override {fonts = user-options.fonts;})
+  #   ];
+  # };
 
   # Apps - TODO: Can I extract this to common and still have it work?
   # `home-manager` currently has issues adding them to `~/Applications`

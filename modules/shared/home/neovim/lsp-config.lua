@@ -77,6 +77,7 @@ local on_attach = function(client, bufnr)
     l = {
       name = "LSP",
       t = { vim.lsp.buf.type_definition, "Type definition" },
+      h = { "<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", "Toggle Inlay Hints" },
     },
   }, { prefix = "<leader>" })
 end
@@ -87,11 +88,8 @@ local lsp_flags = {
 }
 
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
-local servers = {
-  'tsserver',      -- Typescript
+local servers_with_shared_config = {
   -- 'denols',        -- Deno (It works, but it's annoying when using NodeJS)
-  'nil_ls',        -- Nix
-  'lua_ls',        -- Lua
   'rust_analyzer', -- Rust
   'yamlls',        -- Yaml
   'bashls',        -- Bash
@@ -108,15 +106,48 @@ local servers = {
   'dartls',        -- Dart (Language Server provided by `dart`)
 }
 
-for _, server in ipairs(servers) do
+for _, server in ipairs(servers_with_shared_config) do
   require('lspconfig')[server].setup {
     on_attach = on_attach,
     flags = lsp_flags,
   }
 end
 
-require('lspconfig')['hls'].setup {
+require('lspconfig').tsserver.setup {
   on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+    javascript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayVariableTypeHints = true,
+
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+  },
+}
+
+require('lspconfig').hls.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
   -- filetypes = { 'haskell', 'lhaskell', 'cabal' },
   -- rootPatterns = { "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" },
   settings = {
@@ -131,6 +162,7 @@ require('lspconfig')['hls'].setup {
 
 require('lspconfig').nil_ls.setup {
   on_attach = on_attach,
+  flags = lsp_flags,
   settings = {
     ['nil'] = {
       formatting = {
@@ -143,12 +175,14 @@ require('lspconfig').nil_ls.setup {
 
 require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
+  flags = lsp_flags,
   settings = {
     Lua = {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
         globals = { 'vim' },
       },
+      hint = { enable = true },
     },
   },
 }

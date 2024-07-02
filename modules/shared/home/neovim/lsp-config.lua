@@ -82,11 +82,6 @@ local on_attach = function(client, bufnr)
   }, { prefix = "<leader>" })
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
 local servers_with_shared_config = {
   -- 'denols',        -- Deno (It works, but it's annoying when using NodeJS)
@@ -109,13 +104,11 @@ local servers_with_shared_config = {
 for _, server in ipairs(servers_with_shared_config) do
   require('lspconfig')[server].setup {
     on_attach = on_attach,
-    flags = lsp_flags,
   }
 end
 
 require('lspconfig').tsserver.setup {
   on_attach = on_attach,
-  flags = lsp_flags,
   settings = {
     typescript = {
       inlayHints = {
@@ -147,7 +140,6 @@ require('lspconfig').tsserver.setup {
 
 require('lspconfig').hls.setup {
   on_attach = on_attach,
-  flags = lsp_flags,
   -- filetypes = { 'haskell', 'lhaskell', 'cabal' },
   -- rootPatterns = { "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" },
   settings = {
@@ -162,7 +154,6 @@ require('lspconfig').hls.setup {
 
 require('lspconfig').nil_ls.setup {
   on_attach = on_attach,
-  flags = lsp_flags,
   settings = {
     ['nil'] = {
       formatting = {
@@ -175,7 +166,6 @@ require('lspconfig').nil_ls.setup {
 
 require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
-  flags = lsp_flags,
   settings = {
     Lua = {
       diagnostics = {

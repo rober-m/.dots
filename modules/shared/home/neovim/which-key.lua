@@ -1,14 +1,17 @@
 ------------------------------------- WHICH-KEY -----------------------------------------
-require("which-key").setup {
+require("which-key").setup {}
 
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  -- refer to the configuration section below
-}
+-- Movement
 require("which-key").register({
   ["gh"] = { "0", "GoTo beginning of line" },
   ["gl"] = { "$", "GoTo end of line" },
 })
+
+-- Move highlighted lines
+require("which-key").register({
+  ["J"] = { ":m '>+1<CR>gv=gv", "Move line down" },
+  ["K"] = { ":m '<-2<CR>gv=gv", "Move line up" },
+}, { mode = 'v', silent = true })
 
 -- TODO: MacOS remaps. Generalize to Linux.
 local normal_pane_movements = {

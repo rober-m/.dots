@@ -51,6 +51,7 @@
         packer-nvim # This might be related to packerpath error. Always install, just in case
         plenary-nvim # Lua functions that many plugins depend on
         lazy-nvim # Lazy package management for Neovim
+        dressing-nvim # Neovim plugin to improve the default vim.ui interfaces
         {
           plugin = otter-nvim; # LSP for code embeded in documents
           type = "lua";

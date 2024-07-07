@@ -5,7 +5,7 @@
   config,
   ...
 }: {
-  # IMPORTANT: Currently using non-nix installation because it's easier to keep udated and
+  # WARN: Currently using non-nix installation because it's easier to keep udated and
   # dynamically modify settings (e.g., zoom in and out with `Ctrl+=`.)
   # Module: https://github.com/nix-community/home-manager/blob/ae631b0b20f06f7d239d160723d228891ddb2fe0/modules/programs/firefox.nix#L161
   # Config example: https://www.youtube.com/watch?v=GaM_paeX7TI

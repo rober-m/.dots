@@ -3,6 +3,8 @@
 -- Config originally copied from:
 -- https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
 
+-------------------- GENERAL CONFIG ------------------------------
+
 local prompts = {
   -- Code related prompts
   Explain = "Please explain how the following code works.",
@@ -28,7 +30,7 @@ local opts = {
   error_header = "## Error ",
   prompts = prompts,
   auto_follow_cursor = false, -- Don't follow the cursor after getting response
-  show_help = false,          -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
+  show_help = true,           -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
   mappings = {
     -- Use tab for completion
     complete = {
@@ -95,6 +97,9 @@ chat.setup(opts)
 -- Setup the CMP integration
 require("CopilotChat.integrations.cmp").setup()
 
+
+-------------------- CUSTOM COMMANDS ------------------------
+
 vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
   chat.ask(args.args, { selection = select.visual })
 end, { nargs = "*", range = true })
@@ -133,6 +138,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+-------------------- KEYBINDINGS ------------------------
+
 -- Add which-key mappings
 local wk = require("which-key")
 wk.register({
@@ -144,7 +151,7 @@ wk.register({
         local actions = require("CopilotChat.actions")
         require("CopilotChat.integrations.telescope").pick(actions.help_actions())
       end,
-      "CopilotChat - Help actions",
+      "Help actions",
     },
     -- Show prompts actions with telescope
     p = {
@@ -152,14 +159,14 @@ wk.register({
         local actions = require("CopilotChat.actions")
         require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
       end,
-      "CopilotChat - Prompt actions",
+      "Prompt actions",
     },
     -- Code related commands
-    e = { "<cmd>CopilotChatExplain<cr>", "CopilotChat - Explain code" },
-    t = { "<cmd>CopilotChatTests<cr>", "CopilotChat - Generate tests" },
-    r = { "<cmd>CopilotChatReview<cr>", "CopilotChat - Review code" },
-    R = { "<cmd>CopilotChatRefactor<cr>", "CopilotChat - Refactor code" },
-    n = { "<cmd>CopilotChatBetterNamings<cr>", "CopilotChat - Better Naming" },
+    e = { "<cmd>CopilotChatExplain<cr>", "Explain code" },
+    t = { "<cmd>CopilotChatTests<cr>", "Generate tests" },
+    r = { "<cmd>CopilotChatReview<cr>", "Review code" },
+    R = { "<cmd>CopilotChatRefactor<cr>", "Refactor code" },
+    n = { "<cmd>CopilotChatBetterNamings<cr>", "Better Naming" },
     -- Custom input for CopilotChat
     i = {
       function()
@@ -168,35 +175,35 @@ wk.register({
           vim.cmd("CopilotChat " .. input)
         end
       end,
-      "CopilotChat - Ask input",
+      "Ask input",
     },
     -- Generate commit message based on the git diff
     m = {
       "<cmd>CopilotChatCommit<cr>",
-      "CopilotChat - Generate commit message for all changes",
+      "Generate commit message for all changes",
     },
     M = {
       "<cmd>CopilotChatCommitStaged<cr>",
-      "CopilotChat - Generate commit message for staged changes",
+      "Generate commit message for staged changes",
     },
     -- Quick chat with Copilot
-    q = {
+    c = {
       function()
         local input = vim.fn.input("Quick Chat: ")
         if input ~= "" then
           vim.cmd("CopilotChatBuffer " .. input)
         end
       end,
-      "CopilotChat - Quick chat",
+      "Quick chat",
     },
     -- Debug
-    d = { "<cmd>CopilotChatDebugInfo<cr>", "CopilotChat - Debug Info" },
+    d = { "<cmd>CopilotChatDebugInfo<cr>", "Debug Info" },
     -- Fix the issue with diagnostic
-    f = { "<cmd>CopilotChatFixDiagnostic<cr>", "CopilotChat - Fix Diagnostic" },
+    f = { "<cmd>CopilotChatFixDiagnostic<cr>", "Fix Diagnostic" },
     -- Clear buffer and chat history
-    l = { "<cmd>CopilotChatReset<cr>", "CopilotChat - Clear buffer and chat history" },
+    l = { "<cmd>CopilotChatReset<cr>", "Clear buffer and chat history" },
     -- Toggle Copilot Chat Vsplit
-    v = { "<cmd>--[[ C ]]opilotChatToggle<cr>", "CopilotChat - Toggle" },
+    v = { "<cmd>CopilotChatToggle<cr>", "Toggle" },
   }
 }, { prefix = "<leader>" })
 
@@ -204,16 +211,16 @@ wk.register({
   a = {
     p = {
       ":lua require('CopilotChat.integrations.telescope').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
-      "CopilotChat - Prompt actions",
+      "Prompt actions",
     },
     -- Chat with Copilot in visual mode
     v = {
-      ":CopilotChatVisual",
-      "CopilotChat - Open in vertical split",
+      ":CopilotChatVisual<cr>",
+      "Open in vertical split",
     },
-    x = {
+    i = {
       ":CopilotChatInline<cr>",
-      desc = "CopilotChat - Inline chat",
+      desc = "Inline chat",
     },
   },
 }, { prefix = "<leader>", mode = "x" })

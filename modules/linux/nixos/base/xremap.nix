@@ -12,7 +12,7 @@
   users.groups.input.members = [user-options.username];
 
   #---------------------------------------------------------
-  # IMPORTANT!!!: For this to work on the Moonlander, make
+  # WARNING!!!: For this to work on the Moonlander, make
   # sure to plug it in AFTER booting the system or re-plug.
   # Else, this will conflict with the Moonlander's config!!
   #---------------------------------------------------------

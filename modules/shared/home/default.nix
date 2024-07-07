@@ -109,6 +109,7 @@ in {
     nix-tree # visualize the dependency graph of a nix derivation
     alejandra # Nix code formatter
     nix-init # Command line tool to generate Nix packages from URLs
+    nix-output-monitor # Use `nom <build|develop|shell>` to show aditional information while building
 
     #Rust
     gcc # GNU Compiler Collection

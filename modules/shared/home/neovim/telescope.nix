@@ -18,6 +18,7 @@
                                     f = { ":Telescope find_files<cr>", "File" },
                                     t = { ":Telescope live_grep<cr>", "Text" },
                                     b = { ":Telescope buffers<cr>", "Open Buffer" },
+                                    m = { ":Telescope git_status<cr>", "Modified Files" },
                                   },
                                 }, { prefix = "<leader>" })
             -----------------------------------------------------------------------------------------

@@ -13,7 +13,7 @@
           ''
             -------------------------------- TREESITTER ---------------------------------------
             require'nvim-treesitter.configs'.setup {
-              -- IMPORTANT: Don't use "ensure_installed" or "auto_install" because you will get an
+              -- WARN: Don't use "ensure_installed" or "auto_install" because you will get an
               -- error. Install the parsers using nix.
               highlight = {
                 enable = true

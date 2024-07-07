@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
-      # IMPORTANT: I had to install hoogle separatedly "extraPackages" didn't work.
+      # INFO: I had to install hoogle separatedly "extraPackages" didn't work.
       {
         plugin = haskell-tools-nvim;
         type = "lua";

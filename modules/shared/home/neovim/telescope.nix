@@ -33,9 +33,11 @@
           */
           ''
             -------------------------------- TELESCOPE: ZOXIDE --------------------------------------
-            -- zoxide: https://github.com/ajeetdsouza/zoxide
-            -- telescope-zoxide: https://github.com/jvgrootveld/telescope-zoxide
+            -- Move NVIM session to a directory using Zoxide.
+            -- INFO: Select with <C-f> to pipe selected folder files to Telescope's find_files.
             -- Needs to have Zoxide installed.
+            -- Docs - zoxide: https://github.com/ajeetdsouza/zoxide
+            -- Docs - telescope-zoxide: https://github.com/jvgrootveld/telescope-zoxide
             require("which-key").register({
                                   s = {
                                     name = "search",
@@ -55,6 +57,7 @@
           ''
             ----------------------------- TELESCOPE: FILE BROWSER -----------------------------------
             -- Docs: https://github.com/nvim-telescope/telescope-file-browser.nvim
+            -- This could be used as an alternative to NERDTree.
             require("telescope").load_extension "file_browser"
             require("which-key").register({
                                   ["<C-b>"] = { ":Telescope file_browser<cr>", "Browse Files" },

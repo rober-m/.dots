@@ -61,6 +61,7 @@ in {
     fd # Simplified `find`
     fzf # Fuzzy finder
     jq # JSON processor
+    jless # JSON CLI interactive viewer
     zoxide # Also installed in modules/nvim
     mdbook # Create books from Markdown
     inetutils # Collection of common network programs: ping6, telnet, ifconfig, whois, etc
@@ -106,7 +107,8 @@ in {
     comma # run software from without installing it
     niv # easy dependency management for nix projects
     nix-tree # visualize the dependency graph of a nix derivation
-    alejandra
+    alejandra # Nix code formatter
+    nix-init # Command line tool to generate Nix packages from URLs
 
     #Rust
     gcc # GNU Compiler Collection

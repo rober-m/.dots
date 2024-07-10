@@ -24,6 +24,7 @@
     ./nvim-notify.nix # Notifications
     #./chatGPT.nix # ChatGPT integration TODO: Configure it
     ./copilotChat.nix # GitHub Copilot's chat integration
+    ./luasnip.nix # Snippets
     #---------------- IMPORTANT ----------------
     # INFO: which-key must be the last import for it to recognize the keybindings of
     # previous imports.
@@ -108,7 +109,6 @@
                 },
                 exclude = {}, -- exclude these filetypes
               }
-
               -----------------------------------------------------------------------------------------
             '';
         }

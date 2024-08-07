@@ -25,6 +25,7 @@
       ihp-new # IHP framework (https://ihp.digitallyinduced.com/Guide/index.html)
       haskellPackages.doctest
       stylish-haskell # Haskell code prettifier / formatter
+      ghciwatch # Load a GHCi session for a Haskell project and reloads it when source files change.
       #haskellPackages.lhs2tex # Literate Haskell to LaTeX
       #ghcid # Dependency to compile Andres slides... for some reason..
       zlib # Compression library. Needed to use Haskell's zlib package

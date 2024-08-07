@@ -82,6 +82,7 @@ require("which-key").register({
   h = {
     name = "Haskell",
     r = { ht.repl.toggle, "Toggle REPL" },
+    w = { "<cmd>TermExec cmd=\"ghciwatch --clear\" direction=vertical size=60 name=\"ghciwatch\"<CR>", "ghciwatch" }
   },
 
 }, { prefix = "<leader>" })

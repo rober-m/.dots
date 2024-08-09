@@ -28,6 +28,10 @@
         remember_window_size = false;
         initial_window_width = 1000;
         initial_window_height = 800;
+        background_opacity = "1";
+        background_image = "~/.dots/wallpapers/86.png";
+        background_image_layout = "scaled";
+        background_tint = "0.9"; # Mix background color with background image
       };
 
       font.name = "FiraCode Nerd Font";

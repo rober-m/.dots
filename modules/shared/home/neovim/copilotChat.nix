@@ -9,7 +9,7 @@
     ];
 
     extraPackages = with pkgs.vimPlugins; [
-      copilot-vim # GitHub Copilot
+      copilot-lua # GitHub Copilot
       plenary-nvim # Lua functions that many plugins depend on
     ];
   };

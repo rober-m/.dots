@@ -12,6 +12,8 @@
 
       # ICONS
       nvim-web-devicons # Adds icons to my pluggins
+      lspkind-nvim # Add icons to LSP completion menu
+
 
       # MAIN CONFIG
       {

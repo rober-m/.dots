@@ -23,6 +23,7 @@
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
     #./chatGPT.nix # ChatGPT integration TODO: Configure it
+    ./copilot.nix # GitHub Copilot
     ./copilotChat.nix # GitHub Copilot's chat integration
     ./luasnip.nix # Snippets
     #---------------- IMPORTANT ----------------
@@ -48,7 +49,6 @@
 
       # Plugins without configuration
       plugins = with pkgs.vimPlugins; [
-        copilot-vim # GitHub Copilot
         packer-nvim # This might be related to packerpath error. Always install, just in case
         plenary-nvim # Lua functions that many plugins depend on
         lazy-nvim # Lazy package management for Neovim

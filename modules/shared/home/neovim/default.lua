@@ -48,10 +48,10 @@ vim.opt.incsearch = true -- Show incremental matches while typing the search.
 packer = require 'packer'
 local use = packer.use
 packer.startup(function()
-  use {
-    'https://codeberg.org/esensar/nvim-dev-container', -- To use Devcontainers (Docker). Docs: https://github.com/esensar/nvim-dev-container
-    --requires = { 'nvim-treesitter/nvim-treesitter' }   -- Needed  to parse the config
-  }
+  --use {
+  --  'https://codeberg.org/esensar/nvim-dev-container', -- To use Devcontainers (Docker). Docs: https://github.com/esensar/nvim-dev-container
+  --  --requires = { 'nvim-treesitter/nvim-treesitter' }   -- Needed  to parse the config
+  --}
   use 'aiken-lang/editor-integration-nvim'
   -- use {
   --   'akinsho/flutter-tools.nvim',
@@ -60,7 +60,8 @@ packer.startup(function()
   --     'stevearc/dressing.nvim', -- optional for vim.ui.select
   --   },
   -- }
+  -- use 'AndreM222/copilot-lualine'
 end)
 
-require("devcontainer").setup {}
+--require("devcontainer").setup {}
 --require("flutter-tools").setup {}

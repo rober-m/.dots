@@ -25,13 +25,13 @@
         scrollback_lines = 10000;
         enable_audio_bell = false;
         update_check_interval = 0;
-        remember_window_size = false;
+        remember_window_size = true;
         initial_window_width = 1000;
         initial_window_height = 800;
         background_opacity = "1";
-        background_image = "~/.dots/wallpapers/86.png";
+        background_image = "~/.dots/wallpapers/japan_traditional_street.png"; # Only PNG.
         background_image_layout = "scaled";
-        background_tint = "0.9"; # Mix background color with background image
+        background_tint = "0.90"; # Mix background color with background image
       };
 
       font.name = "FiraCode Nerd Font";

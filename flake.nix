@@ -80,7 +80,7 @@
       username = "roberm";
       # More colorschemes at: https://github.com/tinted-theming/base16-schemes
       colorscheme = colorschemes.cf;
-      opacity = 1; # Terminal-related opacity. Range: 0-1 (e.g., 0.92)
+      opacity = 0.92; #1; # Terminal-related opacity. Range: 0-1 (e.g., 0.92)
       fonts = ["Hack" "FiraCode" "DroidSansMono"];
     };
   in {

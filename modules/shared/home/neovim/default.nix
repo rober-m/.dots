@@ -9,6 +9,7 @@
   imports = [
     ./lsp-config.nix # Lsp config
     ./nvim-cmp.nix # Completion engine with completion sources
+    ./dap.nix # Debugging adapter protocol
     ./telescope.nix # Fuzzy finder
     ./bufferline.nix # Cool buffer tabs
     ./lualine.nix # Cool status-line

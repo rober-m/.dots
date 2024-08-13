@@ -59,6 +59,7 @@
           scr = "cd ~/scratchpad";
           pro = "cd ~/projects";
           iog = "cd ~/IOG";
+          exer = "cd ~/projects/100-exercises-to-learn-rust/exercises/ && wr";
 
           # Nix-related
           # add "--refresh" to any "nix develop" command that you want to update inputs
@@ -84,6 +85,9 @@
       # Multi-platform extra commands that should be added to {file}`.zshrc`.
       # MacOS and Linux-specific commands are provided in the respective sections.
       initExtra =
+        /*
+        bash
+        */
         ''
           # Aiken-specific configuration
           # If aiken binary is present in nix-profile, add completion
@@ -118,6 +122,8 @@
             tmux new-session -A -s main
           fi
 
+          # Add Rust binaries to PATH
+          export PATH=$HOME/.cargo/bin:$PATH
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isLinux
         /*

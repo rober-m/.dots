@@ -54,6 +54,7 @@
         plenary-nvim # Lua functions that many plugins depend on
         lazy-nvim # Lazy package management for Neovim
         dressing-nvim # Neovim plugin to improve the default vim.ui interfaces
+        sniprun # Run code snippets
         {
           plugin = otter-nvim; # LSP for code embeded in documents
           type = "lua";

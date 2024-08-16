@@ -112,7 +112,7 @@ in {
     nix-output-monitor # Use `nom <build|develop|shell>` to show aditional information while building
 
     #Rust
-    gcc # GNU Compiler Collection
+    #gcc # GNU Compiler Collection
     rustup # Rust toolchain installer (using this to install rust tooling)
 
     # Flutter

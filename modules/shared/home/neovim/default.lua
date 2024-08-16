@@ -61,7 +61,13 @@ packer.startup(function()
   --   },
   -- }
   -- use 'AndreM222/copilot-lualine'
+  use {
+    'MeanderingProgrammer/render-markdown.nvim',
+    --after = { 'nvim-treesitter' },
+    --requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+  }
 end)
 
+require('render-markdown').setup({})
 --require("devcontainer").setup {}
 --require("flutter-tools").setup {}

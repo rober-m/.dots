@@ -19,6 +19,7 @@
     ./nvim-tree.nix # Tree file explorer
     ./comments.nix # To easily comment/uncomment code
     ./haskell.nix # All my Haskell config (using haskell-tools)
+    ./rust.nix # All my Rust config (using rustaceanvim)
     ./toggleterm.nix # Persist and toggle multiple terminals
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI
@@ -122,15 +123,7 @@
         proselint # A linter for English prose
       ];
 
-      extraConfig =
-        /*
-        vim
-        */
-        ''
-          lua << EOF
-          ${builtins.readFile ./default.lua}
-          EOF
-        '';
+      extraLuaConfig = builtins.readFile ./default.lua;
     };
   };
 }

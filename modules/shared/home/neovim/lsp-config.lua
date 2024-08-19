@@ -85,20 +85,20 @@ end
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)
 local servers_with_shared_config = {
   -- 'denols',        -- Deno (It works, but it's annoying when using NodeJS)
-  'rust_analyzer', -- Rust
-  'yamlls',        -- Yaml
-  'bashls',        -- Bash
-  'vimls',         -- Vim
-  'html',          -- HTML   (vscode-langservers-extracted)
-  'cssls',         -- CSS    (vscode-langservers-extracted)
-  'eslint',        -- ESLint (vscode-langservers-extracted)
-  'jsonls',        -- JSON   (vscode-langservers-extracted)
-  'tailwindcss',   -- Tailwind CSS FIXME: Uncomment after installation is fixed
-  'marksman',      -- Markdown (INFO: Format requests will fail because the LSP isn't capable of formatting!! See features: https://github.com/artempyanykh/marksman/blob/main/docs/features.md)
-  'aiken',         -- Aiken
-  --,'ltex'         -- LaTeX and Markdown
-  'terraformls',   -- Terraform
-  'dartls',        -- Dart (Language Server provided by `dart`)
+  -- 'rust_analyzer', -- Rust (I use rustacean.nix)
+  'yamlls',      -- Yaml
+  'bashls',      -- Bash
+  'vimls',       -- Vim
+  'html',        -- HTML   (vscode-langservers-extracted)
+  'cssls',       -- CSS    (vscode-langservers-extracted)
+  'eslint',      -- ESLint (vscode-langservers-extracted)
+  'jsonls',      -- JSON   (vscode-langservers-extracted)
+  'tailwindcss', -- Tailwind CSS
+  'marksman',    -- Markdown (INFO: Format requests will fail because the LSP isn't capable of formatting!! See features: https://github.com/artempyanykh/marksman/blob/main/docs/features.md)
+  'aiken',       -- Aiken
+  -- 'ltex',         -- LaTeX and Markdown
+  'terraformls', -- Terraform
+  'dartls',      -- Dart (Language Server provided by `dart`)
 }
 
 for _, server in ipairs(servers_with_shared_config) do

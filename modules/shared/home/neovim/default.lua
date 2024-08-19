@@ -49,7 +49,7 @@ packer = require 'packer'
 local use = packer.use
 packer.startup(function()
   --use {
-  --  'https://codeberg.org/esensar/nvim-dev-container', -- To use Devcontainers (Docker). Docs: https://github.com/esensar/nvim-dev-container
+  --  'https://codeberg.org/esensar/nvim-dev-container', -- To use Devcontainers (Docker). DOCS: https://github.com/esensar/nvim-dev-container
   --  --requires = { 'nvim-treesitter/nvim-treesitter' }   -- Needed  to parse the config
   --}
   use 'aiken-lang/editor-integration-nvim'

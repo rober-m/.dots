@@ -1,5 +1,5 @@
 ---------------------------------- NVIM-LSPCONFIG ---------------------------------------
--- Docs: https://github.com/neovim/nvim-lspconfig/
+-- DOCS: https://github.com/neovim/nvim-lspconfig/
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 

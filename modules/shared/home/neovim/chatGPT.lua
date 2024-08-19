@@ -1,5 +1,5 @@
 ---------------------------------- ChatGPT-nvim ----------------------------------------
--- Docs: https://github.com/jackMort/ChatGPT.nvim
+-- DOCS: https://github.com/jackMort/ChatGPT.nvim
 --
 
 require("chatgpt").setup({

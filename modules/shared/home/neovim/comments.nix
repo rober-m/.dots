@@ -11,7 +11,7 @@
           ''
 
             ------------------------------------- COMMENTS-NVIM -------------------------------------
-            -- Docs: https://github.com/numtostr/comment.nvim/
+            -- DOCS: https://github.com/numtostr/comment.nvim/
             require("Comment").setup()
             -----------------------------------------------------------------------------------------
           '';

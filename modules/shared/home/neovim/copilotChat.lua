@@ -1,5 +1,5 @@
 ---------------------------------- COPILOTCHAT ---------------------------------------
--- Docs: https://github.com/CopilotC-Nvim/CopilotChat.nvim/
+-- DOCS: https://github.com/CopilotC-Nvim/CopilotChat.nvim/
 -- Config originally copied from:
 -- https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
 

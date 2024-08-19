@@ -1,6 +1,6 @@
 ---------------------------------- NVIM-CMP ---------------------------------------
 vim.cmd [[set completeopt=menu,menuone,noselect]]
--- Docs: https://github.com/hrsh7th/nvim-cmp/
+-- DOCS: https://github.com/hrsh7th/nvim-cmp/
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind') -- Plugin that adds icons to completion items.

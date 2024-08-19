@@ -11,7 +11,7 @@
           */
           ''
             ---------------------------------------- LEAP -------------------------------------------
-            -- Docs: https://github.com/ggandor/leap.nvim#usage
+            -- DOCS: https://github.com/ggandor/leap.nvim#usage
             require('leap').add_default_mappings()
             -----------------------------------------------------------------------------------------
           '';

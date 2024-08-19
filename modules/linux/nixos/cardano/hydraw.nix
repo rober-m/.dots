@@ -1,5 +1,5 @@
 # Hydraw running on hydra running on cardano
-# Docs: https://github.com/input-output-hk/hydra/blob/master/sample-node-config/nixos/README.md
+# DOCS: https://github.com/input-output-hk/hydra/blob/master/sample-node-config/nixos/README.md
 {
   config,
   pkgs,

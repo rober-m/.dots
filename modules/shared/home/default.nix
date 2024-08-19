@@ -33,7 +33,7 @@ in {
   # Direnv, load and unload environment variables depending on the current directory.
   #-------------------------- Default-config programs --------------------------#
   programs = {
-    # Docs: https://direnv.net
+    # DOCS: https://direnv.net
     direnv = {
       enable = true;
       nix-direnv.enable = true;

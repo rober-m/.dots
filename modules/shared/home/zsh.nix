@@ -21,12 +21,12 @@
         enable = true;
         plugins =
           [
-            "git" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
-            "vi-mode" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+            "git" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+            "vi-mode" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
           ]
           ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
             # I use this only on linux. Mac doesn't need it.
-            "ssh-agent" # Docs: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+            "ssh-agent" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
           ];
         theme = "robbyrussell"; # This is not only colors, but also prompt config.
       };

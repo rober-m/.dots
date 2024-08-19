@@ -1,21 +1,19 @@
-# Docs:
+# DOCS:
 # - https://nixos.wiki/wiki/XMonad
 # TODO: Create a project around xmonad.hs (See las section of previous link)
-{ pkgs, ... }:
-{
-
+{pkgs, ...}: {
   # Suspend system after inactivity
-  # Xmonad is a Window Manager (WM) and not a Desktop Environment (DE). 
+  # Xmonad is a Window Manager (WM) and not a Desktop Environment (DE).
   # Therefore, among other things, Xmonad does not handle power management related things such as sleeping.
-  # However, there are several ways of still adding this functionality. 
+  # However, there are several ways of still adding this functionality.
   services.xserver.displayManager.sessionCommands = ''
     xset -dpms  # Disable Energy Star, as we are going to suspend anyway and it may hide "success" on that
-    xset s blank # `noblank` may be useful for debugging 
+    xset s blank # `noblank` may be useful for debugging
     xset s 300 # seconds
     ${pkgs.lightlocker}/bin/light-locker --idle-hint &
   '';
 
-  # The settings above will toggle the flag "IdleHint" within logind through light-locker (will work with "'lightdm'", there are alternatives). Next we'll have to pick-up the information within logindand select an action to take: 
+  # The settings above will toggle the flag "IdleHint" within logind through light-locker (will work with "'lightdm'", there are alternatives). Next we'll have to pick-up the information within logindand select an action to take:
   # The configuration below will let the system go to "hybrid-sleep" `20s` after the screen-saver triggered
   systemd.targets.hybrid-sleep.enable = true;
   services.logind.extraConfig = ''
@@ -29,9 +27,9 @@
 
     # Adds the xmonad-contrib and xmonad-extras packages
     # https://hackage.haskell.org/package/xmonad-contrib
-    enableContribAndExtras = true; 
+    enableContribAndExtras = true;
 
-    # When developing modules for XMonad, it can help to install the following packages: 
+    # When developing modules for XMonad, it can help to install the following packages:
     extraPackages = haskellPackages: [
       haskellPackages.dbus
       haskellPackages.List

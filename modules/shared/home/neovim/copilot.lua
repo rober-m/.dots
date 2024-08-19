@@ -1,6 +1,6 @@
 ---------------------------------- COPILOT-LUA ---------------------------------------
 ---
---- Docs: https://github.com/zbirenbaum/copilot.lua
+--- DOCS: https://github.com/zbirenbaum/copilot.lua
 ---
 require('copilot').setup({
   panel = {

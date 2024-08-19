@@ -39,7 +39,7 @@
       lib.mkEnableOption "Enable Neovim with personal config";
   };
   config = lib.mkIf config.customized.neovim.enable {
-    # Docs: https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
+    # DOCS: https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
     programs.neovim = {
       enable = true;
       viAlias = true;
@@ -66,7 +66,7 @@
             ''
               ------------------------------------ OTTER -------------------------------------------
               -- WARNING: This doesn't work. I don't know why.
-              -- Docs: https://github.com/jmbuhr/otter.nvim
+              -- DOCS: https://github.com/jmbuhr/otter.nvim
               -- table of embedded languages to look for.
               -- default = nil, which will activate
               -- any embedded languages found
@@ -91,7 +91,7 @@
             */
             ''
               ------------------------------------ TWILIGHT -------------------------------------------
-              -- Docs: https://github.com/folke/twilight.nvim
+              -- DOCS: https://github.com/folke/twilight.nvim
               require('twilight').setup{
                 dimming = {
                   alpha = 0.5, -- amount of dimming

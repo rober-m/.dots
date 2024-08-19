@@ -11,7 +11,7 @@
           */
           ''
             -------------------------------------- TELESCOPE ----------------------------------------
-            -- Docs: https://github.com/nvim-telescope/telescope.nvim#pickers
+            -- DOCS: https://github.com/nvim-telescope/telescope.nvim#pickers
             require("which-key").register({
                                   s = {
                                     name = "search",
@@ -56,7 +56,7 @@
           */
           ''
             ----------------------------- TELESCOPE: FILE BROWSER -----------------------------------
-            -- Docs: https://github.com/nvim-telescope/telescope-file-browser.nvim
+            -- DOCS: https://github.com/nvim-telescope/telescope-file-browser.nvim
             -- This could be used as an alternative to NERDTree.
             require("telescope").load_extension "file_browser"
             require("which-key").register({
@@ -74,7 +74,7 @@
           */
           ''
             --------------------------------- TELESCOPE: HOOGLE -------------------------------------
-            -- Docs: https://github.com/luc-tielen/telescope_hoogle/
+            -- DOCS: https://github.com/luc-tielen/telescope_hoogle/
             require("telescope").load_extension "hoogle"
             require("which-key").register({
                                   h = {

@@ -2,7 +2,7 @@
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = nvim-notify; # Notifications for Nvim. Docs: https://github.com/rcarriga/nvim-notify/
+        plugin = nvim-notify; # Notifications for Nvim. DOCS: https://github.com/rcarriga/nvim-notify/
         type = "lua";
         config =
           /*

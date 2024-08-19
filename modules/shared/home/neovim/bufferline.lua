@@ -1,5 +1,5 @@
 ---------------------------------- BUFFERLINE-NVIM --------------------------------------
--- Docs: https://github.com/akinsho/bufferline.nvim
+-- DOCS: https://github.com/akinsho/bufferline.nvim
 -- You can close buffers by clicking the close icon or by right clicking the tab anywhere
 
 require("bufferline").setup {

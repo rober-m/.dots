@@ -1,5 +1,5 @@
 ------------------------------------- HASKELL-TOOLS-NVIM -----------------------------------------
--- Docs: https://github.com/MrcJkb/haskell-tools.nvim/
+-- DOCS: https://github.com/MrcJkb/haskell-tools.nvim/
 -- This plugin automatically configures the haskell-language-server neovim client and integrateswith with other haskell tools.
 -- Do not call the lspconfig.hls setup or set up the lsp manually, as doing so may cause conflicts.
 

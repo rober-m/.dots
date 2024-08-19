@@ -1,5 +1,5 @@
 --------------------------- Debug Adapter Protocol ----------------------------
--- Docs: https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+-- DOCS: https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 local dap = require("dap")
 ---------------- Setup for Haskell ------------------
 --dap.adapters.haskell = {

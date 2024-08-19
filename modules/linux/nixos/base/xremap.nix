@@ -22,7 +22,7 @@
     withWlroots = true; # Work with Wayland
     userName = user-options.username;
     #yamlConfig = builtins.readFile ./xremap.yml;
-    # Docs: https://github.com/k0kubun/xremap
+    # DOCS: https://github.com/k0kubun/xremap
     # Key names: https://github.com/emberian/evdev/blob/1d020f11b283b0648427a2844b6b980f1a268221/src/scancodes.rs#L26-L572
     config = {
       modmap = [

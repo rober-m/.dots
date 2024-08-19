@@ -155,6 +155,13 @@ require('lspconfig').hls.setup {
 require('lspconfig').nil_ls.setup {
   on_attach = on_attach,
   settings = {
+    --nix = {
+    --  flake = {
+    --    -- calls `nix flake archive` to put a flake and its output to store
+    --    -- (to solve "Your LSP client doesn't support confirmation" message)
+    --    autoArchive = true,
+    --  },
+    --},
     ['nil'] = {
       formatting = {
         --command = { "nixpkgs-fmt" },

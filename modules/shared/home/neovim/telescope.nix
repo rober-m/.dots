@@ -19,6 +19,7 @@
                                     t = { ":Telescope live_grep<cr>", "Text" },
                                     b = { ":Telescope buffers<cr>", "Open Buffer" },
                                     m = { ":Telescope git_status<cr>", "Modified Files" },
+                                    h = { ":Telescope help_tags<cr>", "Help Tags" },
                                   },
                                 }, { prefix = "<leader>" })
             -----------------------------------------------------------------------------------------
@@ -36,8 +37,8 @@
             -- Move NVIM session to a directory using Zoxide.
             -- INFO: Select with <C-f> to pipe selected folder files to Telescope's find_files.
             -- Needs to have Zoxide installed.
-            -- Docs - zoxide: https://github.com/ajeetdsouza/zoxide
-            -- Docs - telescope-zoxide: https://github.com/jvgrootveld/telescope-zoxide
+            -- DOCS: - zoxide: https://github.com/ajeetdsouza/zoxide
+            -- DOCS: - telescope-zoxide: https://github.com/jvgrootveld/telescope-zoxide
             require("which-key").register({
                                   s = {
                                     name = "search",

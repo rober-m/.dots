@@ -124,6 +124,20 @@
 
           # Add Rust binaries to PATH
           export PATH=$HOME/.cargo/bin:$PATH
+
+          # Set up fzf key bindings and fuzzy completion
+          source <(fzf --zsh)
+          # Add default fzf command
+          export FZF_DEFAULT_COMMAND='fd --exclude node_modules --exclude .git --exclude dist-newstyle'
+          # Add default fzf options
+          export FZF_DEFAULT_OPTS='--height 40% --preview "bat --color=always --line-range :500 {}" --preview-window=right:70% --bind "ctrl-o:become(nvim {}),enter:become(readlink -f {})"'
+
+          # Searching file contents with ripgrep combined with fzf preview
+          # find-in-file - usage: fif <searchTerm>
+          fif() {
+            if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+            rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+          }
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isLinux
         /*

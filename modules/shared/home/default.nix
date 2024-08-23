@@ -59,6 +59,7 @@ in {
     lsd
     bat # `cat` with wings
     fd # Simplified `find`
+    ripgrep # Fast `grep`
     fzf # Fuzzy finder
     jq # JSON processor
     jless # JSON CLI interactive viewer

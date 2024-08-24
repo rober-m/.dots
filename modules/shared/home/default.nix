@@ -122,7 +122,7 @@ in {
     #anki # Flashcards
     #elmPackages.elm
     typst # LaTeX alternative
-    typst-lsp # Typst language server
+    #typst-lsp # Typst language server
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

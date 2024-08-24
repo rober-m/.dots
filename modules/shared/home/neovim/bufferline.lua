@@ -17,15 +17,13 @@ require("bufferline").setup {
   }
 }
 
-require("which-key").register({
-  b = {
-    name = "Buffer",
-    l = { ":BufferLineCycleNext<cr>", "Cycle Next" },
-    h = { ":BufferLineCyclePrev<cr>", "Cycle Prev" },
-    c = { ":bd<cr>", "Close" },
-    C = { ":bd!<cr>", "Close without saving" },
-    o = { ":BufferLineCloseOthers<cr>", "Close Others" },
-  },
-}, { prefix = "<leader>" })
+require("which-key").add({
+  { "<leader>b",  group = "buffer" },
+  { "<leader>bl", ":BufferLineCycleNext<cr>",   desc = "Cycle Next" },
+  { "<leader>bh", ":BufferLineCyclePrev<cr>",   desc = "Cycle Prev" },
+  { "<leader>bc", ":bd<cr>",                    desc = "Close" },
+  { "<leader>bC", ":bd!<cr>",                   desc = "Close without saving" },
+  { "<leader>bo", ":BufferLineCloseOthers<cr>", desc = "Close Others" },
+})
 
 -----------------------------------------------------------------------------------------

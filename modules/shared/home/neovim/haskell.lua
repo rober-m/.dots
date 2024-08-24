@@ -31,21 +31,19 @@ local on_attach = function(client, bufnr)
   -- see `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  require("which-key").register({
-    ["gD"] = { vim.lsp.buf.declaration, "goto declaration" },
-    ["gd"] = { vim.lsp.buf.definition, "goto definition" },
-    ["K"] = { vim.lsp.buf.hover, "Hover" },
-    ["gi"] = { vim.lsp.buf.implementation, "goto implementation" },
-    ["gr"] = { vim.lsp.buf.references, "references" },
+  require("which-key").add({
+    { "gD", vim.lsp.buf.declaration,    desc = "goto declaration" },
+    { "gd", vim.lsp.buf.definition,     desc = "goto definition" },
+    { "K",  vim.lsp.buf.hover,          desc = "Hover" },
+    { "gi", vim.lsp.buf.implementation, desc = "goto implementation" },
+    { "gr", vim.lsp.buf.references,     desc = "references" },
   })
-  require("which-key").register({
-    h = {
-      name = "Haskell",
-      a = { vim.lsp.codelens.run, "CodeLens" },
-      h = { ht.hoogle.hoogle_signature, "Hoogle Signature" },
-    },
+  require("which-key").add({
+    { "<leader>h",  group = "haskell" },
+    { "<leader>ha", vim.lsp.codelens.run,       desc = "CodeLens" },
+    { "<leader>hh", ht.hoogle.hoogle_signature, desc = "Hoogle Signature" },
 
-  }, { prefix = "<leader>" })
+  })
 end
 
 
@@ -78,12 +76,10 @@ ht.tools = { -- haskell-tools options
   },
 }
 
-require("which-key").register({
-  h = {
-    name = "Haskell",
-    r = { ht.repl.toggle, "Toggle REPL" },
-    w = { "<cmd>TermExec cmd=\"ghciwatch --clear\" direction=vertical size=60 name=\"ghciwatch\"<CR>", "ghciwatch" }
-  },
+require("which-key").add({
+  { "<leader>h",  group = "haskell" },
+  { "<leader>hr", ht.repl.toggle,                                                                              desc = "Toggle REPL" },
+  { "<leader>hw", "<cmd>TermExec cmd=\"ghciwatch --clear\" direction=vertical size=60 name=\"ghciwatch\"<CR>", desc = "ghciwatch" }
 
-}, { prefix = "<leader>" })
+})
 -----------------------------------------------------------------------------------------

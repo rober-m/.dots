@@ -16,25 +16,20 @@ vim.diagnostic.config({
 })
 
 local opts = { noremap = true, silent = true }
-require("which-key").register({
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    l = { vim.lsp.codelens.run, "CodeLens Action" },
-    r = { vim.lsp.buf.rename, "Rename" },
-    d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    j = { vim.diagnostic.goto_next, "Next Diagnostic", },
-    k = { vim.diagnostic.goto_prev, "Prev Diagnostic", },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-    i = { "<cmd>LspInfo<cr>", "LSP Info" },
-    x = { "<cmd>:LspRestart<cr>", "LSP Restart" },
-  },
-}, { prefix = "<leader>" })
+require("which-key").add({
+  { "<leader>l",  group = "lsp" },
+  { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>",               desc = "Code Action" },
+  { "<leader>ll", vim.lsp.codelens.run,                                   desc = "CodeLens Action" },
+  { "<leader>lr", vim.lsp.buf.rename,                                     desc = "Rename" },
+  { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", desc = "Buffer Diagnostics" },
+  { "<leader>lw", "<cmd>Telescope diagnostics<cr>",                       desc = "Diagnostics" },
+  { "<leader>lj", vim.diagnostic.goto_next,                               desc = "Next Diagnostic", },
+  { "<leader>lk", vim.diagnostic.goto_prev,                               desc = "Prev Diagnostic", },
+  { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>",              desc = "Document Symbols" },
+  { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",     desc = "Workspace Symbols", },
+  { "<leader>li", "<cmd>LspInfo<cr>",                                     desc = "LSP Info" },
+  { "<leader>lx", "<cmd>:LspRestart<cr>",                                 desc = "LSP Restart" },
+})
 
 -- Use an on_attach function to only map the following keys after the language server
 -- attaches to the current buffer
@@ -65,21 +60,17 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  require("which-key").register({
-    ["gD"] = { vim.lsp.buf.declaration, "GoTo Declaration" },
-    ["gd"] = { vim.lsp.buf.definition, "GoTo Definition" },
-    ["K"] = { vim.lsp.buf.hover, "Hover" },
-    ["gi"] = { vim.lsp.buf.implementation, "GoTo Implementation" },
-    ["gr"] = { vim.lsp.buf.references, "References" },
-    ["<C-k>"] = { vim.lsp.buf.signature_help, "Signature Help" },
+  require("which-key").add({
+    { "gD",         vim.lsp.buf.declaration,                                                        desc = "goto declaration" },
+    { "gd",         vim.lsp.buf.definition,                                                         desc = "goto definition" },
+    { "K",          vim.lsp.buf.hover,                                                              desc = "Hover" },
+    { "gi",         vim.lsp.buf.implementation,                                                     desc = "goto implementation" },
+    { "gr",         vim.lsp.buf.references,                                                         desc = "references" },
+    { "<C-k>",      vim.lsp.buf.signature_help,                                                     desc = "Signature Help" },
+    { "<leader>l",  group = "lsp" },
+    { "<leader>lt", vim.lsp.buf.type_definition,                                                    desc = "Type Definition" },
+    { "<leader>lh", "<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", desc = "Toggle Inlay Hints" },
   })
-  require("which-key").register({
-    l = {
-      name = "LSP",
-      t = { vim.lsp.buf.type_definition, "Type definition" },
-      h = { "<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", "Toggle Inlay Hints" },
-    },
-  }, { prefix = "<leader>" })
 end
 
 -- NOT TRUE ANYMORE (see below): Servers without specific config (Haskell server managed in haskell.nix)

@@ -23,7 +23,7 @@ in {
     kitty.enable = true;
     vscode.enable = true;
     haskell.enable = true;
-    prisma-engines.enable = true;
+    prisma-engines.enable = false;
     firefox = {
       enable = true;
       withConfig = false;
@@ -36,7 +36,7 @@ in {
   home.packages = with pkgs; [
     protonvpn-gui # Proton VPN
     bitwarden # Password manager
-    megasync # MegaSync (MEGA Cloud Drive) - Can alternatively be Installed using Flatpak or overlay
+    #megasync # MegaSync (MEGA Cloud Drive) - Can alternatively be Installed using Flatpak or overlay
     telegram-desktop # Telegram for Linux
     #element-desktop # Element (Matrix) for Linux
     emote # emoji picker

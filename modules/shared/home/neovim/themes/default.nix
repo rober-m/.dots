@@ -6,9 +6,12 @@
   ...
 }: let
   # nix-colors-lib = inputs.nix-colors.lib.contrib {inherit pkgs;};
-  fixed-theme = if user-options.colorscheme == "tokyo-night-storm"  then "tokyonight"
-  	else if user-options.colorscheme == "tokyo-night-dark" then "tokyonight"
-	else user-options.colorscheme;
+  fixed-theme =
+    if user-options.colorscheme == "tokyo-night-storm"
+    then "tokyonight"
+    else if user-options.colorscheme == "tokyo-night-dark"
+    then "tokyonight"
+    else user-options.colorscheme;
 in {
   programs.neovim = {
     # Use base 16 colros (if using this, comment all other themes)
@@ -60,6 +63,8 @@ in {
           vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" }) -- Remove NvimTree background
           vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }) -- Remove left gutter background
 
+          -- Next block: Keep borders opaque
+          --vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#DDDDDD", bg = "#DDDDDD" })
         ''
         else ""
       }

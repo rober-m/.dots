@@ -10,12 +10,10 @@
           */
           ''
             --------------------------------------- LAZYGIT -----------------------------------------
-            require("which-key").register({
-                                  g = {
-                                    name = "git",
-                                    g = { ":LazyGit<cr>", "LazyGit" },
-                                  },
-                                }, { prefix = "<leader>" })
+            require("which-key").add({
+                { "<leader>g", group = "git" },
+                { "<leader>gg", ":LazyGit<cr>", desc ="LazyGit" },
+            })
             -----------------------------------------------------------------------------------------
           '';
       }

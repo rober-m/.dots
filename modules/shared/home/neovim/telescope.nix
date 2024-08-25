@@ -12,16 +12,14 @@
           ''
             -------------------------------------- TELESCOPE ----------------------------------------
             -- DOCS: https://github.com/nvim-telescope/telescope.nvim#pickers
-            require("which-key").register({
-                                  s = {
-                                    name = "search",
-                                    f = { ":Telescope find_files<cr>", "File" },
-                                    t = { ":Telescope live_grep<cr>", "Text" },
-                                    b = { ":Telescope buffers<cr>", "Open Buffer" },
-                                    m = { ":Telescope git_status<cr>", "Modified Files" },
-                                    h = { ":Telescope help_tags<cr>", "Help Tags" },
-                                  },
-                                }, { prefix = "<leader>" })
+            require("which-key").add({
+                { "<leader>s", group = "search"},
+                { "<leader>sf", ":Telescope find_files<cr>", desc = "File" },
+                { "<leader>st", ":Telescope live_grep<cr>", desc = "Text" },
+                { "<leader>sb", ":Telescope buffers<cr>", desc = "Open Buffer" },
+                { "<leader>sm", ":Telescope git_status<cr>", desc = "Modified Files" },
+                { "<leader>sh", ":Telescope help_tags<cr>", desc = "Help Tags" },
+            })
             -----------------------------------------------------------------------------------------
           '';
       }
@@ -39,12 +37,9 @@
             -- Needs to have Zoxide installed.
             -- DOCS: - zoxide: https://github.com/ajeetdsouza/zoxide
             -- DOCS: - telescope-zoxide: https://github.com/jvgrootveld/telescope-zoxide
-            require("which-key").register({
-                                  s = {
-                                    name = "search",
-                                    z = { ":Telescope zoxide list<cr>", "Zoxide list" },
-                                  },
-                                }, { prefix = "<leader>" })
+            require("which-key").add({
+                { "<leader>sz", ":Telescope zoxide list<cr>", desc = "Zoxide list" },
+            })
             -----------------------------------------------------------------------------------------
           '';
       }
@@ -60,9 +55,9 @@
             -- DOCS: https://github.com/nvim-telescope/telescope-file-browser.nvim
             -- This could be used as an alternative to NERDTree.
             require("telescope").load_extension "file_browser"
-            require("which-key").register({
-                                  ["<C-b>"] = { ":Telescope file_browser<cr>", "Browse Files" },
-                                })
+            require("which-key").add({
+                { "<leader>sB", ":Telescope file_browser<cr>", desc = "Browse Files" },
+            })
             -----------------------------------------------------------------------------------------
           '';
       }
@@ -77,12 +72,10 @@
             --------------------------------- TELESCOPE: HOOGLE -------------------------------------
             -- DOCS: https://github.com/luc-tielen/telescope_hoogle/
             require("telescope").load_extension "hoogle"
-            require("which-key").register({
-                                  h = {
-                                    name = "Haskell",
-                                    s = { ":Telescope hoogle<cr>", "Hoogle search" },
-                                  },
-                                }, { prefix = "<leader>" })
+            require("which-key").add({
+                { "<leader>h", group = "haskell"},
+                { "<leader>hs", ":Telescope hoogle<cr>", desc = "Hoogle search" },
+            })
             -----------------------------------------------------------------------------------------
           '';
       }

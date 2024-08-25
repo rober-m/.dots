@@ -28,21 +28,19 @@
           */
           ''
             require('dapui').setup();
-            require("which-key").register({
-              d = {
-                name = "+debug",
-                t = { "<cmd>lua require('dapui').toggle()<CR>", "Toggle" },
-                x = { "<cmd>lua require('dapui').open({reset = true})<CR>", "Reset Windows size" },
-                d = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
-                b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
-                r = { "<cmd>lua require('dap').repl.toggle()<CR>", "Toggle REPL" },
-                i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
-                o = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
-                O = { "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
-                c = { "<cmd>lua require('dap').run_to_cursor()<CR>", "Run to Cursor" },
-                q = { "<cmd>lua require('dap').close()<CR>", "Quit" },
-              },
-            }, { prefix = "<leader>" });
+            require("which-key").add({
+              { "<leader>d", group = "debug" },
+              { "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", desc = "Toggle" },
+              { "<leader>dx", "<cmd>lua require('dapui').open({reset = true})<CR>", desc = "Reset Windows size" },
+              { "<leader>dd", "<cmd>lua require('dap').continue()<CR>", desc = "Continue" },
+              { "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle Breakpoint" },
+              { "<leader>dr", "<cmd>lua require('dap').repl.toggle()<CR>", desc = "Toggle REPL" },
+              { "<leader>di", "<cmd>lua require('dap').step_into()<CR>", desc = "Step Into" },
+              { "<leader>do", "<cmd>lua require('dap').step_over()<CR>", desc = "Step Over" },
+              { "<leader>dO", "<cmd>lua require('dap').step_out()<CR>", desc = "Step Out" },
+              { "<leader>dc", "<cmd>lua require('dap').run_to_cursor()<CR>", desc = "Run to Cursor" },
+              { "<leader>dq", "<cmd>lua require('dap').close()<CR>", desc = "Quit" },
+            });
           '';
       }
     ];

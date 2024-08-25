@@ -19,7 +19,8 @@
 
   # Overlay to update MEGASync to the latest version
   nixpkgs.overlays = [
-    #(import ../../../overlays/magasync.nix)
+    (import ../../../overlays/magasync.nix)
+    #(import ../../../overlays/discord.nix)
   ];
 
   # Auto-upgrade system

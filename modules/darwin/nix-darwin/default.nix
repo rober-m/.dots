@@ -61,7 +61,7 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  services.karabiner-elements.enable = true;
+  services.karabiner-elements.enable = false;
 
   programs = {
     # Create /etc/bashrc that loads the nix-darwin environment.

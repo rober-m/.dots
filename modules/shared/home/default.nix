@@ -124,6 +124,7 @@ in {
     #elmPackages.elm
     typst # LaTeX alternative
     #typst-lsp # Typst language server
+    bitwarden-cli # Bitwarden CLI
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

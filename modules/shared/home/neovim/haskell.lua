@@ -40,8 +40,8 @@ local on_attach = function(client, bufnr)
   })
   require("which-key").add({
     { "<leader>h",  group = "haskell" },
-    { "<leader>ha", vim.lsp.codelens.run,       desc = "CodeLens" },
-    { "<leader>hh", ht.hoogle.hoogle_signature, desc = "Hoogle Signature" },
+    { "<leader>ha", vim.lsp.codelens.run,                             desc = "CodeLens" },
+    { "<leader>hh", require('haskell-tools').hoogle.hoogle_signature, desc = "Hoogle Signature" },
 
   })
 end

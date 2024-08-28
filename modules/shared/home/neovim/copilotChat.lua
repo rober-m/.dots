@@ -143,10 +143,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Add which-key mappings
 local wk = require("which-key")
 wk.add({
-  { "<leader>a",  group = "AI" },
+  { "<leader>c",  group = "Copilot Chat" },
   -- Show help actions with telescope
   {
-    "<leader>ah",
+    "<leader>ch",
     function()
       local actions = require("CopilotChat.actions")
       require("CopilotChat.integrations.telescope").pick(actions.help_actions())
@@ -155,7 +155,7 @@ wk.add({
   },
   -- Show prompts actions with telescope
   {
-    "<leader>ap",
+    "<leader>cp",
     function()
       local actions = require("CopilotChat.actions")
       require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
@@ -163,14 +163,14 @@ wk.add({
     desc = "Prompt actions",
   },
   -- Code related commands
-  { "<leader>ae", "<cmd>CopilotChatExplain<cr>",       desc = "Explain code" },
-  { "<leader>at", "<cmd>CopilotChatTests<cr>",         desc = "Generate tests" },
-  { "<leader>ar", "<cmd>CopilotChatReview<cr>",        desc = "Review code" },
-  { "<leader>aR", "<cmd>CopilotChatRefactor<cr>",      desc = "Refactor code" },
-  { "<leader>an", "<cmd>CopilotChatBetterNamings<cr>", desc = "Better Naming" },
+  { "<leader>ce", "<cmd>CopilotChatExplain<cr>",       desc = "Explain code" },
+  { "<leader>ct", "<cmd>CopilotChatTests<cr>",         desc = "Generate tests" },
+  { "<leader>cr", "<cmd>CopilotChatReview<cr>",        desc = "Review code" },
+  { "<leader>cR", "<cmd>CopilotChatRefactor<cr>",      desc = "Refactor code" },
+  { "<leader>cn", "<cmd>CopilotChatBetterNamings<cr>", desc = "Better Naming" },
   -- Custom input for CopilotChat
   {
-    "<leader>ai",
+    "<leader>ci",
     function()
       local input = vim.fn.input("Ask Copilot: ")
       if input ~= "" then
@@ -181,18 +181,18 @@ wk.add({
   },
   -- Generate commit message based on the git diff
   {
-    "<leader>am",
+    "<leader>cm",
     "<cmd>CopilotChatCommit<cr>",
     desc = "Generate commit message for all changes",
   },
   {
-    "<leader>aM",
+    "<leader>cM",
     "<cmd>CopilotChatCommitStaged<cr>",
     desc = "Generate commit message for staged changes",
   },
   -- Quick chat with Copilot
   {
-    "<leader>ac",
+    "<leader>cc",
     function()
       local input = vim.fn.input("Quick Chat: ")
       if input ~= "" then
@@ -202,32 +202,32 @@ wk.add({
     desc = "Quick chat",
   },
   -- Debug
-  { "<leader>ad", "<cmd>CopilotChatDebugInfo<cr>",     desc = "Debug Info" },
+  { "<leader>cd", "<cmd>CopilotChatDebugInfo<cr>",     desc = "Debug Info" },
   -- Fix the issue with diagnostic
-  { "<leader>af", "<cmd>CopilotChatFixDiagnostic<cr>", desc = "Fix Diagnostic" },
+  { "<leader>cf", "<cmd>CopilotChatFixDiagnostic<cr>", desc = "Fix Diagnostic" },
   -- Clear buffer and chat history
-  { "<leader>al", "<cmd>CopilotChatReset<cr>",         desc = "Clear buffer and chat history" },
+  { "<leader>cl", "<cmd>CopilotChatReset<cr>",         desc = "Clear buffer and chat history" },
   -- Toggle Copilot Chat Vsplit
-  { "<leader>av", "<cmd>CopilotChatToggle<cr>",        desc = "Toggle" },
+  { "<leader>cv", "<cmd>CopilotChatToggle<cr>",        desc = "Toggle" },
 }
 )
 
 wk.add({
   {
-    "<leader>ap",
+    "<leader>cp",
     ":lua require('CopilotChat.integrations.telescope').pick(require('CopilotChat.actions').prompt_actions({selection = require('CopilotChat.select').visual}))<CR>",
     desc = "Prompt actions",
     mode = "v",
   },
   -- Chat with Copilot in visual mode
   {
-    "<leader>av",
+    "<leader>cv",
     ":CopilotChatVisual<cr>",
     desc = "Open in vertical split",
     mode = "v",
   },
   {
-    "<leader>ai",
+    "<leader>ci",
     ":CopilotChatInline<cr>",
     desc = "Inline chat",
     mode = "v",

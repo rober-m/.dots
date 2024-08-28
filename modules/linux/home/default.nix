@@ -51,6 +51,15 @@ in {
     gnupg # GnuPG (Contains gpg and gpg-agent)
     pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
     cardano-pkgs.aiken # Aiken CLI
+
+    # Install Cursor as AppImage package (run `cursor` to start. No icon)
+    (pkgs.appimageTools.wrapType2 {
+      name = "cursor";
+      src = pkgs.fetchurl {
+        url = "https://downloader.cursor.sh/linux/appImage/x64 ";
+        sha256 = "sha256-TPCJxrXFfatKDv5XrE8nqGFIE/KKi1aUZ/uUtIeIgxc=";
+      };
+    })
   ];
 
   #-----------------------------------------------------------------------------#

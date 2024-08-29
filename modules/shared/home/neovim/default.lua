@@ -61,22 +61,12 @@ packer.startup(function()
   --   },
   -- }
   -- use 'AndreM222/copilot-lualine'
-  use {
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {
-      file_types = { "markdown", "Avante" },
-    },
-    ft = { "markdown", "Avante" },
-    --after = { 'nvim-treesitter' },
-    --requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
-  }
+  use 'MeanderingProgrammer/render-markdown.nvim'
   use "MunifTanjim/nui.nvim"
   use {
     "yetone/avante.nvim",
     build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
-    opts = {
-      -- add any opts here
-    },
+    commit = "1c0623a9dfc717994085f9d9d68ab072f4b5a7a6",
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       "stevearc/dressing.nvim",

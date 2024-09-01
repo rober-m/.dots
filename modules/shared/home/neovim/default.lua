@@ -43,6 +43,24 @@ vim.opt.hlsearch = true  -- Highlight all the matches.
 vim.opt.incsearch = true -- Show incremental matches while typing the search.
 
 --------------------------------------------------------------------------------------------------
+--------------------------------------  Neovide Config -------------------------------------------
+
+if vim.g.neovide then
+  -- Theme
+  vim.g.neovide_theme = 'auto'
+  -- Flating window blurr
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+
+  -- Floating window shadow
+  vim.g.neovide_floating_shadow = true
+  vim.g.neovide_floating_z_height = 10
+  vim.g.neovide_light_angle_degrees = 45
+  vim.g.neovide_light_radius = 5
+end
+
+
+--------------------------------------------------------------------------------------------------
 ------------------------------------------  PACKER -----------------------------------------------
 
 local packer = require 'packer'

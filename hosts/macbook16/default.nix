@@ -32,6 +32,13 @@ in {
       # `home-manager` module
       home-manager.darwinModules.home-manager
       {
+        nixpkgs.overlays = [
+          (_: _: {
+            #cardano-pkgs.aiken = inputs.aiken_flake_1_1_0.packages.${system}.aiken; # Installed with `nix profile`
+          })
+        ];
+      }
+      {
         nixpkgs = nixpkgsWithConfig;
         # `home-manager` config
         home-manager.useGlobalPkgs = true;

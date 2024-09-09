@@ -124,7 +124,11 @@ in {
     #elmPackages.elm
     typst # LaTeX alternative
     #typst-lsp # Typst language server
-    #bitwarden-cli # Bitwarden CLI
+    bitwarden-cli # Bitwarden CLI
+    ollama
+
+    shellcheck # Shell script analysis tool (Run shellcheck <script>)
+    neovide # Neovim GUI
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

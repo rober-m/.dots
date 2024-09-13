@@ -27,6 +27,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Trying to make Cursor not blurry on Wayland
   };
 
   xdg.portal.enable = true; # For aps to comunicate

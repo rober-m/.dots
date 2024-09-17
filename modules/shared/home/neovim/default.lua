@@ -84,7 +84,7 @@ packer.startup(function()
   use {
     "yetone/avante.nvim",
     build = "make", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
-    commit = "1c0623a9dfc717994085f9d9d68ab072f4b5a7a6",
+    commit = "0642905c8017daeb5fd2ca2892aae22a84721c33",
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       "stevearc/dressing.nvim",

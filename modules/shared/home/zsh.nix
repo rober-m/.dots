@@ -48,6 +48,7 @@
           e = "exit";
           c = "clear";
           gs = "git status"; # More aliases at git config
+          bw = "NODE_OPTIONS=\"--no-deprecation\" bw"; # See: https://github.com/bitwarden/clients/issues/6689
 
           # Git-related
           # See oh-my-zsh -> plugins -> git

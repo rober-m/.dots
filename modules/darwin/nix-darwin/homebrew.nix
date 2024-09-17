@@ -18,6 +18,7 @@
       #"pango"
       "zlib"
       "aikup"
+      "bitwarden-cli"
     ];
     taps = [
       "homebrew/cask"

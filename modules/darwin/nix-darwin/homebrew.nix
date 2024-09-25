@@ -38,6 +38,7 @@
       "obsidian"
       "notion"
       "amethyst"
+      "whisky"
       #"git-credential-manager-core"
     ];
   };

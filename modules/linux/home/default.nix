@@ -36,6 +36,7 @@ in {
   home.packages = with pkgs; [
     protonvpn-gui # Proton VPN
     bitwarden # Password manager
+    bitwarden-cli # Bitwarden CLI
     #megasync # MegaSync (MEGA Cloud Drive) - Can alternatively be Installed using Flatpak or overlay
     telegram-desktop # Telegram for Linux
     #element-desktop # Element (Matrix) for Linux
@@ -51,7 +52,7 @@ in {
     gnupg # GnuPG (Contains gpg and gpg-agent)
     pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
     cardano-pkgs.aiken # Aiken CLI
-    bitwarden-cli # Bitwarden CLI
+    thunderbird # Thunderbird email client
 
     # Install Cursor as AppImage package (run `cursor` to start. No icon)
     (pkgs.appimageTools.wrapType2 {

@@ -130,6 +130,7 @@ in {
     shellcheck # Shell script analysis tool (Run shellcheck <script>)
     neovide # Neovim GUI
     #agda (not for now)
+    stripe-cli # CLI to test Stripe integrations
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

@@ -3,7 +3,7 @@
     enable = true;
     onActivation = {
       cleanup = "zap";
-      upgrade = true;
+      upgrade = false;
       autoUpdate = true;
     };
     brews = [
@@ -21,7 +21,6 @@
       "bitwarden-cli"
     ];
     taps = [
-      "homebrew/cask"
       "koekeishiya/formulae" # yabai
       "aiken-lang/homebrew-tap"
       #"xcodesorg/made/xcodes" # CLI to manage Xcode versions. Using App Store instead.

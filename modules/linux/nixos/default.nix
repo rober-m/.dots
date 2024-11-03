@@ -18,6 +18,7 @@
 
   # Most of these are in the `shared/home` config files.
   customized = {
+    kanata.enable = true; # Run Kanata service with my own config
     android.enable = true;
     cardano = {
       cardano-node.enable = false; # Run cardano-node as a service and install cardano-cli

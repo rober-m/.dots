@@ -17,7 +17,7 @@
       #haskell.compiler.ghc928 #(GHC: 9.2.6  && base: 4.16.4.0)
       #haskell.compiler.ghc942 #(GHC: 9.4.2  && base: 4.17.0.0)
       #haskell.compiler.ghc96 #(GHC: 9.6.2  && base: 4.18.0.0)
-      (haskell-language-server.override {supportedGhcVersions = ["925"];}) #Also installed in modules/nvim/lsp-config.nix
+      #(haskell-language-server.override {supportedGhcVersions = ["925"];}) #Also installed in modules/nvim/lsp-config.nix
       #(haskell-language-server.override {supportedGhcVersions = ["810"];}) #Also installed in modules/nvim/lsp-config.nix
       haskellPackages.cabal-install
       haskellPackages.hoogle

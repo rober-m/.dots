@@ -46,7 +46,6 @@ local on_attach = function(client, bufnr)
   })
 end
 
-
 ht.hls = { -- LSP client options
   on_attach = on_attach,
   settings = {

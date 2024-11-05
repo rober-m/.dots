@@ -129,19 +129,19 @@ require('lspconfig').tsserver.setup {
   },
 }
 
-require('lspconfig').hls.setup {
-  on_attach = on_attach,
-  -- filetypes = { 'haskell', 'lhaskell', 'cabal' },
-  -- rootPatterns = { "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" },
-  settings = {
-    haskell = {
-      -- checkParents = "CheckOnSave",
-      -- checkProject = true,
-      -- cabalFormattingProvider = "cabalfmt",
-      formattingProvider = 'stylish-haskell',
-    },
-  },
-}
+--require('lspconfig').hls.setup {
+--  on_attach = on_attach,
+--  -- filetypes = { 'haskell', 'lhaskell', 'cabal' },
+--  -- rootPatterns = { "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" },
+--  settings = {
+--    haskell = {
+--      -- checkParents = "CheckOnSave",
+--      -- checkProject = true,
+--      -- cabalFormattingProvider = "cabalfmt",
+--      formattingProvider = 'stylish-haskell',
+--    },
+--  },
+--}
 
 require('lspconfig').nil_ls.setup {
   on_attach = on_attach,

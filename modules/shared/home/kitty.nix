@@ -19,7 +19,7 @@
         #"--start-as=maximized"
       ];
 
-      theme = "Catppuccin-Frappe"; # TODO: map to user-options.theme
+      themeFile = "Catppuccin-Frappe"; # TODO: map to user-options.theme
 
       settings = {
         scrollback_lines = 10000;

@@ -101,7 +101,7 @@ in {
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions
     nodePackages.firebase-tools # firebase CLI
-    nodePackages.vercel # Vercel CLI
+    #nodePackages.vercel # Vercel CLI
 
     # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix

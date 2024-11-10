@@ -1,6 +1,7 @@
 {...}: {
   # Set your time zone.
-  time.timeZone = "Europe/Lisbon";
+  #time.timeZone = "Europe/Lisbon";
+  time.timeZone = "America/Argentina/Buenos_Aires";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

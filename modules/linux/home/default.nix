@@ -59,7 +59,7 @@ in {
       name = "cursor";
       src = pkgs.fetchurl {
         url = "https://downloader.cursor.sh/linux/appImage/x64 ";
-        sha256 = "sha256-ZURE8UoLPw+Qo1e4xuwXgc+JSwGrgb/6nfIGXMacmSg=";
+        sha256 = "sha256-CD6bQ4T8DhJidiOxNRgRDL4obfEZx7hnO0VotVb6lDc=";
       };
     })
   ];

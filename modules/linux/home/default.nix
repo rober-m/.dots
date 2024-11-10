@@ -54,14 +54,15 @@ in {
     cardano-pkgs.aiken # Aiken CLI
     thunderbird # Thunderbird email client
 
+    code-cursor # Cursor IDE
     # Install Cursor as AppImage package (run `cursor` to start. No icon)
-    (pkgs.appimageTools.wrapType2 {
-      name = "cursor";
-      src = pkgs.fetchurl {
-        url = "https://downloader.cursor.sh/linux/appImage/x64 ";
-        sha256 = "sha256-CD6bQ4T8DhJidiOxNRgRDL4obfEZx7hnO0VotVb6lDc=";
-      };
-    })
+    #(pkgs.appimageTools.wrapType2 {
+    #  name = "cursor";
+    #  src = pkgs.fetchurl {
+    #    url = "https://downloader.cursor.sh/linux/appImage/x64 ";
+    #    sha256 = "sha256-CD6bQ4T8DhJidiOxNRgRDL4obfEZx7hnO0VotVb6lDc=";
+    #  };
+    #})
   ];
 
   #-----------------------------------------------------------------------------#

@@ -63,6 +63,8 @@ in {
     #    sha256 = "sha256-CD6bQ4T8DhJidiOxNRgRDL4obfEZx7hnO0VotVb6lDc=";
     #  };
     #})
+
+    todoist-electron
   ];
 
   #-----------------------------------------------------------------------------#

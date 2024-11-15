@@ -15,6 +15,7 @@
             require("which-key").add({
                 { "<leader>s", group = "search"},
                 { "<leader>sf", ":Telescope find_files<cr>", desc = "File" },
+                { "<leader>sa", ":Telescope find_files hidden=true no_ignore=true no_ignore_parent=true<cr>", desc = "All Files" },
                 { "<leader>st", ":Telescope live_grep<cr>", desc = "Text" },
                 { "<leader>sb", ":Telescope buffers<cr>", desc = "Open Buffer" },
                 { "<leader>sm", ":Telescope git_status<cr>", desc = "Modified Files" },

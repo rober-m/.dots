@@ -98,7 +98,7 @@ for _, server in ipairs(servers_with_shared_config) do
   }
 end
 
-require('lspconfig').tsserver.setup {
+require('lspconfig').ts_ls.setup {
   on_attach = on_attach,
   settings = {
     typescript = {

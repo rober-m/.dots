@@ -56,6 +56,7 @@
         lazy-nvim # Lazy package management for Neovim
         dressing-nvim # Neovim plugin to improve the default vim.ui interfaces
         sniprun # Run code snippets
+        avante-nvim # A modern Neovim UI
         {
           plugin = otter-nvim; # LSP for code embeded in documents
           type = "lua";

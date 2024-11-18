@@ -39,6 +39,7 @@
       "amethyst"
       "whisky"
       #"git-credential-manager-core"
+      "todoist"
     ];
   };
 }

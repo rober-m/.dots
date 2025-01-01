@@ -126,6 +126,10 @@
           # Add Rust binaries to PATH
           export PATH=$HOME/.cargo/bin:$PATH
 
+          # Add NPM executables to PATH so that they are available as commands:
+          (to use this, run `npm config set prefix '~/.mutable_node_modules'`)
+          export PATH="$HOME/.mutable_node_modules/bin:$PATH"
+
           # Set up fzf key bindings and fuzzy completion
           source <(fzf --zsh)
           # Add default fzf command

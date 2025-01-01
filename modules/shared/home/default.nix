@@ -100,7 +100,7 @@ in {
     nodePackages.typescript
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions
-    nodePackages.firebase-tools # firebase CLI
+    #nodePackages.firebase-tools # firebase CLI (Installed trhough npm because nixpkgs' version is outdated)
     #nodePackages.vercel # Vercel CLI
 
     # Nix stuff

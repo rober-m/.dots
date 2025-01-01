@@ -51,6 +51,7 @@
     };
     # Software updates
     defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
+    stateVersion = 4;
   };
 
   #------------------------------------------------------------------------------------------------

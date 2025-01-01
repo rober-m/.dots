@@ -128,7 +128,7 @@ in {
     ollama
 
     shellcheck # Shell script analysis tool (Run shellcheck <script>)
-    neovide # Neovim GUI
+    #neovide # Neovim GUI
     #agda (not for now)
     stripe-cli # CLI to test Stripe integrations
   ];

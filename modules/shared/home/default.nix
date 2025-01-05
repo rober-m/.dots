@@ -131,6 +131,7 @@ in {
     #neovide # Neovim GUI
     #agda (not for now)
     stripe-cli # CLI to test Stripe integrations
+    pandoc
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

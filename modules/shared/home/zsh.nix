@@ -77,6 +77,7 @@
         // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
           rebuild = "sudo nixos-rebuild switch --flake ~/.dots#framework";
           collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
+          open = "xdg-open"; # Open files with default application
         }
         // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
           rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";

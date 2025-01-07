@@ -18,6 +18,7 @@ in {
     git.enable = true;
     zsh.enable = true;
     tmux.enable = true;
+    zellij.enable = true;
     neovim.enable = true;
     alacritty.enable = false;
     kitty.enable = true;

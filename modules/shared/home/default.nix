@@ -72,6 +72,7 @@ in {
     zlib # Compression library. Needed to use Haskell's zlib package
     watchman # File watching service
     cmake # Cross-platform build system
+    zellij # Terminal multiplexer (Tmux alternative)
 
     # Virtualization
     lazydocker # Lazygit for Docker

@@ -119,16 +119,17 @@
           #Print neofetch
           #neofetch
 
+          # INFO: Comented out to try zellij, but it works properly
           # Start tmux session if not in one
-          if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]]; then
-            tmux new-session -A -s main
-          fi
+          #if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]]; then
+          #  tmux new-session -A -s main
+          #fi
 
           # Add Rust binaries to PATH
           export PATH=$HOME/.cargo/bin:$PATH
 
           # Add NPM executables to PATH so that they are available as commands:
-          (to use this, run `npm config set prefix '~/.mutable_node_modules'`)
+          #(to use this, run `npm config set prefix '~/.mutable_node_modules'`)
           export PATH="$HOME/.mutable_node_modules/bin:$PATH"
 
           # Set up fzf key bindings and fuzzy completion

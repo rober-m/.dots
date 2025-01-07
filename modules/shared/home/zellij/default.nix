@@ -17,5 +17,8 @@
       target = ".config/zellij/config.kdl";
       text = builtins.readFile ./config.kdl;
     };
+    home.sessionVariables = {
+      ZELLIJ_AUTO_ATTACH = "true";
+    };
   };
 }

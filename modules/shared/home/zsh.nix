@@ -125,6 +125,19 @@
           #  tmux new-session -A -s main
           #fi
 
+          # Autostart zellij (see: https://github.com/zellij-org/zellij/blob/3dda02f44e06a5137da6139492997e0a77a757c1/zellij-utils/assets/shell/auto-start.zsh)
+          if [[ -z "$ZELLIJ" ]]; then
+             if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+                 zellij attach -c
+             else
+                 zellij
+             fi
+
+             if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+                 exit
+             fi
+          fi
+
           # Add Rust binaries to PATH
           export PATH=$HOME/.cargo/bin:$PATH
 

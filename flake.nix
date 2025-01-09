@@ -6,17 +6,20 @@
 
   inputs = {
     # Package sets
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # Environment/system management
     darwin = {
       url = "github:lnl7/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      #inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      #inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Other sources
@@ -60,7 +63,7 @@
     self,
     darwin,
     nixpkgs,
-    nixpkgs-unstable,
+    #nixpkgs-unstable,
     home-manager,
     alejandra,
     flake-utils,
@@ -99,7 +102,7 @@
       # NixOS Configurations
       import ./hosts/framework {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs-unstable home-manager user-options;
+        inherit inputs nixpkgs home-manager user-options;
       };
 
     ##################################################################

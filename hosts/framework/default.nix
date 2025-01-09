@@ -2,7 +2,8 @@
   inputs,
   home-manager,
   user-options,
-  nixpkgs-unstable,
+  nixpkgs,
+  #nixpkgs-unstable,
   ...
 }: let
   system = "x86_64-linux";
@@ -21,7 +22,7 @@
   };
 in {
   # My `Framework` config
-  framework = nixpkgs-unstable.lib.nixosSystem {
+  framework = nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {inherit inputs user-options;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [

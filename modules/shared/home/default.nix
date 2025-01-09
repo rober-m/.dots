@@ -47,7 +47,7 @@ in {
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [
     # Generic Terminal
-    (pkgs.nerdfonts.override {fonts = user-options.fonts;})
+    #(pkgs.nerdfonts.override {fonts = user-options.fonts;})
     coreutils
     curl
     wget
@@ -74,6 +74,7 @@ in {
     watchman # File watching service
     cmake # Cross-platform build system
     zellij # Terminal multiplexer (Tmux alternative)
+    supabase-cli # Supabase CLI
 
     # Virtualization
     lazydocker # Lazygit for Docker

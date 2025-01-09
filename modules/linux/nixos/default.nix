@@ -57,4 +57,10 @@
     #nix-index.enable = true;
     steam.enable = false; # Set to true if bored :P
   };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+  ];
 }

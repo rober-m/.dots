@@ -120,6 +120,7 @@
 
       # INFO: Packages in `extraPackages` are installed only inside the Neovim environment. Install them separately if you want to use them outside of Neovim.
       extraPackages = with pkgs; [
+        xclip # To copy to clipboard using `"+y`
         shellcheck # Shell script analysis tool (Run shellcheck <script>)
         statix # `statix check file.nix` Lints and suggestions for the Nix programming language.
         proselint # A linter for English prose

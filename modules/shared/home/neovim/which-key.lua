@@ -13,6 +13,12 @@ require("which-key").add({
   { "K", ":m '<-2<CR>gv=gv", desc = "Move line up",   mode = 'v' },
 })
 
+-- Copy and paster to clipboard
+require("which-key").add({
+  { "<leader>y", '"+y', desc = "Copy to clipboard",  mode = 'v' },
+  { "<leader>p", '"+p', desc = "Paste to clipboard", mode = 'v' },
+})
+
 -- TODO: MacOS remaps. Generalize to Linux.
 --local normal_pane_movements = {
 --  ["∆"] = { "<C-w>j", "Move to pane below" },

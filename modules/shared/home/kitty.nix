@@ -33,16 +33,17 @@
         background_image_layout = "scaled";
         background_tint = "0.90"; # Mix background color with background image
         macos_option_as_alt = true;
+        copy_on_select = true;
       };
 
       font.name = "FiraCode Nerd Font";
       font.size = 13;
 
       # TODO: Add keybindings based on Alacritty's ones
-      # keybindings = {
-      #   "ctrl+c" = "copy_or_interrupt";
-      #   "ctrl+f>2" = "set_font_size 20";
-      # };
+      #keybindings = {
+      #  "ctrl+c" = "copy_or_interrupt";
+      #  "ctrl+f>2" = "set_font_size 20";
+      #};
 
       environment = {LS_COLORS = "1";};
     };

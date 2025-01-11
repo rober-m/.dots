@@ -123,7 +123,7 @@ in {
     #flutter
 
     # Other
-    #anki # Flashcards
+    anki # Flashcards
     #elmPackages.elm
     typst # LaTeX alternative
     #typst-lsp # Typst language server

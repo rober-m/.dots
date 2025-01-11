@@ -31,6 +31,7 @@ local opts = {
   prompts = prompts,
   auto_follow_cursor = false, -- Don't follow the cursor after getting response
   show_help = true,           -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
+  chat_autocomplete = true,   -- Enable autocomplete for chat
   mappings = {
     -- Use tab for completion
     complete = {
@@ -66,11 +67,11 @@ local opts = {
       normal = "gmd",
     },
     -- Show the prompt
-    show_system_prompt = {
+    show_info = {
       normal = "gmp",
     },
     -- Show the user selection
-    show_user_selection = {
+    show_context = {
       normal = "gms",
     },
   },
@@ -94,9 +95,6 @@ opts.prompts.CommitStaged = {
 }
 
 chat.setup(opts)
--- Setup the CMP integration
-require("CopilotChat.integrations.cmp").setup()
-
 
 -------------------- CUSTOM COMMANDS ------------------------
 

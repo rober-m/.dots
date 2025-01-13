@@ -1,5 +1,7 @@
 ## My personal dotfiles
 
+test
+
 This is the configuration for my machines:
 - **MacBook Pro (M2)** with MacOS using `nix-darwin` and `home-manager`
 - **Framework (Intel)** with NixOS using `home-manager`

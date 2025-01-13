@@ -3,7 +3,6 @@
   home-manager,
   user-options,
   nixpkgs,
-  #nixpkgs-unstable,
   ...
 }: let
   system = "x86_64-linux";

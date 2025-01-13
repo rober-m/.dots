@@ -8,17 +8,14 @@
     # Package sets
     #nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # Environment/system management
     darwin = {
       url = "github:lnl7/nix-darwin/master";
-      #inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      #inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -63,7 +60,6 @@
     self,
     darwin,
     nixpkgs,
-    #nixpkgs-unstable,
     home-manager,
     alejandra,
     flake-utils,

@@ -1,20 +1,3 @@
--- -------
--- Library
--- -------
-
--- Helper functions to easily define remaps
-function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
-
-function nmap(shortcut, command)
-  map('n', shortcut, command)
-end
-
-function imap(shortcut, command)
-  map('i', shortcut, command)
-end
-
 --------------------------------------------------------------------------------------------------
 --------------------------------------  General Config -------------------------------------------
 
@@ -41,6 +24,14 @@ vim.opt.expandtab = true -- Insert spaces instead of tabs.
 -- Search
 vim.opt.hlsearch = true  -- Highlight all the matches.
 vim.opt.incsearch = true -- Show incremental matches while typing the search.
+
+--------------------------------------------------------------------------------------------------
+-------------------------------------  Filetype Configs ------------------------------------------
+
+if vim.bo.filetype == "markdown" then
+  vim.opt.wrap = true
+  vim.opt.linebreak = true
+end
 
 --------------------------------------------------------------------------------------------------
 --------------------------------------  Neovide Config -------------------------------------------

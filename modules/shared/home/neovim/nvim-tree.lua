@@ -30,7 +30,7 @@ require("nvim-tree").setup {
   },
 }
 
--- Remappings
-nmap("<C-e>", ":NvimTreeToggle<cr>")
-imap("<C-e>", ":NvimTreeToggle<cr>")
+require("which-key").add({
+  { "<C-e>", ":NvimTreeToggle<cr>", desc = "ktoggle NvimTree", mode = { 'n', 'i' } },
+})
 -----------------------------------------------------------------------------------------

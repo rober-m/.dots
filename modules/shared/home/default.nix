@@ -119,7 +119,7 @@ in {
     gcc # GNU Compiler Collection
     rustup # Rust toolchain installer (using this to install rust tooling)
     cargo-binstall # Tool for installing rust binaries as an alternative to building from source
-    dioxus-cli # CLI for Dioxus multi-platform application framework
+    #dioxus-cli # CLI for Dioxus multi-platform application framework (using cargo install)
 
     # Flutter
     #flutter

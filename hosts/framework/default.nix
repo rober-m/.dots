@@ -7,6 +7,12 @@
 }: let
   system = "x86_64-linux";
 
+  # Your custom packages
+  # Accessible through 'nix build', 'nix shell', etc
+  packages = import ../../my-pkgs nixpkgs.legacyPackages.${system};
+  # Your custom packages and modifications, exported as overlays
+  overlays = import ../../overlays {inherit inputs;};
+
   nixpkgsWithConfig = {
     config = {
       allowUnfree = true;
@@ -36,6 +42,8 @@ in {
       inputs.cardano-node.nixosModules.cardano-node
       {
         nixpkgs.overlays = [
+          overlays.additions
+          overlays.modifications
           (_: _: {
             cardano-pkgs.node = inputs.cardano-node.packages.${system};
             #cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;

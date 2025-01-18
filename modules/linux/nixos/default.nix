@@ -50,9 +50,6 @@
     extraGroups = ["networkmanager" "wheel" "docker" "adbusers"];
     shell = pkgs.zsh;
     # packages = with pkgs; [ ];
-    packages = with pkgs; [
-      my-dioxus-cli
-    ];
   };
 
   programs = {

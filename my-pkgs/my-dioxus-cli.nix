@@ -12,7 +12,7 @@
   dioxus-cli,
 }:
 rustPlatform.buildRustPackage rec {
-  pname = "my-dioxus-cli";
+  pname = "dioxus-cli";
   version = "0.6.1";
 
   src = fetchCrate {

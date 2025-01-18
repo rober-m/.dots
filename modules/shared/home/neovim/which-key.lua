@@ -15,8 +15,8 @@ require("which-key").add({
 
 -- Copy and paster to clipboard
 require("which-key").add({
-  { "<leader>y", '"+y', desc = "Copy to clipboard",  mode = 'v' },
-  { "<leader>p", '"+p', desc = "Paste to clipboard", mode = 'v' },
+  { "<leader>y", '"+y', desc = "Copy to clipboard",  mode = { 'n', 'v' } },
+  { "<leader>p", '"+p', desc = "Paste to clipboard", mode = { 'n', 'v' } },
 })
 
 -- TODO: MacOS remaps. Generalize to Linux.

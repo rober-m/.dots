@@ -37,8 +37,8 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Format on save
-  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+  -- Format on save (except for the marksman LSP. But the filter didn't work. TODO: investingate)
+  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ filter = function(client) return client.name ~= "marksman" end })]]
 
   -- Show line diagnostics automatically in hover window
   vim.api.nvim_create_autocmd("CursorHold", {

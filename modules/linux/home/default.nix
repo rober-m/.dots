@@ -9,6 +9,10 @@ in {
 
   home.keyboard = null; # Configured at the system level.
 
+  nixpkgs.overlays = [
+    #(import ../../overlays/protonvpn-gui.nix)
+  ];
+
   #-----------------------------------------------------------------------------#
   #---------------------------- Customized packages ----------------------------#
 
@@ -36,7 +40,7 @@ in {
 
   home.packages = with pkgs;
     [
-      protonvpn-gui # Proton VPN
+      protonvpn-gui # Proton VPN (broken temporarily in all Linux distros. Reverting to previous version by my-pkgs)
       bitwarden # Password manager
       bitwarden-cli # Bitwarden CLI
       #megasync # MegaSync (MEGA Cloud Drive) - Can alternatively be Installed using Flatpak or overlay
@@ -70,6 +74,7 @@ in {
     ]
     ++ [
       (pkgs.callPackage ../../../my-pkgs/my-dioxus-cli.nix {})
+      #(pkgs.callPackage ../../../my-pkgs/my-protonvpn-gui.nix {})
     ];
 
   #-----------------------------------------------------------------------------#

@@ -12,6 +12,10 @@
       allowUnfree = true;
       android_sdk.accept_license = true;
     };
+
+    overlays = [
+      #(import ../../overlays/protonvpn-gui.nix)
+    ];
   };
   home-modules = {...}: {
     imports = [

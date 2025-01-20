@@ -62,5 +62,6 @@
     nerd-fonts.hack
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
+    ubuntu_font_family
   ];
 }

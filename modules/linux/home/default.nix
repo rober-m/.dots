@@ -59,6 +59,7 @@ in {
       pinentry # Pinentry is a collection of passphrase entry dialogs which is required for GPG
       cardano-pkgs.aiken # Aiken CLI
       thunderbird # Thunderbird email client
+      anki # Flashcards
 
       code-cursor # Cursor IDE
       # Install Cursor as AppImage package (run `cursor` to start. No icon)

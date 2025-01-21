@@ -49,9 +49,17 @@ darwin (nix-darwin, home)     linux (NixOS, home)
 - [ ] Add secrets management.
 - [ ] Should I expicitly import modules instead of using `default.nix` to make it easier to handle multiple systems?
 
-## Installation
+### Installation (troubleshooting section below)
 
 TODO: Add instructions
+
+## Troubleshooting
+
+### If `darwin-rebuild` stops working
+
+Likely, this happened due to a MacOS update that broke the symlinks. Run this command at the root of the `.dots` dir to solve it:
+
+`nix run nix-darwin -- switch --flake .#macbook`
 
 ### If Neovim can't load packages
 

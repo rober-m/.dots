@@ -72,6 +72,8 @@ in {
       #})
 
       todoist-electron
+
+      haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
     ]
     ++ [
       (pkgs.callPackage ../../../my-pkgs/my-dioxus-cli.nix {})

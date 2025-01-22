@@ -133,7 +133,7 @@ in {
 
     shellcheck # Shell script analysis tool (Run shellcheck <script>)
     #neovide # Neovim GUI
-    #agda (not for now)
+    agda
     stripe-cli # CLI to test Stripe integrations
     pandoc
   ];

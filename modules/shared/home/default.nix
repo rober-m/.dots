@@ -104,7 +104,8 @@ in {
     nodePackages.node2nix
     nodePackages.web-ext # cli to help build web extensions
     #nodePackages.firebase-tools # firebase CLI (Installed trhough npm because nixpkgs' version is outdated)
-    #nodePackages.vercel # Vercel CLI
+    nodePackages.vercel # Vercel CLI
+    tailwindcss # Tailwind CSS CLI
 
     # Nix stuff
     cachix # adding/managing alternative binary caches hosted by Cachix

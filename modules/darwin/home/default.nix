@@ -34,6 +34,7 @@ in {
   home.packages = with pkgs; [
     cocoapods
     #kanata # Keyboard remap layouts. It's broken on the latest version (1.7-1). Wait for PR to be merged: https://github.com/NixOS/nixpkgs/pull/334243
+    (pkgs.callPackage ../../../my-pkgs/my-kanata.nix {}) # The installer works, but kanata doesn't. TODO: Create an issue.
     m-cli # useful macOS CLI commands
     # INFO: Aiken CLI above v0.0.20-alpha doesn't compile on darwin. Using
     # alternative installations options

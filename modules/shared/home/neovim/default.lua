@@ -25,6 +25,19 @@ vim.opt.expandtab = true -- Insert spaces instead of tabs.
 vim.opt.hlsearch = true  -- Highlight all the matches.
 vim.opt.incsearch = true -- Show incremental matches while typing the search.
 
+-- Clipboard (Force Nvim to use the OSC 52 provider that kitty supports)
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+
 --------------------------------------------------------------------------------------------------
 -------------------------------------  Filetype Configs ------------------------------------------
 

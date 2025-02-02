@@ -105,6 +105,7 @@ in {
     nodePackages.web-ext # cli to help build web extensions
     #nodePackages.firebase-tools # firebase CLI (Installed trhough npm because nixpkgs' version is outdated)
     nodePackages.vercel # Vercel CLI
+    nodePackages.eas-cli # Expo CLI
     tailwindcss # Tailwind CSS CLI
 
     # Nix stuff

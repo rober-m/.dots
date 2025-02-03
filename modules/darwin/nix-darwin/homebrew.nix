@@ -40,6 +40,7 @@
       "whisky"
       #"git-credential-manager-core"
       "todoist"
+      #"keycastr" # Show key presses
     ];
   };
 }

@@ -138,6 +138,7 @@ in {
     agda
     stripe-cli # CLI to test Stripe integrations
     pandoc
+    #kmonad # Keyboard remapper. Doesn't work on Darwin :(
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

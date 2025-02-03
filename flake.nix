@@ -25,6 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap-flake.url = "github:xremap/nix-flake";
+    #kmonad = {
+    #  url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     cardano-node.url = "github:IntersectMBO/cardano-node/8.9.0";
     aiken_flake.url = "github:aiken-lang/aiken";
     aiken_flake_20.url = "github:aiken-lang/aiken/v1.0.20-alpha"; # Newer versions don't compile in Darwin

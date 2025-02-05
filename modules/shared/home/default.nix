@@ -136,6 +136,7 @@ in {
     shellcheck # Shell script analysis tool (Run shellcheck <script>)
     #neovide # Neovim GUI
     agda
+    lean4
     stripe-cli # CLI to test Stripe integrations
     pandoc
     #kmonad # Keyboard remapper. Doesn't work on Darwin :(

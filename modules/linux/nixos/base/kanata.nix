@@ -9,8 +9,6 @@
       lib.mkEnableOption "Enable kanata (keyboard layout) with personal config";
   };
 
-  # TODO: Replace xremap with kanata
-
   config = lib.mkIf config.customized.kanata.enable {
     services.kanata = {
       enable = true;

@@ -19,7 +19,8 @@
   # Most of these are in the `shared/home` config files.
   customized = {
     kanata.enable = true; # Run Kanata service with my own config
-    android.enable = true;
+    android.enable = false; # Enable Android development tools
+    hyprland.enable = false; # Enable custom hyprland+waybar configuration
     cardano = {
       cardano-node.enable = false; # Run cardano-node as a service and install cardano-cli
       hydraw.enable = false; # Enable cardano-node (with cli) + hydra-node + example hydraw application

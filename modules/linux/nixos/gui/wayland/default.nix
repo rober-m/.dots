@@ -1,42 +1,49 @@
 {
   pkgs,
-  imports,
+  lib,
+  config,
   ...
 }: {
-  # TODO: Can I move this config to home manager? (non-nix config files already are)
-  programs.hyprland = {
-    enable = true; # Doesn't work on NVIDIA
-    xwayland.enable = true; # To run X11 apps
+  options = {
+    customized.hyprland.enable = lib.mkEnableOption "Enable custom hyprland+waybar configuration";
   };
 
-  environment.systemPackages = with pkgs; [
-    waybar # Status bar (other options: polybar, eww)
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-    }))
+  config = lib.mkIf config.customized.hyprland.enable {
+    # TODO: Can I move this config to home manager? (non-nix config files already are)
+    programs.hyprland = {
+      enable = true; # Doesn't work on NVIDIA
+      xwayland.enable = true; # To run X11 apps
+    };
 
-    dunst # Notification daemon
-    libnotify # (required by dunst)
+    environment.systemPackages = with pkgs; [
+      waybar # Status bar (other options: polybar, eww)
+      (waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      }))
 
-    swww # Wallpaper deamon
+      dunst # Notification daemon
+      libnotify # (required by dunst)
 
-    rofi-wayland # Application launcher
+      swww # Wallpaper deamon
 
-    networkmanagerapplet # Network manager menu in the status bar
-  ];
+      rofi-wayland # Application launcher
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
-    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Trying to make Cursor not blurry on Wayland
+      networkmanagerapplet # Network manager menu in the status bar
+    ];
+
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1"; # Enable Ozone-Wayland for Chromium and Electron apps
+      ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Trying to make Cursor not blurry on Wayland
+    };
+
+    xdg.portal.enable = true; # For aps to comunicate
+    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
+    # imports.imports.home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/config.rasi;
+    # imports.home.file.".config/hypr/hyprland.conf".source = ./modules/gui/wayland/hyprland/hyprland.conf;
+    # imports.home.file.".config/hypr/start.sh" = {
+    #   source = ./modules/gui/wayland/hyprland/start.sh;
+    #   executable = true;
+    # };
   };
-
-  xdg.portal.enable = true; # For aps to comunicate
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-
-  # imports.imports.home.file.".config/rofi/config.rasi".source = ./modules/gui/wayland/config.rasi;
-  # imports.home.file.".config/hypr/hyprland.conf".source = ./modules/gui/wayland/hyprland/hyprland.conf;
-  # imports.home.file.".config/hypr/start.sh" = {
-  #   source = ./modules/gui/wayland/hyprland/start.sh;
-  #   executable = true;
-  # };
 }

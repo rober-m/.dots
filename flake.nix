@@ -4,6 +4,9 @@
   ###############################################################################################
   ######################################  INPUTS ################################################
 
+  #TODO: See if I should use https://github.com/NixOS/nixos-hardware ...
+  #...It seems easy to use, but unsure if I should since the laptop works fine.
+
   inputs = {
     # Package sets
     #nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";

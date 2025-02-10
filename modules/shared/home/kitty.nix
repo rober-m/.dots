@@ -40,10 +40,14 @@
       font.size = 13;
 
       # TODO: Add keybindings based on Alacritty's ones
-      #keybindings = {
-      #  "ctrl+c" = "copy_or_interrupt";
-      #  "ctrl+f>2" = "set_font_size 20";
-      #};
+      keybindings = {
+        #  "ctrl+c" = "copy_or_interrupt";
+        #  "ctrl+f>2" = "set_font_size 20";
+        # Resize font size (I had to use "opt+ctrl" because otherwise it doesn't register the "equal" key...
+        #...TODO: investigate using https://github.com/kovidgoyal/kitty/issues/872#issuecomment-419854408)
+        "opt+ctrl+minus" = "change_font_size all -2.0";
+        "opt+ctrl+equal" = "change_font_size all +2.0";
+      };
 
       environment = {LS_COLORS = "1";};
     };

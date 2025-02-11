@@ -4,11 +4,13 @@
   pkgs,
   user-options,
   ...
-}: {
+}: let
+  onlyLinuxAttr = lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux;
+  onlyDarwinAttr = lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin;
+in {
   options = {
     customized.zsh.enable = lib.mkEnableOption "Enable custom zsh configuration";
   };
-
   config = lib.mkIf config.customized.zsh.enable {
     #home.packages = with pkgs; [
     #  spaceship-prompt # Docs: https://spaceship-prompt.sh/config/intro/
@@ -78,12 +80,12 @@
           h96-iog = "nix develop github:input-output-hk/devx#ghc96-iog --no-write-lock-file";
           plutus-apps12 = "nix develop github:input-output-hk/plutus-apps/v1.2.0";
         }
-        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+        // onlyLinuxAttr {
           rebuild = "sudo nixos-rebuild switch --flake ~/.dots#framework";
           collect-garbage = "sudo nix-collect-garbage --delete-older-than 7d";
           open = "xdg-open"; # Open files with default application
         }
-        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+        // onlyDarwinAttr {
           rebuild = "darwin-rebuild switch --flake ~/.dots#macbook";
           collect-garbage = "echo 'TODO: Implement collect-garbage in Darwin'";
         };
@@ -201,10 +203,10 @@
           ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#888"; # Change autosuggest highligh color
           VI_MODE_RESET_PROMPT_ON_MODE_CHANGE = true; # For oh-my-zsh vi-mode
         }
-        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
+        // onlyLinuxAttr {
           #CHROME_EXECUTABLE = "google-chrome-stable"; # Flutter can't find chrome on linux
         }
-        // lib.attrsets.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
+        // onlyDarwinAttr {
           HOMEBREW_NO_ANALYTICS = 1;
         };
     };

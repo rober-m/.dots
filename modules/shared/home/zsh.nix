@@ -10,6 +10,10 @@
   };
 
   config = lib.mkIf config.customized.zsh.enable {
+    #home.packages = with pkgs; [
+    #  spaceship-prompt # Docs: https://spaceship-prompt.sh/config/intro/
+    #];
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -21,7 +25,7 @@
         enable = true;
         plugins =
           [
-            "git" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+            #"git" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
             "vi-mode" # DOCS: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
           ]
           ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
@@ -47,11 +51,11 @@
           cat = "bat";
           e = "exit";
           c = "clear";
-          gs = "git status"; # More aliases at git config
           bw = "NODE_OPTIONS=\"--no-deprecation\" bw"; # See: https://github.com/bitwarden/clients/issues/6689
 
           # Git-related
-          # See oh-my-zsh -> plugins -> git
+          gaa = "git add --all";
+          gs = "git status";
           lg = "lazygit";
           lzd = "lazydocker";
 
@@ -159,6 +163,10 @@
             if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
             rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
           }
+
+          # Spaceship prompt is too slow! Disabling it for now
+          #source "${pkgs.spaceship-prompt}/lib/spaceship-prompt/spaceship.zsh"
+          #export SPACESHIP_PROMPT_ASYNC=false # https://github.com/spaceship-prompt/spaceship-prompt/issues/1193
         ''
         + lib.optionalString pkgs.stdenv.hostPlatform.isLinux
         /*

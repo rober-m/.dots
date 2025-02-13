@@ -56,8 +56,11 @@ in {
           bw = "NODE_OPTIONS=\"--no-deprecation\" bw"; # See: https://github.com/bitwarden/clients/issues/6689
 
           # Git-related
-          gaa = "git add --all";
           gs = "git status";
+          gaa = "git add --all";
+          gcm = "git commit -m";
+          gca = "git commit --amend --no-edit";
+          gch = "git checkout";
           lg = "lazygit";
           lzd = "lazydocker";
 

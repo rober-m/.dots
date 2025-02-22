@@ -12,6 +12,9 @@
     #nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    # Hardware support
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     # Environment/system management
     darwin = {
       url = "github:lnl7/nix-darwin/master";

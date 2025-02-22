@@ -37,7 +37,10 @@ in {
       ../../modules/linux/nixos
       # `home-manager` modules
       home-manager.nixosModules.home-manager
+      # `cardano-node` modules
       inputs.cardano-node.nixosModules.cardano-node
+      # Custom hardware modules for 13th-gen Intel Framework Laptop
+      inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
       {
         nixpkgs.overlays = [
           (_: _: {

@@ -34,6 +34,21 @@
   services = {
     thermald.enable = true; # Enable thermald to prevent overheating.
     printing.enable = true; # Enable CUPS to print documents.
+    fwupd = {
+      # Docs: https://github.com/NixOS/nixos-hardware/tree/master/framework
+      enable = true; # Enable fwupd to update firmware.
+      #extraRemotes = ["lvfs-testing"]; # Add the testing remote to get the latest firmware.
+      # uefiCapsuleSettings.DisableCapsuleUpdateOnDisk = true; # Might be necessary once to make the update succeed
+      #package =
+      #  # we need fwupd 1.9.7 to downgrade the fingerprint sensor firmware
+      #  (import (builtins.fetchTarball {
+      #      url = "https://github.com/NixOS/nixpkgs/archive/bb2009ca185d97813e75736c2b8d1d8bb81bde05.tar.gz";
+      #      sha256 = "sha256:003qcrsq5g5lggfrpq31gcvj82lb065xvr7bpfa8ddsw8x4dnysk";
+      #    }) {
+      #      inherit (pkgs) system;
+      #    })
+      #  .fwupd;
+    };
   };
 
   #------------------------------------------------------------------------------------------------
@@ -57,6 +72,7 @@
     zsh.enable = true;
     #nix-index.enable = true;
     steam.enable = false; # Set to true if bored :P
+    partition-manager.enable = true; # Enable KDE Partition Manager
   };
 
   fonts.packages = with pkgs; [

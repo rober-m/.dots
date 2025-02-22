@@ -18,7 +18,7 @@
       #"pango"
       "zlib"
       "aikup"
-      "bitwarden-cli"
+      #"bitwarden-cli"
     ];
     taps = [
       "koekeishiya/formulae" # yabai
@@ -41,6 +41,7 @@
       #"git-credential-manager-core"
       "todoist"
       #"keycastr" # Show key presses
+      #"expo-orbit"
     ];
   };
 }

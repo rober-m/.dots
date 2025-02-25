@@ -24,9 +24,28 @@
       extraConfig = {
         github.user = "rober-m";
         pull.rebase = false;
-        merge.conflictstyle = "diff3";
+        merge.conflictstyle = "zdiff3";
         init.defaultBranch = "main";
         #credential.helper = "osxkeychain";
+        column.ui = "auto";
+        branch.sort = "-committerdate";
+        tag.sort = "version:refname";
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicprefix = true;
+          renames = true;
+        };
+        push = {
+          default = "simple";
+          autoSetRemote = true;
+          followTags = true;
+        };
+        feth = {
+          prune = true;
+          pruneTags = true;
+        };
+        help.autocorrect = "prompt";
       };
       ignores = [".DS_Store"];
     };

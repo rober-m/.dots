@@ -61,6 +61,8 @@ in {
           gcm = "git commit -m";
           gca = "git commit --amend --no-edit";
           gch = "git checkout";
+          gp = "git pull";
+          gP = "git push";
           lg = "lazygit";
           lzd = "lazydocker";
 

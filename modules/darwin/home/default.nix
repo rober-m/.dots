@@ -42,6 +42,7 @@ in {
     # darwin.xcode_14_1 # Nix can't install Xcode. Using App Store instead.
     #cardano-pkgs.aiken # Aiken CLI
     #haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
+    zulu17
   ];
 
   # ------------------------------ Misc configuration files ---------------------------------------

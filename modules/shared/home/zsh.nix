@@ -197,6 +197,10 @@ in {
 
           export PATH=$HOME/.cabal/bin/:$PATH # Add cabal-installed binaries to PATH
           #weather-cli -l 38 -g 9
+
+          export ANDROID_HOME=$HOME/Library/Android/sdk
+          export PATH=$PATH:$ANDROID_HOME/emulator
+          export PATH=$PATH:$ANDROID_HOME/platform-tools
         '';
       profileExtra = ''
         # export KEYTIMEOUT=1 # Needed for ZSH vi mode

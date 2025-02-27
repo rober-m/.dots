@@ -132,7 +132,6 @@ in {
     #typst-lsp # Typst language server
     #bitwarden-cli # Bitwarden CLI
     ollama
-
     shellcheck # Shell script analysis tool (Run shellcheck <script>)
     #neovide # Neovim GUI
     agda
@@ -140,6 +139,7 @@ in {
     stripe-cli # CLI to test Stripe integrations
     pandoc
     #kmonad # Keyboard remapper. Doesn't work on Darwin :(
+    #claude-code # CLI for Claude LLM TODO: Use after updating flake
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

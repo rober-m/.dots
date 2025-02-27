@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   nix.gc.interval = {
     Weekday = 0;
     Hour = 0;

@@ -31,7 +31,7 @@
         background_opacity = "1";
         background_image = "~/.dots/wallpapers/japan_traditional_street.png"; # Only PNG.
         background_image_layout = "scaled";
-        background_tint = "0.90"; # Mix background color with background image
+        background_tint = "0.94"; # Mix background color with background image
         macos_option_as_alt = true;
         copy_on_select = true;
       };

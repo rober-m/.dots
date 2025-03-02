@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-  # Custom option config to enable zellij
   options = {
     customized.superfile.enable =
       lib.mkEnableOption "Enable superfile with personal config";

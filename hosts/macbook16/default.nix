@@ -35,6 +35,7 @@ in {
         nixpkgs.overlays = [
           (_: _: {
             #cardano-pkgs.aiken = inputs.aiken_flake_1_1_0.packages.${system}.aiken; # Installed with `nix profile`
+            superfile = inputs.superfile.packages.${system}.default;
           })
           (self: super: {
             # https://github.com/LnL7/nix-darwin/issues/1041

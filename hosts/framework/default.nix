@@ -49,6 +49,7 @@ in {
             #cardano-pkgs.aiken = inputs.aiken_bump_nix_pr.packages.${system}.aiken;
             cardano-pkgs.aiken = inputs.aiken_flake_asteria.packages.${system}.aiken;
             #cardano-pkgs.aiken = inputs.aiken_flake.packages.${system}.aiken;
+            superfile = inputs.superfile.packages.${system}.default;
           })
         ];
       }

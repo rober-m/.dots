@@ -29,6 +29,7 @@ in {
     vscode.enable = true;
     haskell.enable = true;
     kanata.enable = false; # Update flake to use new version
+    superfile.enable = true;
   };
 
   #-------------------------- Default-config packages --------------------------#

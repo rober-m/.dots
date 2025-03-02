@@ -31,6 +31,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap-flake.url = "github:xremap/nix-flake";
+    superfile = {
+      url = "github:yorukot/superfile";
+    };
     #kmonad = {
     #  url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
     #  inputs.nixpkgs.follows = "nixpkgs";

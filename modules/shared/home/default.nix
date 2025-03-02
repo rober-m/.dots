@@ -16,6 +16,7 @@
     ./zsh.nix
     ./haskell.nix # Haskell-related binaries and config (withot nvim config)
     ./vscode
+    ./superfile
     inputs.nix-colors.homeManagerModules.default
   ];
 in {

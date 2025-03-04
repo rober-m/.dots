@@ -34,8 +34,8 @@
       # Default DB path: /var/lib/cardano-node/db-<environment>
       enable = true;
       environment = "preview";
-      # TODO: Change socket path to avoid sudo?
-      # TODO: Add node configuration .
+      # Change socket path to avoid sudo?
+      # Add node configuration here.
     };
   };
 }

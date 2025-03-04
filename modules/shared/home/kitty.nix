@@ -39,7 +39,6 @@
       font.name = "FiraCode Nerd Font";
       font.size = 13;
 
-      # TODO: Add keybindings based on Alacritty's ones
       keybindings = {
         #  "ctrl+c" = "copy_or_interrupt";
         #  "ctrl+f>2" = "set_font_size 20";

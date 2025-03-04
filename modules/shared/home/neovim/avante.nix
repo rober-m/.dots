@@ -1,4 +1,3 @@
-# TODO: Use this.
 {
   lib,
   vimUtils,

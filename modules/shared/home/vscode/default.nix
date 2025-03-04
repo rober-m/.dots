@@ -9,7 +9,6 @@
   };
 
   config = lib.mkIf config.customized.vscode.enable {
-    #TODO: Add language servers (the ones in the nvim config) here? Add them to home.nix? Let VSCode manage the installation?
     programs.vscode = {
       enable = true;
       #userSettings = lib.importJSON ./settings.json; # Commenting this because it's too cumbersome

@@ -42,6 +42,7 @@ local on_attach = function(client, bufnr)
     { "<leader>h",  group = "haskell" },
     { "<leader>ha", vim.lsp.codelens.run,                             desc = "CodeLens" },
     { "<leader>hh", require('haskell-tools').hoogle.hoogle_signature, desc = "Hoogle Signature" },
+    { "<leader>hf", vim.lsp.buf.format,                               desc = "Format buffer" },
 
   })
 end

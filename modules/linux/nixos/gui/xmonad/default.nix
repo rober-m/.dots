@@ -1,6 +1,6 @@
 # DOCS:
 # - https://nixos.wiki/wiki/XMonad
-# TODO: Create a project around xmonad.hs (See las section of previous link)
+# To use this, create a project around xmonad.hs (See las section of previous link)
 {pkgs, ...}: {
   # Suspend system after inactivity
   # Xmonad is a Window Manager (WM) and not a Desktop Environment (DE).

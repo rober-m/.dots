@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   user-options,
   ...
@@ -62,48 +63,52 @@
         cursor = {
           style.shape = "Block";
         };
-        # TODO: Change commands depending on the operating system. Do I have to?
-        keyboard.bindings = [
-          #{ key = ""; mods = ""; chars/action = ""; }
-          ######## Common ########
-          {
-            key = "Escape";
-            mods = "Control";
-            action = "ToggleViMode";
-          }
-          ######## MacOS ########
-          {
-            key = "N";
-            mods = "Command";
-            action = "SpawnNewInstance";
-          }
-          {
-            key = "C";
-            mods = "Command";
-            action = "Copy";
-          }
-          {
-            key = "V";
-            mods = "Command";
-            action = "Paste";
-          }
-          ######## Linux ########
-          {
-            key = "N";
-            mods = "Control";
-            action = "SpawnNewInstance";
-          }
-          {
-            key = "C";
-            mods = "Alt";
-            action = "Copy";
-          }
-          {
-            key = "V";
-            mods = "Alt";
-            action = "Paste";
-          }
-        ];
+        keyboard.bindings =
+          [
+            #{ key = ""; mods = ""; chars/action = ""; }
+            ######## Common ########
+            {
+              key = "Escape";
+              mods = "Control";
+              action = "ToggleViMode";
+            }
+          ]
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+            ######## MacOS ########
+            {
+              key = "N";
+              mods = "Command";
+              action = "SpawnNewInstance";
+            }
+            {
+              key = "C";
+              mods = "Command";
+              action = "Copy";
+            }
+            {
+              key = "V";
+              mods = "Command";
+              action = "Paste";
+            }
+          ]
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+            ######## Linux ########
+            {
+              key = "N";
+              mods = "Control";
+              action = "SpawnNewInstance";
+            }
+            {
+              key = "C";
+              mods = "Alt";
+              action = "Copy";
+            }
+            {
+              key = "V";
+              mods = "Alt";
+              action = "Paste";
+            }
+          ];
       };
     };
   };

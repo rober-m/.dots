@@ -20,6 +20,10 @@
         cm = "commit -m";
         ca = "commt --amend --no-edit";
       };
+      # TODO: Add GPG key to Mac and uncomment this
+      #signing = {
+      #  signByDefault = true;
+      #};
       difftastic.enable = true;
       extraConfig = {
         github.user = "rober-m";

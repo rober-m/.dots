@@ -24,13 +24,13 @@
     ./gitsigns.nix # Git decorations
     ./lazygit.nix # Git TUI
     ./nvim-notify.nix # Notifications
-    #./chatGPT.nix # ChatGPT integration TODO: Configure it
     ./copilot.nix # GitHub Copilot
     ./copilotChat.nix # GitHub Copilot's chat integration
     ./luasnip.nix # Snippets
+    #./chatGPT.nix # ChatGPT integration TODO: Configure it
+    ./avante.nix # Cursor-like IDE
     #---------------- IMPORTANT ----------------
-    # INFO: which-key must be the last import for it to recognize the keybindings of
-    # previous imports.
+    # WARN: which-key must be the last import for it to recognize the keybindings of previous imports.
     ./which-key.nix # Pannel showing available keymappings live.
   ];
 

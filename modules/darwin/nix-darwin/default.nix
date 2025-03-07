@@ -58,10 +58,8 @@
   #-------------------------------------- OTHER CONFIG --------------------------------------------
 
   # Add ability to used TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
   services.karabiner-elements.enable = true;
 
   programs = {

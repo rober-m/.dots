@@ -4,7 +4,6 @@
   config,
   ...
 }: {
-  # Custom option config to enable tmux with some plugins.
   options = {
     customized.kanata.enable =
       lib.mkEnableOption "Enable kanata (keyboard layout) with personal config";

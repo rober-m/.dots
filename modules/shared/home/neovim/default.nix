@@ -58,6 +58,27 @@
         sniprun # Run code snippets
         avante-nvim # A modern Neovim UI
         {
+          plugin = grug-far-nvim;
+          type = "lua";
+          config =
+            /*
+            lua
+            */
+            ''
+              ------------------------------------ GRUG FAR -------------------------------------------
+              -- DOCS: https://github.com/MagicDuck/grug-far.nvim
+
+              require('grug-far').setup({})
+
+              require("which-key").add({
+                  { "<leader>s", group = "search"},
+                  { "<leader>sr", ":GrugFar<cr>", mode = { "n", "v" }, desc = "Search and Replace" },
+              })
+
+              -----------------------------------------------------------------------------------------
+            '';
+        }
+        {
           plugin = otter-nvim; # LSP for code embeded in documents
           type = "lua";
           config =
@@ -66,6 +87,7 @@
             */
             ''
               ------------------------------------ OTTER -------------------------------------------
+
               -- WARNING: This doesn't work. I don't know why.
               -- DOCS: https://github.com/jmbuhr/otter.nvim
               -- table of embedded languages to look for.
@@ -81,6 +103,8 @@
               -- uses injections if nil or not set
               local tsquery = nil
               require('otter').activate(languages, completion, diagnostics, tsquery)
+
+              -----------------------------------------------------------------------------------------
             '';
         }
         {
@@ -92,6 +116,7 @@
             */
             ''
               ------------------------------------ TWILIGHT -------------------------------------------
+
               -- DOCS: https://github.com/folke/twilight.nvim
               require('twilight').setup{
                 dimming = {
@@ -113,6 +138,7 @@
                 },
                 exclude = {}, -- exclude these filetypes
               }
+
               -----------------------------------------------------------------------------------------
             '';
         }

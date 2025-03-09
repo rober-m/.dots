@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------------------------
 --------------------------------------  General Config -------------------------------------------
 
-vim.g.mapleader = " " -- Leader key
+vim.g.mapleader = " "      -- Leader key
+vim.g.maplocalleader = "," -- Local leader key
 
 -- Visual
 vim.opt.wrap = false                        -- Wrap text?

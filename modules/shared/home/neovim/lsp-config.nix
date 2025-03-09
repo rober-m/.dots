@@ -25,6 +25,9 @@
       #ltex-ls # LaTeX and Markdown, and others (https://github.com/valentjn/ltex-ls)
       terraform-ls # Terraform
       #dart # Dart
+
+      tinymist # Typst LSP
+      typstyle # Typst formatter that tinymist uses
     ];
   };
 }

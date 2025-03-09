@@ -178,6 +178,7 @@ require('lspconfig').lua_ls.setup {
 require('lspconfig').tinymist.setup {
   on_attach = on_attach,
   settings = {
+    projectResolution = 'lockDatabase',
     formatterMode = "typstyle",
     exportPdf = "onSave",
     semanticTokens = "enable"

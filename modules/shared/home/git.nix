@@ -5,12 +5,22 @@
 }: {
   options = {
     customized.git.enable =
-      lib.mkEnableOption "Enable Git with custom config";
+      lib.mkEnableOption "Enable Git with custom tools and config";
   };
 
   config = lib.mkIf config.customized.git.enable {
+    # -------------------------------------------------------------
+    # -------------------------- LazyGit --------------------------
+    programs.lazygit = {
+      enable = lib.mkDefault true;
+      settings = {
+        git.paging.externalDiffCommand = "difft --color=always --display=side-by-side --syntax-highlight=off";
+      };
+    };
+    # -------------------------------------------------------------
+    # ---------------------------- Git ----------------------------
     programs.git = {
-      enable = true;
+      enable = lib.mkDefault true;
       userName = "Robertino Martinez";
       userEmail = "48034748+rober-m@users.noreply.github.com";
       aliases = {
@@ -24,7 +34,10 @@
       #signing = {
       #  signByDefault = true;
       #};
-      difftastic.enable = true;
+      difftastic = {
+        enable = true;
+        color = "always";
+      };
       extraConfig = {
         github.user = "rober-m";
         pull.rebase = false;

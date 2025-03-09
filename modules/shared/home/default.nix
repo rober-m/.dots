@@ -52,10 +52,8 @@ in {
     coreutils
     curl
     wget
-    git
     gh # GitHub CLI
     gitleaks # Git leaks detector CLI
-    lazygit # Also installed in modules/nvim
     dua # Disk Usage Analyzer
     zsh # Linux shell
     lsd

@@ -12,7 +12,7 @@
     programs.vscode = {
       enable = true;
       #userSettings = lib.importJSON ./settings.json; # Commenting this because it's too cumbersome
-      extensions = with pkgs.vscode-extensions; [
+      profiles.default.extensions = with pkgs.vscode-extensions; [
         # General
         vscodevim.vim # Vim (https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
         github.copilot # Copilot (https://marketplace.visualstudio.com/items?itemName=github.copilot)

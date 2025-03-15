@@ -9,8 +9,8 @@
       lib.mkEnableOption "Enable kanata (keyboard layout) with personal config";
   };
 
-  config =
-    lib.mkIf (config.customized.kanata.enable
+  config = lib.mkMerge [
+    (lib.mkIf (config.customized.kanata.enable
       && pkgs.stdenv.hostPlatform.isLinux) {
       services.kanata = {
         enable = true;
@@ -21,45 +21,48 @@
           };
         };
       };
-    }
-    // lib.mkIf (config.customized.kanata.enable
+    })
+
+    (lib.mkIf (config.customized.kanata.enable
       && pkgs.stdenv.hostPlatform.isDarwin) {
-      home.packages = with pkgs; [
-        kanata # Keyboard remap layouts.
-        #(callPackage ../../../my-pkgs/my-kanata.nix {}) # The installer works, but kanata doesn't. TODO: Create an issue.
-      ];
-      home.file.".config/kanata/kanata.kbd".text =
-        /*
-        lisp
-        */
-        ''
-          ;; defsrc is still necessary
-          (defcfg
-            process-unmapped-keys yes
-          )
+      # TODO: This doesn't compile in Linux because all mkIf braches must be evaluated, even if they are not used.
+      # home.packages = with pkgs; [
+      #   kanata # Keyboard remap layouts.
+      #   #(callPackage ../../../my-pkgs/my-kanata.nix {}) # The installer works, but kanata doesn't. TODO: Create an issue.
+      # ];
+      # home.file.".config/kanata/kanata.kbd".text =
+      #   /*
+      #   lisp
+      #   */
+      #   ''
+      #     ;; defsrc is still necessary
+      #     (defcfg
+      #       process-unmapped-keys yes
+      #     )
 
-          (defsrc
-            a s d f j k l ;
-          )
-          (defvar
-            tap-time 150
-            hold-time 200
-          )
+      #     (defsrc
+      #       a s d f j k l ;
+      #     )
+      #     (defvar
+      #       tap-time 150
+      #       hold-time 200
+      #     )
 
-          (defalias
-            a (tap-hold $tap-time $hold-time a lmet)
-            s (tap-hold $tap-time $hold-time s lalt)
-            d (tap-hold $tap-time $hold-time d lsft)
-            f (tap-hold $tap-time $hold-time f lctl)
-            j (tap-hold $tap-time $hold-time j rctl)
-            k (tap-hold $tap-time $hold-time k rsft)
-            l (tap-hold $tap-time $hold-time l ralt)
-            ; (tap-hold $tap-time $hold-time ; rmet)
-          )
+      #     (defalias
+      #       a (tap-hold $tap-time $hold-time a lmet)
+      #       s (tap-hold $tap-time $hold-time s lalt)
+      #       d (tap-hold $tap-time $hold-time d lsft)
+      #       f (tap-hold $tap-time $hold-time f lctl)
+      #       j (tap-hold $tap-time $hold-time j rctl)
+      #       k (tap-hold $tap-time $hold-time k rsft)
+      #       l (tap-hold $tap-time $hold-time l ralt)
+      #       ; (tap-hold $tap-time $hold-time ; rmet)
+      #     )
 
-          (deflayer base
-            @a @s @d @f @j @k @l @;
-          )
-        '';
-    };
+      #     (deflayer base
+      #       @a @s @d @f @j @k @l @;
+      #     )
+      #   '';
+    })
+  ];
 }

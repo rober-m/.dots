@@ -27,7 +27,7 @@ in {
   # My `Framework` config
   framework = nixpkgs.lib.nixosSystem {
     inherit system;
-    specialArgs = {inherit inputs user-options;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
+    specialArgs = {inherit inputs user-options system;}; # Pass flake variables. These are available in all submodules (if indicated as inputs)
     modules = [
       # Framework's hardware config
       ./hardware-configuration.nix
@@ -42,23 +42,12 @@ in {
       # Custom hardware modules for 13th-gen Intel Framework Laptop
       inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
       {
-        nixpkgs.overlays = [
-          (_: _: {
-            cardano-pkgs.node = inputs.cardano-node.packages.${system};
-            #cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;
-            #cardano-pkgs.aiken = inputs.aiken_bump_nix_pr.packages.${system}.aiken;
-            cardano-pkgs.aiken = inputs.aiken_flake_asteria.packages.${system}.aiken;
-            #cardano-pkgs.aiken = inputs.aiken_flake.packages.${system}.aiken;
-            superfile = inputs.superfile.packages.${system}.default;
-          })
-        ];
-      }
-      {
         nixpkgs = nixpkgsWithConfig;
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit user-options inputs;}; # Pass flake variables
+        home-manager.useGlobalPkgs = false;
+        home-manager.useUserPackages = false;
+        home-manager.extraSpecialArgs = {inherit user-options inputs system;}; # Pass flake variables
         home-manager.users.${user-options.username} = home-modules;
+        home-manager.backupFileExtension = "bakup";
       }
     ];
   };

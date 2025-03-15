@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   user-options,
+  system,
   ...
 }: let
   #---------------------------- Customized packages ----------------------------#
@@ -26,6 +27,24 @@ in {
   # Don't enable/disable customized options here. This file serves only as a
   # configuration aggregator. Enable/disable your custom options in the
   # respective modules (linux/home, darwin/home).
+
+  # TODO: These user-level nixpkgs are shared by both systems. Prioritize this one and clean up the other ones.
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      (import ../../../overlays/protonvpn-gui.nix)
+      (_: _: {
+        cardano-pkgs.node = inputs.cardano-node.packages.${system};
+        #cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;
+        #cardano-pkgs.aiken = inputs.aiken_bump_nix_pr.packages.${system}.aiken;
+        cardano-pkgs.aiken = inputs.aiken_flake_asteria.packages.${system}.aiken;
+        #cardano-pkgs.aiken = inputs.aiken_flake.packages.${system}.aiken;
+        superfile = inputs.superfile.packages.${system}.default;
+      })
+    ];
+  };
 
   home.stateVersion = "22.05";
   colorScheme = inputs.nix-colors.colorSchemes.${user-options.colorscheme};

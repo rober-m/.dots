@@ -73,11 +73,12 @@ in {
 
       todoist-electron
 
-      haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
+      #haskell.compiler.ghc925 #(GHC: 9.2.5  && base: 4.16.4.0)
       steam-run # Run commands in the same FHS environment that is used for Steam
     ]
     ++ [
-      (pkgs.callPackage ../../../my-pkgs/my-dioxus-cli.nix {})
+      # TODO: dioxus stopped working after updating flake. Fix when needed
+      #(pkgs.callPackage ../../../my-pkgs/my-dioxus-cli.nix {})
       #(pkgs.callPackage ../../../my-pkgs/my-protonvpn-gui.nix {})
     ];
 

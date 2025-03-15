@@ -53,8 +53,8 @@ in {
       {
         nixpkgs = nixpkgsWithConfig;
         # `home-manager` config
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
+        home-manager.useGlobalPkgs = false;
+        home-manager.useUserPackages = false;
         home-manager.extraSpecialArgs = {inherit user-options system inputs;}; # Pass flake variable
         home-manager.users.${user-options.username} = home-modules;
         home-manager.backupFileExtension = "bakup";

@@ -57,28 +57,27 @@
         dressing-nvim # Neovim plugin to improve the default vim.ui interfaces
         sniprun # Run code snippets
         avante-nvim # A modern Neovim UI
-        #{
-        # TODO: Try making this plugin compile after fixing weird networking issues
-        #  plugin = grug-far-nvim;
-        #  type = "lua";
-        #  config =
-        #    /*
-        #    lua
-        #    */
-        #    ''
-        #      ------------------------------------ GRUG FAR -------------------------------------------
-        #      -- DOCS: https://github.com/MagicDuck/grug-far.nvim
+        {
+          plugin = grug-far-nvim;
+          type = "lua";
+          config =
+            /*
+            lua
+            */
+            ''
+              ------------------------------------ GRUG FAR -------------------------------------------
+              -- DOCS: https://github.com/MagicDuck/grug-far.nvim
 
-        #      require('grug-far').setup({})
+              require('grug-far').setup({})
 
-        #      require("which-key").add({
-        #          { "<leader>s", group = "search"},
-        #          { "<leader>sr", ":GrugFar<cr>", mode = { "n", "v" }, desc = "Search and Replace" },
-        #      })
+              require("which-key").add({
+                  { "<leader>s", group = "search"},
+                  { "<leader>sr", ":GrugFar<cr>", mode = { "n", "v" }, desc = "Search and Replace" },
+              })
 
-        #      -----------------------------------------------------------------------------------------
-        #    '';
-        #}
+              -----------------------------------------------------------------------------------------
+            '';
+        }
         {
           plugin = otter-nvim; # LSP for code embeded in documents
           type = "lua";

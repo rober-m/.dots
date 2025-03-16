@@ -69,8 +69,6 @@ in {
     # Generic Terminal
     #(pkgs.nerdfonts.override {fonts = user-options.fonts;})
     coreutils
-    curl
-    wget
     gh # GitHub CLI
     gitleaks # Git leaks detector CLI
     dua # Disk Usage Analyzer
@@ -93,6 +91,12 @@ in {
     cmake # Cross-platform build system
     zellij # Terminal multiplexer (Tmux alternative)
     supabase-cli # Supabase CLI
+
+    # Networking
+    curl
+    wget
+    dig # DNS lookup using OS libraries
+    dnslookup # DNS lookup without using OS libraries
 
     # Virtualization
     lazydocker # Lazygit for Docker

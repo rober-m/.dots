@@ -34,7 +34,6 @@ in {
       allowUnfree = true;
     };
     overlays = [
-      (import ../../../overlays/protonvpn-gui.nix)
       (_: _: {
         cardano-pkgs.node = inputs.cardano-node.packages.${system};
         #cardano-pkgs.aiken = inputs.aiken_flake_26.packages.${system}.aiken;

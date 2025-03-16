@@ -14,7 +14,7 @@
     };
 
     overlays = [
-      (import ../../overlays/protonvpn-gui.nix)
+      #(import ../../overlays/protonvpn-gui.nix)
     ];
   };
   home-modules = {...}: {

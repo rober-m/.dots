@@ -8,8 +8,7 @@ require("which-key").add({
 require('avante_lib').load()
 require("avante").setup({
   {
-    ---@alias Provider "openai" | "claude" | "azure"  | "copilot" | "cohere" | [string]
-    provider = "claude",
+    provider = "copilot",                  -- "openai" | "claude" | "azure"  | "copilot" | "cohere" | [string]
     auto_suggestions_provider = "copilot", -- Auto-suggestions are a high-frequency operation and therefore expensive, use an inexpensive/free provider (e.g., copilot)
     claude = {
       endpoint = "https://api.anthropic.com",
@@ -19,14 +18,13 @@ require("avante").setup({
       max_tokens = 4096,
     },
     behaviour = {
-      auto_suggestions = false, -- Experimental stage
+      auto_suggestions = true, -- Experimental stage
       auto_set_highlight_group = true,
       auto_set_keymaps = true,
-      auto_apply_diff_after_generation = false,
+      auto_apply_diff_after_generation = true,
       support_paste_from_clipboard = false,
     },
     mappings = {
-      --- @class AvanteConflictMappings
       diff = {
         ours = "co",
         theirs = "ct",
@@ -53,14 +51,19 @@ require("avante").setup({
       sidebar = {
         apply_all = "A",
         apply_cursor = "a",
+        retry_user_request = "r",
+        edit_user_request = "e",
         switch_windows = "<Tab>",
         reverse_switch_windows = "<S-Tab>",
+        remove_file = "d",
+        add_file = "@",
+        close = { "<Esc>", "q" },
+        close_from_input = nil, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
       },
     },
     hints = { enabled = true },
     windows = {
-      ---@type "right" | "left" | "top" | "bottom"
-      position = "right", -- the position of the sidebar
+      position = "right", -- the position of the sidebar: "right" | "left" | "top" | "bottom"
       wrap = true,        -- similar to vim.o.wrap
       width = 30,         -- default % based on available width
       sidebar_header = {
@@ -69,7 +72,7 @@ require("avante").setup({
         rounded = true,
       },
       input = {
-        prefix = "> ",
+        prefix = "👨> ",
         height = 8, -- Height of the input window in vertical layout
       },
       edit = {
@@ -77,21 +80,18 @@ require("avante").setup({
         start_insert = true, -- Start insert mode when opening the edit window
       },
       ask = {
-        floating = false,    -- Open the 'AvanteAsk' prompt in a floating window
-        start_insert = true, -- Start insert mode when opening the ask window
+        floating = false,        -- Open the 'AvanteAsk' prompt in a floating window
+        start_insert = true,     -- Start insert mode when opening the ask window
         border = "rounded",
-        ---@type "ours" | "theirs"
-        focus_on_apply = "ours", -- which diff to focus after applying
+        focus_on_apply = "ours", -- which diff to focus after applying: "ours" | "theirs"
       },
     },
     highlights = {
-      ---@type AvanteConflictHighlights
       diff = {
         current = "DiffText",
         incoming = "DiffAdd",
       },
     },
-    --- @class AvanteConflictUserConfig
     diff = {
       autojump = true,
       ---@type string | fun(): any
@@ -100,6 +100,10 @@ require("avante").setup({
       --- Helps to avoid entering operator-pending mode with diff mappings starting with `c`.
       --- Disable by setting to -1.
       override_timeoutlen = 500,
+    },
+    suggestion = {
+      debounce = 600,
+      throttle = 600,
     },
   }
 })

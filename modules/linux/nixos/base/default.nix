@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../../../shared/system/kanata.nix # On nixos kanata is at the system level
+    ./kanata-linux.nix
     ./bootloader.nix
     ./networking.nix
     ./sound.nix

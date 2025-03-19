@@ -5,7 +5,7 @@
 }: let
   imports = [
     ./custom-launcher.nix
-    ../../shared/system/kanata.nix # On darwin kanata is at the user level
+    ./kanata-darwin.nix
   ];
 in {
   inherit imports;

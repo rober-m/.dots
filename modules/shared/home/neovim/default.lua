@@ -74,8 +74,24 @@ packer.startup(function()
   use 'aiken-lang/editor-integration-nvim'
   use 'MeanderingProgrammer/render-markdown.nvim'
   use "MunifTanjim/nui.nvim"
+  use {
+    '~/projects/audit.nvim',
+    config = function()
+      require('audit').setup()
+    end
+  }
 end)
 
 require('render-markdown').setup({
   file_types = { "markdown", "Avante" },
+})
+
+
+
+require("which-key").add({
+  { "<Leader>n",  group = "notes" },
+  { "<Leader>nn", ":AuditAddNote<CR>",     desc = "New Note",     mode = { "v" } },
+  { "<Leader>nt", ":AuditTogglePanel<CR>", desc = "Toggle Panel", mode = { "n" } },
+  { "<Leader>ns", ":AuditSyncNotes<CR>",   desc = "Sync Notes",   mode = { "n" } },
+  { "<Leader>nd", ":AuditDeleteNote<CR>",  desc = "Delete Note",  mode = { "n" } },
 })

@@ -161,6 +161,11 @@ in {
     pandoc
     #kmonad # Keyboard remapper. Doesn't work on Darwin :(
     #claude-code # CLI for Claude LLM TODO: Use after updating flake
+
+    #luajitPackages.busted # Lua testing framework
+    lua.pkgs.busted
+    lua.pkgs.luafilesystem
+    lua.pkgs.luarocks
   ];
   #----------------------------- Other config files ----------------------------#
   home.file.".config/neofetch/config.conf".source = ./neofetch.conf;

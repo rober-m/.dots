@@ -3,8 +3,10 @@ require("which-key").setup {}
 
 -- Movement
 require("which-key").add({
-  { "gh", "0", desc = "GoTo beginning of line" },
-  { "gl", "$", desc = "GoTo end of line" },
+  { "gh", "0",          desc = "GoTo beginning of line" },
+  { "gl", "$",          desc = "GoTo end of line" },
+  { "]q", ":cnext<CR>", desc = "Next quickfix" },
+  { "[q", ":cprev<CR>", desc = "Previous quickfix" },
 })
 
 -- Move highlighted lines

@@ -50,10 +50,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --------------------------------------------------------------------------------------------------
 -------------------------------------  Filetype Configs ------------------------------------------
 
-if vim.bo.filetype == "markdown" then
-  vim.opt.wrap = true
-  vim.opt.linebreak = true
-end
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = "Markdown-specific settings",
+  -- Change to * to apply to ALL markdown buffers, not only mardown files
+  pattern = { "*.md", "*.markdown" },
+  callback = function()
+    if vim.bo.filetype == "markdown" then
+      vim.opt_local.wrap = true
+      vim.opt_local.linebreak = true
+    end
+  end,
+})
 
 --------------------------------------------------------------------------------------------------
 --------------------------------------  Neovide Config -------------------------------------------

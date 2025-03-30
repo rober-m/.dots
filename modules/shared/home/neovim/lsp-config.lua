@@ -56,6 +56,28 @@ local on_attach = function(client, bufnr)
     end
   })
 
+  --DOCS: https://myriad-dreamin.github.io/tinymist/frontend/neovim.html
+  -- Autocomand that sets the main file for the typst LSP
+  -- if vim.api.nvim_buf_get_option(bufnr, 'filetype') == 'typst' then
+  --   vim.api.nvim_create_autocmd("BufEnter", {
+  --     callback = function()
+  --       local mainFile = vim.fs.find("audit.typ", { upwards = true })
+  --       vim.notify("Setting main file to: " .. mainFile)
+  --       vim.lsp.buf.execute_command({ command = 'tinymist.pinMain', arguments = { mainFile } })
+  --     end
+  --   })
+  -- end
+  --
+
+
+  if vim.api.nvim_buf_get_option(bufnr, 'filetype') == 'typst' then
+    -- pin the main file
+    require("which-key").add({
+      { "<leader>t",  group = "tinymist" },
+      { "<leader>tp", "<cmd> lua vim.lsp.buf.execute_command({ command = 'tinymist.pinMain', arguments = { vim.api.nvim_buf_get_name(0) } })<cr>", desc = "Pin Main File" },
+    })
+  end
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -184,4 +206,5 @@ require('lspconfig').tinymist.setup {
     semanticTokens = "enable"
   }
 }
+
 -----------------------------------------------------------------------------------------

@@ -52,10 +52,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_create_autocmd('BufEnter', {
   desc = "Markdown-specific settings",
-  -- Change to * to apply to ALL markdown buffers, not only mardown files
-  pattern = { "*.md", "*.markdown" },
+  -- Change to * to apply to ALL buffers, not only files
+  pattern = { "*.md", "*.markdown", "*.typ" },
   callback = function()
-    if vim.bo.filetype == "markdown" then
+    if vim.bo.filetype == "markdown" or vim.bo.filetype == "typst" then
       vim.opt_local.wrap = true
       vim.opt_local.linebreak = true
     end

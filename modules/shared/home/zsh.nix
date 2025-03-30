@@ -113,7 +113,7 @@ in {
               fi
           fi
           # If aiken binary is present in .aiken/bin, add to PATH and add completion
-          export PATH=$HOME/.aiken/versions/v1.0.29-alpha/aiken-aarch64-apple-darwin/:$PATH # TODO: Do it the right way
+          export PATH=$HOME/.aiken/bin:$PATH
 
           # Add Yaci-Devkit to path
           export PATH="$HOME/.yaci-devkit/bin:$PATH"

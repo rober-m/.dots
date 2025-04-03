@@ -15,7 +15,7 @@
       enable = true;
       keyboards = {
         internalKeyboard = {
-          config = builtins.readFile ../../../shared/home/kanata.kbd;
+          configFile = ../../../shared/home/kanata.kbd;
         };
       };
     };

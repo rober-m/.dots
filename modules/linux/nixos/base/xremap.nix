@@ -16,6 +16,9 @@
   # sure to plug it in AFTER booting the system or re-plug.
   # Else, this will conflict with the Moonlander's config!!
   #---------------------------------------------------------
+  # ERROR!!: This doesn't work on the Voyager unless I rebuild
+  # after plugging it in. TODO: Fix this.
+  #---------------------------------------------------------
 
   services.xremap = {
     #withHypr = true; # Work with Hyprlnd

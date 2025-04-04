@@ -21,9 +21,7 @@
 
   config = lib.mkMerge [
     (lib.mkIf (config.customized.firefox.enable && !config.customized.firefox.withConfig) {
-      home.packages = with pkgs; [
-        firefox
-      ];
+      programs.firefox.enable = true;
     })
     (lib.mkIf (config.customized.firefox.enable && config.customized.firefox.withConfig) {
       programs.firefox = {

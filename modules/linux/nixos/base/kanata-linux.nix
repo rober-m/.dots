@@ -15,6 +15,8 @@
       enable = true;
       keyboards = {
         internalKeyboard = {
+          # TODO: move "swap CAPSLOCK and ESC" from xremap to kanata
+          # INFO: I think I can't add comments inside the kanata config file without breaking it.
           configFile = ../../../shared/home/kanata.kbd;
         };
       };

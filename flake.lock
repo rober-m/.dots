@@ -95,23 +95,23 @@
         "type": "github"
       }
     },
-    "aiken_flake_20": {
+    "aiken_flake_21": {
       "inputs": {
         "flake-utils": "flake-utils_4",
         "nixpkgs": "nixpkgs_7",
         "rust-overlay": "rust-overlay_4"
       },
       "locked": {
-        "lastModified": 1698274803,
-        "narHash": "sha256-v0/H4ApAe7OiOHDmSv/UVhDphpCruweNoVQzX/gAAtg=",
+        "lastModified": 1701746963,
+        "narHash": "sha256-rGhsoBe0rzSBquQSLudk0pr1AHOP3uPhpQ5pijZWeAs=",
         "owner": "aiken-lang",
         "repo": "aiken",
-        "rev": "49bd4ba33d9fd99180cd77321ad799e19f23c6ba",
+        "rev": "4b04517aba50f0dd85d4f21d8cdae03fe5a263cd",
         "type": "github"
       },
       "original": {
         "owner": "aiken-lang",
-        "ref": "v1.0.20-alpha",
+        "ref": "v1.0.21-alpha",
         "repo": "aiken",
         "type": "github"
       }
@@ -3101,7 +3101,7 @@
         "aiken_bump_nix_pr": "aiken_bump_nix_pr",
         "aiken_flake": "aiken_flake",
         "aiken_flake_1_1_0": "aiken_flake_1_1_0",
-        "aiken_flake_20": "aiken_flake_20",
+        "aiken_flake_21": "aiken_flake_21",
         "aiken_flake_26": "aiken_flake_26",
         "alejandra": "alejandra",
         "cardano-node": "cardano-node",

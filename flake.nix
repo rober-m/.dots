@@ -40,7 +40,7 @@
     #};
     cardano-node.url = "github:IntersectMBO/cardano-node/8.9.0";
     aiken_flake.url = "github:aiken-lang/aiken";
-    aiken_flake_20.url = "github:aiken-lang/aiken/v1.0.20-alpha"; # Newer versions don't compile in Darwin
+    aiken_flake_21.url = "github:aiken-lang/aiken/v1.0.21-alpha";
     aiken_flake_26.url = "github:aiken-lang/aiken/v1.0.26-alpha";
     aiken_flake_1_1_0.url = "github:aiken-lang/aiken/v1.1.0";
     aiken_bump_nix_pr = {

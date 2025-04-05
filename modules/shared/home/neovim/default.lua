@@ -106,6 +106,7 @@ require('render-markdown').setup({
 require("which-key").add({
   { "<Leader>n",  group = "notes" },
   { "<Leader>nn", ":AuditAddNote<CR>",        desc = "New Note",                mode = { "v" } },
+  { "<Leader>np", ":AuditAddProjectNote<CR>", desc = "New Project Note",        mode = { "n" } },
   { "<Leader>nd", ":AuditDeleteNote<CR>",     desc = "Delete Note",             mode = { "n" } },
   { "<Leader>nr", ":AuditToggleReviewed<CR>", desc = "Mark/Unmark as reviewed", mode = { "v" } },
   { "<Leader>nt", ":AuditTogglePanel<CR>",    desc = "Toggle Panel",            mode = { "n" } },

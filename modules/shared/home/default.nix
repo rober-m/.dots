@@ -113,7 +113,7 @@ in {
     #python310Packages.jupyter
     #python310Packages.jupyter_core
     #python310Packages.jupyter-client
-    #python310Packages.jupyterlab
+    python313Packages.jupyterlab
     #python310Packages.notebook
 
     # WebDev stuff

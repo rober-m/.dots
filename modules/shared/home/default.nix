@@ -61,6 +61,7 @@ in {
       enable = true;
       settings.show_program_path = true;
     };
+    gpg.enable = true;
   };
   #-------------------------- Default-config packages --------------------------#
   home.packages = with pkgs; [

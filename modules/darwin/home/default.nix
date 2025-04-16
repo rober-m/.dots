@@ -24,7 +24,7 @@ in {
     custom-launcher.enable = true;
     tmux.enable = true;
     neovim.enable = true;
-    alacritty.enable = true;
+    alacritty.enable = false;
     kitty.enable = true;
     vscode.enable = true;
     haskell.enable = true;

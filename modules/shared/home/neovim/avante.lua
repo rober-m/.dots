@@ -10,13 +10,13 @@ require("avante").setup({
   {
     provider = "copilot",                  -- "openai" | "claude" | "azure"  | "copilot" | "cohere" | [string]
     auto_suggestions_provider = "copilot", -- Auto-suggestions are a high-frequency operation and therefore expensive, use an inexpensive/free provider (e.g., copilot)
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-sonnet-20240620",
-      api_key_name = "cmd:bw get notes anthropic-api-key",
-      temperature = 0,
-      max_tokens = 4096,
-    },
+    --claude = {
+    --  endpoint = "https://api.anthropic.com",
+    --  model = "claude-3-5-sonnet-20240620",
+    --  api_key_name = "cmd:bw get notes anthropic-api-key",
+    --  temperature = 0,
+    --  max_tokens = 4096,
+    --},
     behaviour = {
       auto_suggestions = true, -- Experimental stage
       auto_set_highlight_group = true,
